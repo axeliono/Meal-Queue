@@ -22,6 +22,7 @@
             </div>
         </div>
     </header>
+
     <div class="nav-menu">
             <a href="#">HOME</a>
             <a href="#">INSTRUCTION</a>
@@ -29,26 +30,119 @@
             <a href="#">CONTACT US</a>
     </div> 
 
-    <div class="operation-page">
-        <div class="operation-intro">
-            <h1 class="main-text">
-                Calc title will go here
-            </h1>
-            <p>Instruction can be here</p>
+    <div class="operation-intro">
+        <h1 class="main-text">
+            How to use:
+        </h1>
+        <p>1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
+    </div>
+
+    <div class="operation-page">
+        
+        <div class="recipe-name" id="recipe-name">
+            <h3>
+                Enter Recipe Name (optional)
+            </h3>
+            <input type="text" id="name-input"/>
         </div>
-        <div class="operation-box">
-            <p>
-                calculator <br>result-box <br>goes-here.
-            </p>
-            <a href="#" class="jump-to-calculator">Calculator</a>
+        <div class="recipe-ingredients" id="recipe-ingredients">
+            <h3>
+                Enter Recipe Ingredients*
+            </h3>
+            <textarea aria-label="Enter recipe ingredients" rows="20" class="focused"></textarea>
         </div>
-        <div class="operation-result">
-            <p>
-                calculator <br>result-box <br>goes-here.
-            </p>
-            <a href="#" class="jump-to-calculator">Calculator</a>
+        <div class="number-serving" id="number-serving">
+            <h3>
+                Select Number of Servings*
+            </h3>
+            <div class="select">
+            <select aria-label="Select number of servings">
+                <option value="null" selected="selected" disabled="disabled" hidden="hidden">Click Here</option> 
+                <option bind-value="n">1</option>
+                <option bind-value="n">2</option>
+                <option bind-value="n">3</option>
+                <option bind-value="n">4</option>
+                <option bind-value="n">5</option>
+                <option bind-value="n">6</option>
+                <option bind-value="n">7</option>
+                <option bind-value="n">8</option>
+                <option bind-value="n">9</option>
+                <option bind-value="n">10</option>
+                <option bind-value="n">11</option>
+                <option bind-value="n">12</option>
+                <option bind-value="n">13</option>
+                <option bind-value="n">14</option>
+                <option bind-value="n">15</option>
+                <option bind-value="n">16</option>
+                <option bind-value="n">17</option>
+                <option bind-value="n">18</option>
+                <option bind-value="n">19</option>
+                <option bind-value="n">20</option>
+                <option bind-value="n">21</option>
+                <option bind-value="n">22</option>
+                <option bind-value="n">23</option>
+                <option bind-value="n">24</option>
+                <option bind-value="n">25</option>
+                <option bind-value="n">26</option>
+                <option bind-value="n">27</option>
+                <option bind-value="n">28</option>
+                <option bind-value="n">29</option>
+                <option bind-value="n">30</option>
+                <option bind-value="n">31</option>
+                <option bind-value="n">32</option>
+                <option bind-value="n">33</option>
+                <option bind-value="n">34</option>
+                <option bind-value="n">35</option>
+                <option bind-value="n">36</option>
+                <option bind-value="n">37</option>
+                <option bind-value="n">38</option>
+                <option bind-value="n">39</option>
+                <option bind-value="n">40</option>
+                <option bind-value="n">41</option>
+                <option bind-value="n">42</option>
+                <option bind-value="n">43</option>
+                <option bind-value="n">44</option>
+                <option bind-value="n">45</option>
+                <option bind-value="n">46</option>
+                <option bind-value="n">47</option>
+                <option bind-value="n">48</option>
+                <option bind-value="n">49</option>
+                <option bind-value="n">50</option>
+                <option bind-value="n">51</option>
+                <option bind-value="n">52</option>
+                <option bind-value="n">53</option>
+                <option bind-value="n">54</option>
+                <option bind-value="n">55</option>
+                <option bind-value="n">56</option>
+                <option bind-value="n">57</option>
+                <option bind-value="n">58</option>
+                <option bind-value="n">59</option>
+                <option bind-value="n">60</option>
+                <option bind-value="n">61</option>
+                <option bind-value="n">62</option>
+                <option bind-value="n">63</option>
+                <option bind-value="n">64</option>
+                <option bind-value="n">65</option>
+                <option bind-value="n">66</option>
+                <option bind-value="n">67</option>
+                <option bind-value="n">68</option>
+                <option bind-value="n">69</option>
+                <option bind-value="n">70</option>
+                <option bind-value="n">71</option>
+                <option bind-value="n">72</option>
+            </select>
         </div>
+    </div>
+        <div class="serving-size" id="serving-size">
+            <h3>
+                Enter serving size (optional)
+            </h3>
+            <input type="text" id="size-input"/>
+        </div>
+        <button class="result-btn" id="result-btn">ANALYZE RECIPE</button>
     </div>
 
     <footer>
