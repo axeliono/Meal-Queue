@@ -1,42 +1,113 @@
 @import 'config';
 
 :root {
-    --base-color: #DC1E0B;
-    --base-color: #FFA820;
-    --base-color: #FBFCEB;
-    --base-color: #DFE9AC;
-    --base-color: #97BE11;
-    --base-color: #28590C;
+    --background-color: #111518;
 }
 
-
-
 .intro {
-    position: relative;
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     background: url(../images/header2.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: bottom;
+    padding-top: 100px;
+    clip-path: circle(260vh at 50% -200vh);
+
+    .intro-page{
+        width: 40%;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        padding: 5rem;
+        margin: auto auto 0 auto;
+        box-shadow: 2px 4px 7px rgb(10, 12, 14); 
+        background-color: rgba(25, 31, 36, 0.9);
+        position: relative;
+     
+        .intro-left{
+            width: 50%;
+            margin-left: auto;
+            z-index: 1;
+            h1{
+                color: #fff;
+                font-size: 42px;
+                font-weight: 900;
+                text-align: right;
+                padding-right: 100px;
+                font-family: 'Times New Roman', Times, serif
+            }
+        }
+        .intro-right{
+            width:50%;
+            margin-right: auto;
+            z-index: 1;
+            p {
+                color: rgb(219, 219, 219);
+            }
+        }
+    }
+}
+
+.nav-menu{
+    width: 40%;
+    height: 10vh;
+    margin: 60px auto;
+    position: static;
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: circle(280vh at 50% -200vh);
-
-
-    .title {
-        max-width: 1000px;
-        text-align: center;
+    z-index: 2;
+    background-color: rgba(25, 31, 36, 0.9);
     
+    a {
+        font-weight: 900;
+        font-size: 22px;
+        text-decoration: none;
+        color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        letter-spacing: 2px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+.first-page{
+    width: 60%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    margin: auto auto 0 auto;
+    box-shadow: 2px 4px 7px rgb(10, 12, 14); 
+    background-color: rgba(25, 31, 36, 0.9);
+    position: relative;
+ 
+    .first-left{
+        width: 50%;
+        margin-left: auto;
+        z-index: 1;
         h1{
-            font-size: 5em;
-            color: #ff6720bb;
-            font-weight: 700;
-            text-shadow: 2px 2px 8px #FBFCEB;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #28590C;
-            position: fixed;
+            color: #fff;
+            font-size: 42px;
+            font-weight: 900;
+            text-align: left;
+            font-family: 'Times New Roman', Times, serif
         }
     }
+    .first-right{
+        width:50%;
+        margin-right: auto;
+        z-index: 1;
+        p {
+            color: rgb(219, 219, 219);
+        }
+    }
+}
+
+footer{
+    
+        
 }
