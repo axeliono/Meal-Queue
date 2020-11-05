@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Document</title>
 </head>
 <body>
@@ -40,7 +41,7 @@
     </div>
 
     <div class="operation-page">
-        
+        <div class="operation-grid">
         <div class="recipe-name" id="recipe-name">
             <h3>
                 Enter Recipe Name (optional)
@@ -137,11 +138,12 @@
     </div>
         <div class="serving-size" id="serving-size">
             <h3>
-                Enter serving size (optional)
+                Enter Serving Size (optional)
             </h3>
             <input type="text" id="size-input"/>
         </div>
         <button class="result-btn" id="result-btn">ANALYZE RECIPE</button>
+    </div>
     </div>
 
     <!-- Nobody can make profit with nutrition calculator. This is our real job -->
@@ -151,20 +153,37 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus corporis ex voluptatem cumque dolorum accusantium eveniet, similique explicabo nostrum minima, harum obcaecati architecto distinctio. Fugit quis sunt autem esse eveniet.</p> -->
     </div>
     
-    <section> 
-        <div class="contact">
-            <!-- <p>
-                If you need a professional coach to manage your nutition plan! Do not hesitate to contact us!
-            </p> -->
-
+    <div class="contact-container">
+        <div class="contact-box">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <div class="left">
+                    <h2 class="info-title">Info</h2>
+                    <p>Lorem ipsum dolor</p>
+                    <p>Lorem ipsum dolor</p>
+                    <p>Lorem ipsum dolor</p>
+                    <p>Lorem ipsum dolor</p>
+                    
+                </div>
+                <input type="text" size="50" placeholder="Your Name" class="name">
+                <input type="email" size="50"  placeholder="Your Email" class="email">
+                <input type="text" size="50"  placeholder="Your Phone" class="phone">
+                <textarea placeholder="Message" size="50" class="msg"></textarea>
+                <button id="send-btn" class="send-btn">Send</button>
+            </div>
         </div>
-    </section>
+
+    </div>
     <footer>
         
         <div class="credit">
             <p>
                 &copy; MealMath
+                
             </p>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
         </div>
     </footer>
 
