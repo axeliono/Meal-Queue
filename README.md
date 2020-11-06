@@ -32,6 +32,7 @@
 * Demo: Show your stuff!
 
 * Directions for future development.
+
 This, I made a description and contact div element below the calculation form. 
 
 My scenario is, we are nutrition management company who takes care and manages client's health. 
@@ -39,9 +40,6 @@ My scenario is, we are nutrition management company who takes care and manages c
 So. We can write who we are and what we are doing and lead users to apply.
 The contact form will be the way they can reach out to us.
 
-<<<<<<< HEAD
-* Links to the deployed application and the GitHub repository.
-=======
 * Links to the deployed application and the GitHub repository.
 
 #MVP LIST
@@ -53,4 +51,3 @@ THEN I am presented with the ingredient list
 WHEN I am presented with the ingredient list
 THEN a video that shows how to make the recipe is shown
 
->>>>>>> d2e7d257104a7e817fef00d53f54aaf2430f0e64
