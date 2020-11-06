@@ -39,4 +39,18 @@ My scenario is, we are nutrition management company who takes care and manages c
 So. We can write who we are and what we are doing and lead users to apply.
 The contact form will be the way they can reach out to us.
 
+<<<<<<< HEAD
 * Links to the deployed application and the GitHub repository.
+=======
+* Links to the deployed application and the GitHub repository.
+
+#MVP LIST
+
+WHEN I enter a meal item
+THEN I'm presented with multiple recipes
+WHEN I click a recipe 
+THEN I am presented with the ingredient list
+WHEN I am presented with the ingredient list
+THEN a video that shows how to make the recipe is shown
+
+>>>>>>> d2e7d257104a7e817fef00d53f54aaf2430f0e64
