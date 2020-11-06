@@ -1,7 +1,7 @@
 # MealMath
 
 ##App
-* Use a CSS framework other than Bootstrap.
+* Use a CSS framework other than Bootstrap. X
 
 * Be deployed to GitHub Pages.
 
