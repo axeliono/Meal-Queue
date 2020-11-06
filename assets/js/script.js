@@ -6,12 +6,25 @@ var analyzeRecipeEl = document.getElementById("result-btn");
 
 function getRecipe() {
     var recipeName = document.getElementById("name-input").value;
-
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${recipeName}`;
     fetch(recipeURL).then(function(response) {
-        console.log(response.json());
+        return response.json()
+    })
+    .then(function(data) {
+        let recipesFound = data.hits
+        for (i = 0; i < recipesFound.length; i++) {
+        let recipeName = data.hits[i].recipe.label
+        console.log(recipeName)
+        let recipeImage = data.hits[i].recipe.image
+        console.log(recipeImage)
+        let ingredientList = data.hits[i].recipe.ingredients
+        console.log(ingredientList)
+        }
     })
 }
+
+
+
 analyzeRecipeEl.addEventListener("click", function() {
     console.log("button pressed");
     getRecipe();
