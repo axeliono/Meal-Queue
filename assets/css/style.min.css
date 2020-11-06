@@ -1,2 +1,50 @@
-*{margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;box-sizing:border-box}body{background:#111518}.operation-page{display:flex}.operation-page .operation-grid{width:50%;height:100%;display:grid;grid-template-columns:repeat(5, 1fr);grid-template-rows:repeat(6, 1fr);padding:2rem;margin:15px auto 0 auto;box-shadow:2px 4px 7px #0a0c0e;background-color:rgba(50,62,71,0.9);position:relative}.operation-page .recipe-name{grid-column:1/6;grid-row:1/2;width:100%;padding-top:10px;margin-left:auto;z-index:1}.operation-page .recipe-name input{width:100%;padding:10px;background:#bebebe}.operation-page .recipe-name input:focus{background:#fff}.operation-page .recipe-ingredients{grid-column:1/6;grid-row:2/5;padding-top:10px;width:100%;margin-top:20px;margin-right:auto;z-index:1}.operation-page .recipe-ingredients textarea{width:100%;height:80%;padding:0px;background:#bebebe;resize:none}.operation-page .recipe-ingredients textarea:focus{background:#fff}.operation-page .number-serving{grid-column:1/3;grid-row:5/6;padding-top:10px;width:100%;margin-right:auto;margin-top:20px;z-index:1}.operation-page .number-serving .select select{width:50%;padding:10px;background:#bebebe;color:#212121;appearance:none}.operation-page .number-serving .select select:focus{background:#fff}.operation-page .serving-size{grid-column:3/6;grid-row:5/6;padding-top:10px;width:100%;margin-right:auto;margin-top:20px;z-index:1}.operation-page .serving-size input{width:100%;padding:10px;background:#bebebe}.operation-page .serving-size input:focus{background:#fff}.operation-page h3{color:#fff;margin-bottom:10px}.operation-page .result-btn{color:#fff;font-size:22px;letter-spacing:2px;grid-row:6/7;grid-column:1/6;width:100%;height:60px;margin-top:30px;background-color:#191f24;border-style:none}.operation-page .result-btn:hover{background-color:#225986;transition:0.5s}.operation-page .result-btn:active{background-color:#008cff}.contact-container{position:relative;display:flex;justify-content:center;width:100%;height:80vh;padding:20px 100px;margin-top:200px}.contact-container:after{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:url("../images/contact2.jpg") no-repeat center;background-attachment:fixed;background-size:cover;z-index:-4}.contact-container .contact-form{width:100%;display:grid;grid-template-columns:repeat(6, 1fr);grid-template-rows:repeat(6, 1fr);padding:2rem;margin:15px auto 0 auto;box-shadow:2px 4px 7px #0a0c0e;background-color:rgba(50,62,71,0.9);position:relative;margin-top:100px}.contact-container .contact-form input{width:100%;padding:10px;margin-bottom:20px;margin-right:2rem}.contact-container h2{grid-column:4/7;height:40px;color:#fff}.contact-container .left{grid-column:1/4;grid-row:1/7;margin-right:30px}.contact-container .left .info-title{margin-bottom:10px}.contact-container .left p{width:100%;color:#fff}.contact-container .left p:nth-child(5){padding-bottom:50px}.contact-container .left a{font-size:40px;text-decoration:none;color:#fff;position:relative;padding-right:30px;margin-top:40px}.contact-container .name{grid-column:4/7}.contact-container .email{grid-column:4/7}.contact-container .phone{grid-column:4/7}.contact-container textarea{grid-column:4/7;padding:10px}.contact-container button{grid-column:4/7;margin-top:20px}.intro{width:100%;height:60vh;background:url(../images/header2.jpg);background-size:cover;background-attachment:fixed;background-position:bottom;padding-top:100px;clip-path:circle(260vh at 50% -200vh)}.intro .intro-page{width:40%;height:30vh;display:flex;align-items:center;padding:5rem;margin:auto auto 0 auto;box-shadow:2px 4px 7px #0a0c0e;background-color:rgba(25,31,36,0.9);position:relative}.intro .intro-page .intro-left{width:50%;margin-left:auto;z-index:1}.intro .intro-page .intro-left h1{color:#fff;font-size:42px;font-weight:900;text-align:right;padding-right:100px;font-family:'Times New Roman', Times, serif}.intro .intro-page .intro-right{width:50%;margin-right:auto;z-index:1}.intro .intro-page .intro-right p{color:#dbdbdb}.nav-menu{width:100%;display:flex;justify-content:center;align-items:center;height:10vh;margin:60px auto;position:relative}.nav-menu a{display:inline-block;font-weight:900;font-size:22px;text-decoration:none;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.4);letter-spacing:2px;margin-right:10px;margin-left:10px;padding:15px 25px}.operation-intro{display:flex;flex-direction:column;margin:60px 50vh;z-index:1}.operation-intro h1{color:#fff;font-size:32px;font-weight:900}.operation-intro p{padding-top:10px;color:#fff;font-size:16px}footer{width:100%;height:100px;display:flex;justify-content:center}footer p{padding:10px;font-size:30px;color:#fff}footer a{font-size:30px;letter-spacing:15px;color:#fff;align-items:flex-end}
+*{margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;box-sizing:border-box}
+body{background:#7bb96c}
+.operation-page{display:flex}
+.operation-page .operation-grid{width:50%;height:100%;display:grid;grid-template-columns:repeat(5, 1fr);grid-template-rows:repeat(6, 1fr);padding:2rem;margin:15px auto 0 auto;box-shadow:2px 4px 7px #0a0c0e;background-color:rgba(50,62,71,0.9);position:relative}
+.operation-page .recipe-name{grid-column:1/6;grid-row:1/2;width:100%;padding-top:10px;margin-left:auto;z-index:1}
+.operation-page .recipe-name input{width:100%;padding:10px;background:#bebebe}
+.operation-page .recipe-name input:focus{background:#fff}
+.operation-page .recipe-ingredients{grid-column:1/6;grid-row:2/5;padding-top:10px;width:100%;margin-top:20px;margin-right:auto;z-index:1}
+.operation-page .recipe-ingredients textarea{width:100%;height:80%;padding:0px;background:#bebebe;resize:none}
+.operation-page .recipe-ingredients textarea:focus{background:#fff}
+.operation-page .number-serving{grid-column:1/3;grid-row:5/6;padding-top:10px;width:100%;margin-right:auto;margin-top:20px;z-index:1}
+.operation-page .number-serving .select select{width:50%;padding:10px;background:#bebebe;color:#212121;appearance:none}
+.operation-page .number-serving .select select:focus{background:#fff}
+.operation-page .serving-size{grid-column:3/6;grid-row:5/6;padding-top:10px;width:100%;margin-right:auto;margin-top:20px;z-index:1}
+.operation-page .serving-size input{width:100%;padding:10px;background:#bebebe}
+.operation-page .serving-size input:focus{background:#fff}
+.operation-page h3{color:#fff;margin-bottom:10px}
+.operation-page .result-btn{color:#fff;font-size:22px;letter-spacing:2px;grid-row:6/7;grid-column:1/6;width:100%;height:60px;margin-top:30px;background-color:#191f24;border-style:none}
+.operation-page .result-btn:hover{background-color:#225986;transition:0.5s}
+.operation-page .result-btn:active{background-color:#008cff}
+.contact-container{position:relative;display:flex;justify-content:center;width:100%;height:80vh;padding:20px 100px;margin-top:200px}
+.contact-container:after{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:url("../images/contact2.jpg") no-repeat center;background-attachment:fixed;background-size:cover;z-index:-4}
+.contact-container .contact-form{width:100%;display:grid;grid-template-columns:repeat(6, 1fr);grid-template-rows:repeat(6, 1fr);padding:2rem;margin:15px auto 0 auto;box-shadow:2px 4px 7px #0a0c0e;background-color:rgba(50,62,71,0.9);position:relative;margin-top:100px}
+.contact-container .contact-form input{width:100%;padding:10px;margin-bottom:20px;margin-right:2rem}
+.contact-container h2{grid-column:4/7;height:40px;color:#fff}
+.contact-container .left{grid-column:1/4;grid-row:1/7;margin-right:30px}
+.contact-container .left .info-title{margin-bottom:10px}
+.contact-container .left p{width:100%;color:#fff}
+.contact-container .left p:nth-child(5){padding-bottom:50px}
+.contact-container .left a{font-size:40px;text-decoration:none;color:#fff;position:relative;padding-right:30px;margin-top:40px}
+.contact-container .name{grid-column:4/7}
+.contact-container .email{grid-column:4/7}
+.contact-container .phone{grid-column:4/7}
+.contact-container textarea{grid-column:4/7;padding:10px}
+.contact-container button{grid-column:4/7;margin-top:20px}
+.intro{width:100%;height:60vh;background:url(../images/header2.jpg);background-size:cover;background-attachment:fixed;background-position:bottom;padding-top:100px;clip-path:circle(260vh at 50% -200vh)}
+.intro .intro-page{width:40%;height:30vh;display:flex;align-items:center;padding:5rem;margin:auto auto 0 auto;box-shadow:2px 4px 7px #0a0c0e;background-color:rgba(25,31,36,0.9);position:relative}
+.intro .intro-page .intro-left{width:100px;margin-right:30px;z-index:1}
+.intro .intro-page .intro-left h1{color:#fff;font-size:42px;font-weight:900;text-align:right;padding-right:100px;font-family:'Times New Roman', Times, serif}
+.intro .intro-page .intro-right{width:100px;padding-left:20px;z-index:1}
+.intro .intro-page .intro-right p{margin:0;color:#dbdbdb}
+.nav-menu{width:100%;display:flex;justify-content:center;align-items:center;height:10vh;margin:60px auto;position:relative}
+.nav-menu a{display:inline-block;font-weight:900;font-size:22px;text-decoration:none;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.4);letter-spacing:2px;margin-right:10px;margin-left:10px;padding:15px 25px}
+.operation-intro{display:flex;flex-direction:column;margin:60px 50vh;z-index:1}
+.operation-intro h1{color:#fff;font-size:32px;font-weight:900}
+.operation-intro p{padding-top:10px;color:#fff;font-size:16px}
+footer{width:100%;height:100px;display:flex;justify-content:center}
+footer p{padding:10px;font-size:30px;color:#fff}
+footer a{font-size:30px;letter-spacing:15px;color:#fff;align-items:flex-end}
 /*# sourceMappingURL=style.min.css.map */
