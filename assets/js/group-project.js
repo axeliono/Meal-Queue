@@ -11,9 +11,8 @@ analyzeRecipeEl.addEventListener("click", function() {
 
 function getRecipe() {
 
-    let recipeURL = "https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=pizza";
+    let recipeURL = "https://api.edamam.com/search?app_id=${appID}&app_key=$${apiKey}&q=pizza";
     fetch(recipeURL).then(function(response) {
         console.log(response);
     })
 }
-
