@@ -33,15 +33,27 @@ function getRecipe() {
 
 function displayRecipeCards(recipeName, recipeImage, ingredientList) {
     var cardHolder = document.querySelector(".recipe-card-holder");
-
+    
+    // creates div element to contain recipe card
     var recipeCard = document.createElement("div");
-    recipeCard.className = "recipe-card";
+    var txtContainer = document.createElement("div");
+    var recipeCardTxt = document.createElement("p");
+    txtContainer.setAttribute("class", "text-container");
+
+    // creates div element to contain "image"
+    var imgContainer = document.createElement("div");
+    imgContainer.setAttribute("class", "img-container");
     var image = document.createElement("img");
+    
+    recipeCard.className = "recipe-card";
     image.src = recipeImage;
 
-    recipeCard.innerText = recipeName;
-    recipeCard.appendChild(image);
 
+    recipeCardTxt.innerText = recipeName;
+    recipeCard.appendChild(txtContainer)
+    txtContainer.appendChild(recipeCardTxt);
+    recipeCard.appendChild(imgContainer);
+    imgContainer.appendChild(image);
     cardHolder.appendChild(recipeCard);
     
 
