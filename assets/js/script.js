@@ -35,15 +35,27 @@ function getRecipe() {
 
 function displayRecipeCards(recipeName, recipeImage, ingredientList) {
     var cardHolder = document.querySelector(".recipe-card-holder");
-
+    
+    // creates div element to contain recipe card
     var recipeCard = document.createElement("div");
-    recipeCard.className = "recipe-card";
+    var txtContainer = document.createElement("div");
+    var recipeCardTxt = document.createElement("p");
+    txtContainer.setAttribute("class", "text-container");
+
+    // creates div element to contain "image"
+    var imgContainer = document.createElement("div");
+    imgContainer.setAttribute("class", "img-container");
     var image = document.createElement("img");
+    
+    recipeCard.className = "recipe-card";
     image.src = recipeImage;
 
-    recipeCard.innerText = recipeName;
-    recipeCard.appendChild(image);
 
+    recipeCardTxt.innerText = recipeName;
+    recipeCard.appendChild(txtContainer)
+    txtContainer.appendChild(recipeCardTxt);
+    recipeCard.appendChild(imgContainer);
+    imgContainer.appendChild(image);
     cardHolder.appendChild(recipeCard);
     
 
@@ -57,20 +69,19 @@ function getYT () {
     fetch(ytURL).then(function(response) {
         console.log(recipeName);
         return response.json()
-        
     })
     .then(function(data) {
-        // var displayVideo = document.getElementById("you-tube");
-        // var thumbnail = document.createElement("img");
-        // thumbnail.src = data.items[0].snippet.thumbnails;
-        // displayVideo.appendChild(thumbnail);
-        console.log(data);
+        var id = data.items[0].id.videoId;
+        console.log(id);
+        displayYT(id); 
     })
 }
 
-// function displayYT () {
-//    let videoURL = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc%2Cc0KYU2j0TM4%2CeIho2S0ZahI&key=[AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4]'; 
-// }
+ function displayYT (id) {
+   var playerEl = document.getElementById("player");
+   playerEl.setAttribute("src", "http://www.youtube.com/embed/" + id + "?enablejsapi=1&origin=http://example.com")
+}
+
 var videoBtnEl = document.getElementById("video-btn");
 videoBtnEl.addEventListener("click", function() {
     getYT();
