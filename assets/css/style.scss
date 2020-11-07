@@ -1,7 +1,8 @@
+@import'mediaQueries';
 @import 'config';
 @import 'main-form';
 @import 'contactForm';
-
+@import 'calc_form';
 
 .intro {
     width: 100%;
@@ -17,7 +18,7 @@
         height: 30vh;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         padding: 5rem;
         top: 150px;
         margin: auto auto 0 auto;
@@ -105,3 +106,4 @@ footer{
         align-items: flex-end;
     }
 }
+$breakpoint: 
