@@ -35,11 +35,14 @@ function displayRecipeCards(recipeName, recipeImage, ingredientList) {
     var cardHolder = document.querySelector(".recipe-card-holder");
 
     var recipeCard = document.createElement("div");
+    var name = document.createElement("p");
+    name.innerHTML = recipeName;
+
     recipeCard.className = "recipe-card";
     var image = document.createElement("img");
+    image.className = "recipe-image";
     image.src = recipeImage;
 
-    recipeCard.innerText = recipeName;
     recipeCard.appendChild(image);
 
     cardHolder.appendChild(recipeCard);
