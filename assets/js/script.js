@@ -1,11 +1,13 @@
 //edamam API
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
+const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
+const recipeName = document.getElementById("name-input").value;
 var analyzeRecipeEl = document.getElementById("result-btn");
 
 
 function getRecipe() {
-    var recipeName = document.getElementById("name-input").value;
+    const recipeName = document.getElementById("name-input").value;
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${recipeName}`;
     fetch(recipeURL).then(function(response) {
         return response.json()
@@ -47,6 +49,33 @@ function displayRecipeCards(recipeName, recipeImage, ingredientList) {
 
 
 }
+
+// YOUTUBE API
+function getYT () {
+    var recipeName = document.getElementById("name-input").value;
+    let ytURL = `https://youtube.googleapis.com/youtube/v3/search?&part=snippet&maxResults=2&q=${recipeName} + "making"&key=${ytApiKey}`;
+    fetch(ytURL).then(function(response) {
+        console.log(recipeName);
+        return response.json()
+        
+    })
+    .then(function(data) {
+        // var displayVideo = document.getElementById("you-tube");
+        // var thumbnail = document.createElement("img");
+        // thumbnail.src = data.items[0].snippet.thumbnails;
+        // displayVideo.appendChild(thumbnail);
+        console.log(data);
+    })
+}
+
+// function displayYT () {
+//    let videoURL = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc%2Cc0KYU2j0TM4%2CeIho2S0ZahI&key=[AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4]'; 
+// }
+var videoBtnEl = document.getElementById("video-btn");
+videoBtnEl.addEventListener("click", function() {
+    getYT();
+})
+
 
 analyzeRecipeEl.addEventListener("click", function() {
     console.log("button pressed");
