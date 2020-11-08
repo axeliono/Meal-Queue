@@ -2,7 +2,12 @@
 @import 'config';
 @import 'main-form';
 @import 'contactForm';
+<<<<<<< HEAD
 @import 'calc_form';
+=======
+@import 'modal';
+
+>>>>>>> ed063123d65d37281e6fc9d46d490990c5bd54cc
 
 .intro {
     width: 100%;
@@ -61,7 +66,7 @@
     justify-content: flex-end;
     position: fixed;
     background-color: $primary-color;
-    z-index: 1;
+    z-index: 3;
 
     a {
         display: inline-block;

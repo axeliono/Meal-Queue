@@ -27,5 +27,6 @@ html {
     }
 }
 body{
-    background: $primary-color
+    background: $primary-color;
+    z-index: -2;
 }
