@@ -15,7 +15,7 @@ body {background-color:rgb(159, 197, 151)}
     clip-path: circle(260vh at 50% -200vh);
 
     .intro-page{
-        width: 60%;
+        width: 50%;
         height: 30vh;
         display: flex;
         flex-direction: column;
@@ -30,29 +30,32 @@ body {background-color:rgb(159, 197, 151)}
 
         .intro-left{
             width: 50%;
-            // margin-left: auto;
+            margin: auto;
             border-right: 3px;
             padding: 1rem;
+        
             h1{
                 color: #fff;
                 font-size: 42px;
                 font-weight: 900;
-                text-align: right;
-                padding-right: 100px;
+                text-align: center;
+                padding-right: 20px;
                 font-family: 'Times New Roman', Times, serif
                 
             }
         }
         .intro-right{
             width:50%;
-            // margin-right: auto;
+            margin: auto;
             border-left: 3px;
-            // padding: 1rem;
+            padding: 1rem;
+            justify-content: absolute;
             text-align: center; //changed to center
 
             
             p {
                 color: rgb(219, 219, 219);
+                font-size: 13px;
             }
         }
     }
@@ -83,7 +86,9 @@ body {background-color:rgb(159, 197, 151)}
 .operation-intro {
     display: flex;
     flex-direction: column;
-    margin: 60px 50vh;
+    //margin: 60px 50vh;
+    margin: 10px 25%;
+    padding-left: 20px;
 
     h1{
         color: #fff;
@@ -120,6 +125,7 @@ footer{
         margin-left: 20px;
     }
 }
+//added a few modifications to page here
 .credit{
     padding-top: 5px;
     margin-right: 50px;
@@ -128,4 +134,14 @@ footer{
     color:white;
     font-size: 10px;
     margin-top: 20px;
+}
+.description {
+    font-size: 15px;
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    align-content: center;  
+}
+.why-use {  
+    margin: 10px;
 }
