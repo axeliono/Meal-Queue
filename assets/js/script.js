@@ -4,8 +4,8 @@ const apiKey = "736b0810150196f28b8c1028864f5f3f";
 var analyzeRecipeEl = document.getElementById("result-btn");
 var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 //var clearHistoryEl = 
-var historyEl = document.querySelector(".operation-right");
-let searchTerm = "";
+//var historyEl = document.querySelector(".operation-right");
+//let searchTerm = "";
 
 function getRecipe(searchTerm) {
     
@@ -73,7 +73,7 @@ analyzeRecipeEl.addEventListener("click", function() {
  })*/
 
  //will display past searches on side
-function displaySearchHistory() {
+/*function displaySearchHistory() {
    historyEl.innerHTML = "";
    for (var i = 0; i < searchHistory.length; i++) {
       var pastRecipe = document.createElement("input");
@@ -97,4 +97,4 @@ function displaySearchHistory() {
 displaySearchHistory();
 if (searchHistory.length > 0) {
    getRecipe(searchHistory[searchHistory.length - 1]);
-}
+}*/
