@@ -7,5 +7,6 @@ $primary-color:  #111518;
     box-sizing: border-box;
 }
 body{
-    background: $primary-color
+    background: $primary-color;
+    z-index: -2;
 }
