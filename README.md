@@ -1,4 +1,4 @@
-# MealMath
+# MealQueue
 
 ##App
 * Use a CSS framework other than Bootstrap. X
