@@ -108,11 +108,25 @@
         letter-spacing: 1px;
         grid-row: 6/7;
         grid-column: 1/6;
-        width: 100%;
+        width: 100px;
         height: 60px;
         margin-top: 30px;
         background-color: #191f24;
         border-style: none;
+        @include breakpoint(mama-bear){
+            font-size: 16px;
+            letter-spacing: 0.1px;
+            text-align: center;
+        }
+        @include breakpoint(baby-bear){
+            font-size: 10px;
+        }
+        @include breakpoint(teeny){
+            font-size: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     .result-btn:hover{

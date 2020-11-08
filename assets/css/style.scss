@@ -14,46 +14,77 @@
     clip-path: circle(260vh at 50% -200vh);
 
     .intro-page{
-        width: 60%;
+        width: 40%;
         height: 30vh;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        padding: 2rem;
+        justify-content: space-evenly;
+        padding-top: 2rem;
         top: 150px;
         margin: auto auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
         background-color: rgba(25, 31, 36, 0.9);
-        background-
-        position: relative;
+        background-position: relative;
+        @include breakpoint(papa-bear){
+           flex-direction: column;
+           @include breakpoint(teeny){
+               width: 80%;
+               
+           }
+                
+        }
      
         .intro-left{
             width: 50%;
-            margin-left: auto;
-            border-right: 3px;
+            margin-left: 113px;
             padding: 1rem;
+
+            @include breakpoint(papa-bear){
+                width: 100%;
+            }
+            @include breakpoint(teeny){
+                margin: none;
+                padding: none;
+                width: 100%;
+            }
             h1{
                 color: #fff;
                 font-size: 42px;
                 font-weight: 900;
                 text-align: right;
-                padding-right: 100px;
-                font-family: 'Times New Roman', Times, serif
-                
+                font-family: 'Times New Roman', Times, serif;
+                @include breakpoint(papa-bear){
+                    text-align:center;
+                }
+                @include breakpoint(mama-bear){
+                    margin-top: 40px;
+                }
+                @include breakpoint(teeny){
+                    margin-top: 60px;
+                    padding-bottom: 40px;
+                    font-size: 28px;
+                }
             }
         }
         .intro-right{
             width:50%;
             margin-right: auto;
-            border-left: 3px;
             padding: 1rem;
+            @include breakpoint(papa-bear){
+                width: 100%;
+            }
+            @include breakpoint(teeny){
+                 padding-bottom: 3rem;
+                 border-left: none;
+                 margin-right: none;   
+            }
             p {
                 color: rgb(219, 219, 219);
+               
             }
         }
     }
-}
+
 
 .nav-menu{ //more efx will be adopted
     width: 100%;
@@ -112,4 +143,11 @@ footer{
         color: #fff;
         align-items: flex-end;
     }
+}
+}
+.you-tube{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
 }
