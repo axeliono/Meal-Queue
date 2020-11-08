@@ -26,12 +26,13 @@
         background-color: rgba(25, 31, 36, 0.9);
         background-position: relative;
         @include breakpoint(papa-bear){
-           flex-direction: column;
-           @include breakpoint(teeny){
-               width: 80%;
-               
-           }
-                
+           flex-direction: column;       
+        }
+        @include breakpoint(mama-bear){
+            width: 60%;
+        }
+        @include breakpoint(teeny){
+            width: 80%;   
         }
      
         .intro-left{
@@ -41,9 +42,11 @@
 
             @include breakpoint(papa-bear){
                 width: 100%;
+                margin-left: 0px;
+                justify-content: center;
             }
             @include breakpoint(teeny){
-                margin: none;
+                margin-left: 0px;
                 padding: none;
                 width: 100%;
             }
@@ -61,7 +64,7 @@
                 }
                 @include breakpoint(teeny){
                     margin-top: 60px;
-                    padding-bottom: 40px;
+                    padding-bottom: 0px;
                     font-size: 28px;
                 }
             }

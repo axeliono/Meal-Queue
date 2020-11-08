@@ -56,6 +56,15 @@
             border-radius: 5px;
             background-color: #fff;
             margin: 5px 0;
+            @include breakpoint(mama-bear){
+                width: 150px;
+                height: 225px;
+                padding: 10px;
+            }
+            @include breakpoint(teeny){
+                width: 200px;
+                height: 300px;
+            }
         }
     }
     .number-serving{
