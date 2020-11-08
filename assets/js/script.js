@@ -7,7 +7,7 @@ var analyzeRecipeEl = document.getElementById("result-btn");
 function getRecipe() {
     var recipeName = document.getElementById("name-input").value;
 
-    let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${recipeName}`;
+    let recipeURL = `https://api.edamam.com/search?app_id=${ssappID}&app_key=${apiKey}&q=${recipeName}`;
     fetch(recipeURL).then(function(response) {
         console.log(response.json());
     })
