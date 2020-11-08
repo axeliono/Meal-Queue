@@ -1,6 +1,7 @@
 @import 'config';
 @import 'main-form';
 @import 'contactForm';
+@import 'modal';
 
 
 .intro {
@@ -53,7 +54,7 @@
     justify-content: flex-end;
     position: fixed;
     background-color: $primary-color;
-    z-index: 1;
+    z-index: 3;
 
     a {
         display: inline-block;
