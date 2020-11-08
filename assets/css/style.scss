@@ -1,22 +1,22 @@
-@import'mediaQueries';
+@import 'mediaQueries';
 @import 'config';
 @import 'main-form';
-@import 'contactForm';
-<<<<<<< HEAD
-@import 'calc_form';
-=======
 @import 'modal';
-
->>>>>>> ed063123d65d37281e6fc9d46d490990c5bd54cc
+@import 'navbar';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap');
 
 .intro {
     width: 100%;
     height: 60vh;
     background: url(../images/header.jpg);
     background-size: cover;
+    -webkit-clip-path:circle(260vh at 50% -200vh); 
+    clip-path: circle(260vh at 50% -200vh);
     background-attachment: fixed;
     background-position: bottom;
-    clip-path: circle(260vh at 50% -200vh);
+    position: relative;
+    overflow: visible;
+    z-index: 0;
 
     .intro-page{
         width: 60%;
@@ -30,29 +30,32 @@
         margin: auto auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
         background-color: rgba(25, 31, 36, 0.9);
-        background-
         position: relative;
+
+        
      
         .intro-left{
             width: 50%;
-            margin-left: auto;
+            // margin-left: auto;
             border-right: 3px;
             padding: 1rem;
+
             h1{
                 color: #fff;
                 font-size: 42px;
                 font-weight: 900;
                 text-align: right;
                 padding-right: 100px;
-                font-family: 'Times New Roman', Times, serif
+                font-family: 'Inconsolata', monospace;
                 
             }
         }
         .intro-right{
-            width:50%;
-            margin-right: auto;
+            // width:50%;
+            // margin-right: auto;
             border-left: 3px;
             padding: 1rem;
+            
             p {
                 color: rgb(219, 219, 219);
             }
@@ -60,27 +63,7 @@
     }
 }
 
-.nav-menu{ //more efx will be adopted
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    background-color: $primary-color;
-    z-index: 3;
 
-    a {
-        display: inline-block;
-        font-weight: 900;
-        font-size: 16px;
-        text-decoration: none;
-        color: rgb(250, 250, 250);
-        letter-spacing: 2px;
-        margin-right: 10px;
-        margin-left: 10px;
-        padding: 15px 25px;
-        
-    }
-}
 
 .operation-intro {
     display: flex;

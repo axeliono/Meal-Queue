@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
     <title>MEAL QUEUE</title>
 </head>
 <body>
-    <header class="intro">
+    <header class="intro" id="home">
         <!-- Nav bar -->
-    <div class="nav-menu">
-        <a href="#how-to-use">HOME</a>
-        <a href="#recipe-name"> ABOUT US</a>
-        <a href="#contact">RECIPE</a>
-    </div> 
+
         <div class="intro-page">
             <div class="intro-left">
                 <h1 class="intro-text">
-                    Meal <i>Q</i><small>ueue
+                    Meal Queue
                 </h1>
             </div>
             <div class="intro-right">
                 <p class="instruction">
-                    A site to help you choose a creative delicious meal to impress your friends and family! 
+                    We are here to help you choose a creative delicious meal to impress your friends and family! 
                 </p>
             </div>
         </div>
     </header>
 
+    <!-- <div class="nav-menu">
+        <a href="#how-to-use">HOME</a>
+        <a href="#recipe-name"> ABOUT US</a>
+        <a href="#contact">RECIPE</a>
+    </div>  -->
+
+    <div id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar(this)">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>  
+        <div class="list">
+          <div class="item"><a class="link-menu" href="#home">Home</a></div>
+          <div class="item"><a class="link-menu" href="#">About us</a></div>
+          <div class="item"><a class="link-menu" href="#recipe-function">Get Recipe</a></div>
+        </div>
+      </div>
+
     <!-- Main function -->
-    <div class="operation-page">
+    <div class="operation-page" id="recipe-function">
         <div class="operation-box">
             <div class="recipe-name" id="recipe-name">
                 <h3>
@@ -48,33 +63,10 @@
                     <h3>Result :</h3>
                 </div>
             <div class="recipe-card-holder" id="recipe-card-holder">
-                <!-- You can also delete this (from Joshua) --> 
-                <!-- modals have to be inside of this box -->
-                <!-- <div class="modal-container">
-                    <input id="modal-toggle" type="checkbox">
-                    <label class="modal-btn" id="modal-btn" for="modal-toggle">Click me</label> 
-
-                    <label class="modal-backdrop" for="modal-toggle"></label>
-                    <div class="modal-content">
-                      <label class="modal-close" for="modal-toggle">&#x2715;</label>
-                      <div class="ingredients">
-                        <h2>Modal title</h2>
-                      </div>
-                      <div class="youTube">
-                        <h2>Modal title</h2>
-                      </div>
-                      <label class="modal-content-btn" for="modal-toggle">OK</label>   
-                    </div>          
-                  </div>   -->
             </div>
         </div>
     </div>    
 
-    <div class="you-tube">
-        <iframe id="you-tube" width="420" height="315" src="">
-        </iframe>
-    </div>
-    
     <footer>
         <div class="credit">
             <p>
@@ -88,22 +80,6 @@
     </footer>
     <script src="https://apis.google.com/js/client.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/navbar.js"></script>
 </body>
 </html>
-<div class="description">
-    <h2>Why use this?</h2>
-    <p>We all do our part to keep each other safe by social distancing 
-        and avoiding large crowds, but now, meals have become a monotonous task. How many times 
-        can we eat at the same local restaurants? And how healthy is that? Here's a change! <strong>Meal Queue!</strong> 
-        Enter a meal idea and get the recipes to cook something creative and different!</p>
-</div>
-
-<div class="operation-intro" id="how-to-use">
-    <h1 class="main-text">
-        How to use:
-    </h1>
-    <p>1. First, in Meal reQuest enter a food idea. ex: Chicken Carbonara</p>
-    <p>2. Next, Decide how many Guests you will feed.</p>
-    <p>3. Then, if you want, enter serving size. ex: 4oz (for ingredient accuracy)</p>
-    <p>4. Finally, click Display Recipe and there you have it! A list of Ingredients reQuired!</p>
-</div>
