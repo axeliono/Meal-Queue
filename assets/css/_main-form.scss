@@ -28,8 +28,24 @@
       background: rgb(190, 190, 190);
     }
 
-    input:focus {
-      background: #fff;
+    h3 {
+      padding-bottom: 10px;
+      color: #fff;
+    }
+
+    input {
+      width: 40%;
+      padding: 10px;
+      background: rgb(190, 190, 190);
+      @include breakpoint(mama-bear) {
+        height: 30px;
+      }
+      @include breakpoint(baby-bear) {
+        height: 20px;
+      }
+      @include breakpoint(teeny) {
+        height: 10px;
+      }
     }
 
     .result-btn {
@@ -41,9 +57,30 @@
       border-style: none;
     }
 
-    .result-btn:hover {
-      background-color: #225986;
-      transition: 0.5s;
+    .result-btn {
+      color: #fff;
+      letter-spacing: 2px;
+      width: 20%;
+      height: 40px;
+      background-color: #191f24;
+      border-style: none;
+      @include breakpoint(mama-bear) {
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        text-align: center;
+        height: 30px;
+      }
+      @include breakpoint(baby-bear) {
+        font-size: 10px;
+        height: 20px;
+      }
+      @include breakpoint(teeny) {
+        font-size: 6px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 10px;
+      }
     }
 
     .result-btn:active {
@@ -62,16 +99,13 @@
       border-radius: 15px;
 
       h3 {
+        margin-top: 10px;
+        padding: 10px 0;
+        color: #fff;
         padding-left: 20px;
       }
     }
   }
-}
-
-h3 {
-  margin-top: 10px;
-  padding: 10px 0;
-  color: #fff;
 }
 
 .recipe-card-holder {
@@ -94,20 +128,32 @@ h3 {
     border-radius: 5px;
     background-color: #fff;
     margin: 5px 0;
-  }
-  .text-container {
-    padding: 5px;
-    height: 48px;
-    text-align: center;
-  }
-  .img-container {
-    overflow: hidden;
-    width: 100%;
-    height: fit-content;
 
-    img {
+    @include breakpoint(mama-bear) {
+      width: 150px;
+      height: 225px;
+      padding: 10px;
+    }
+    @include breakpoint(teeny) {
+      width: 200px;
+      height: 300px;
+    }
+
+    .text-container {
+      padding: 5px;
+      height: 48px;
+      text-align: center;
+    }
+    .img-container {
+      overflow: hidden;
       width: 100%;
-      object-fit: cover;
+      height: fit-content;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

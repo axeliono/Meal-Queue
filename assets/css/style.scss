@@ -42,12 +42,11 @@
      
         .intro-left{
             width: 50%;
-            margin-left: 113px;
-            padding: 1rem;
+            padding: 2rem;
 
             @include breakpoint(papa-bear){
                 width: 100%;
-                margin-left: 0px;
+                display: flex;
                 justify-content: center;
             }
             @include breakpoint(teeny){
