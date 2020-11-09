@@ -44,6 +44,20 @@
         height: 40px;
         background-color: #191f24;
         border-style: none;
+        @include breakpoint(mama-bear){
+            font-size: 16px;
+            letter-spacing: 0.1px;
+            text-align: center;
+        }
+        @include breakpoint(baby-bear){
+            font-size: 10px;
+        }
+        @include breakpoint(teeny){
+            font-size: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         }
 
         .result-btn:hover{
@@ -70,9 +84,7 @@
                 padding-left: 20px;
             }
         }
-
-    }
-    }
+  } }
 
    
     
@@ -103,6 +115,15 @@
             border-radius: 5px;
             background-color: #fff;
             margin: 5px 0;
+            @include breakpoint(mama-bear){
+                width: 150px;
+                height: 225px;
+                padding: 10px;
+            }
+            @include breakpoint(teeny){
+                width: 200px;
+                height: 300px;
+            }
 
             
         }
