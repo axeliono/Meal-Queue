@@ -1,7 +1,7 @@
 # MealMath
 
 ##App
-* Use a CSS framework other than Bootstrap.
+* Use a CSS framework other than Bootstrap. X
 
 * Be deployed to GitHub Pages.
 
@@ -32,6 +32,7 @@
 * Demo: Show your stuff!
 
 * Directions for future development.
+
 This, I made a description and contact div element below the calculation form. 
 
 My scenario is, we are nutrition management company who takes care and manages client's health. 
