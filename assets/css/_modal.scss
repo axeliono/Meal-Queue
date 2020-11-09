@@ -9,7 +9,7 @@
     width: 160px;
     height: 50px;
     line-height: 50px;
-    background: #446cb3;
+    background: #ff8161;
     font-size: 22px;
     border: 0;
     border-radius: 3px;
@@ -18,7 +18,7 @@
     box-shadow: 0 5px 5px -5px #333;
     transition: background 0.3s ease-in;
     &:hover {
-      background: #365690;
+      background: #ff816196;
     }
   }
   .modal-content,
@@ -54,7 +54,7 @@
     cursor: pointer;
     bottom: 20px;
     right: 30px;
-    background: #446cb3;
+    background: #ff8161;
     color: #fff;
     width: 50px;
     border-radius: 2px;
@@ -64,7 +64,7 @@
     font-weight: normal;
     &:hover {
       color: #fff;
-      background: #365690;
+      background: #ff816196;
     }
   }
   #modal-toggle {
@@ -80,14 +80,15 @@
       z-index: 9;
       visibility: visible;
       opacity: 1;
-      transition: opacity 0.2s ease-in;
+      transition: opacity 0.15s ease-in;
     }
     &.active ~ .modal-content,
     &:checked ~ .modal-content {
+      text-align: center;
       opacity: 1;
       background-color: #fff;
       width: 50vw;
-      height: 5vh;
+      height: 50vh;
       padding: 10px 30px;
       position: fixed;
       left: calc(25%);
