@@ -29,18 +29,6 @@
         margin: auto auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
         background-color: rgba(25, 31, 36, 0.9);
-<<<<<<< HEAD
-        position: relative;
-
-        
-     
-        .intro-left{
-            width: 50%;
-            // margin-left: auto;
-            border-right: 3px;
-            padding: 1rem;
-
-=======
         background-position: relative;
         @include breakpoint(papa-bear){
            flex-direction: column;       
@@ -67,25 +55,11 @@
                 padding: none;
                 width: 100%;
             }
->>>>>>> 47cf247e653e781319d7eddef2ed457dba54eb09
             h1{
                 color: #fff;
                 font-size: 42px;
                 font-weight: 900;
                 text-align: right;
-<<<<<<< HEAD
-                padding-right: 100px;
-                font-family: 'Inconsolata', monospace;
-                
-            }
-        }
-        .intro-right{
-            // width:50%;
-            // margin-right: auto;
-            border-left: 3px;
-            padding: 1rem;
-            
-=======
                 font-family: 'Times New Roman', Times, serif;
                 @include breakpoint(papa-bear){
                     text-align:center;
@@ -112,7 +86,6 @@
                  border-left: none;
                  margin-right: none;   
             }
->>>>>>> 47cf247e653e781319d7eddef2ed457dba54eb09
             p {
                 color: rgb(219, 219, 219);
                
@@ -122,22 +95,6 @@
 
 
 
-<<<<<<< HEAD
-=======
-    a {
-        display: inline-block;
-        font-weight: 900;
-        font-size: 16px;
-        text-decoration: none;
-        color: rgb(159, 197, 151);
-        letter-spacing: 2px;
-        margin-right: 10px;
-        margin-left: 10px;
-        padding: 15px 25px;
-        
-    }
-}
->>>>>>> 47cf247e653e781319d7eddef2ed457dba54eb09
 
 .operation-intro {
     display: flex;
