@@ -31,6 +31,15 @@
             width: 40%;
             padding: 10px;
             background: rgb(190, 190, 190);
+            @include breakpoint(mama-bear){
+                height: 30px;
+            }
+            @include breakpoint(baby-bear){
+                height: 20px;
+            }
+            @include breakpoint(teeny){
+                height: 10px;
+            }
         }
 
         input:focus{
@@ -45,18 +54,22 @@
         background-color: #191f24;
         border-style: none;
         @include breakpoint(mama-bear){
-            font-size: 16px;
+            font-size: 14px;
             letter-spacing: 0.1px;
             text-align: center;
+            height: 30px;
         }
         @include breakpoint(baby-bear){
             font-size: 10px;
-        }
+            height: 20px;
+    
+        }   
         @include breakpoint(teeny){
             font-size: 6px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            height: 10px;
         }
         }
 
