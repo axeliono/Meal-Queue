@@ -137,17 +137,19 @@
             @include breakpoint(mama-bear){
                 
             }
-            @include breakpoint(teeny){
-                width: 200px;
-                height: 300px;
-            }
-
+            
             
         }
         .text-container{
             padding: 5px;
             height: 48px;
             text-align: center;
+            p{
+                font-size: smaller;
+                @include breakpoint(papa-bear){
+                    font-size: 12px;
+                }
+            }
         }
         .img-container{
             overflow: hidden;
