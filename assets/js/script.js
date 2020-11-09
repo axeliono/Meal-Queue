@@ -29,19 +29,27 @@ function getRecipe() {
         console.log(recipeName);
         let recipeImage = data.hits[i].recipe.image;
         console.log(recipeImage);
+        //put ingredients from fetch data into array which is held by object
         let ingredientList = data.hits[i].recipe.ingredients;
-        console.log(ingredientList);
+        var ingredientArrayObject = { ingredients: [] };
+        for (x = 0; x < ingredientList.length; x++) {
+          //put each ingredient into array
+          ingredientArrayObject.ingredients.push(ingredientList[x].text);
+        }
+        console.log(ingredientArrayObject);
 
-        displayRecipeCards(recipeName, recipeImage, ingredientList);
+        displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
       }
     });
 }
 
-function displayRecipeCards(recipeName, recipeImage, ingredientList) {
+function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var cardHolder = document.querySelector(".recipe-card-holder");
 
   // creates div element to contain recipe card
   var recipeCard = document.createElement("div");
+  // take the text of each index of the object holding the array of ingredients
+
   var txtContainer = document.createElement("div");
   var recipeCardTxt = document.createElement("p");
   txtContainer.setAttribute("class", "text-container");
@@ -54,11 +62,30 @@ function displayRecipeCards(recipeName, recipeImage, ingredientList) {
   recipeCard.className = "recipe-card";
   image.src = recipeImage;
 
+  var recipeModalButton = document.createElement("div");
+  recipeModalButton.setAttribute("class", "modal-container");
+  var recipeModalButtonInput = document.createElement("input");
+  recipeModalButtonInput.setAttribute("type", "checkbox");
+  recipeModalButtonInput.setAttribute("id", "modal-toggle");
+  var btnLabel = document.createElement("label");
+  btnLabel.setAttribute("for", "modal-toggle");
+  btnLabel.className = "modal-btn";
+  var backdropLabel = document.createElement("label");
+  backdropLabel.setAttribute("for", "modal-toggle");
+  backdropLabel.className = "modal-backdrop";
+  recipeModalButton.appendChild(recipeModalButtonInput);
+  recipeModalButton.appendChild(btnLabel);
+  recipeModalButton.appendChild(backdropLabel);
+
   recipeCardTxt.innerText = recipeName;
+  //set ingredients as attribute to be accessed by modal
+  recipeCard.setAttribute("ingredients", ingredientArrayObject);
   recipeCard.appendChild(txtContainer);
   txtContainer.appendChild(recipeCardTxt);
   recipeCard.appendChild(imgContainer);
   imgContainer.appendChild(image);
+
+  recipeCard.appendChild(recipeModalButton);
   cardHolder.appendChild(recipeCard);
 }
 
