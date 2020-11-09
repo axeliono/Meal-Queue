@@ -83,53 +83,133 @@
         .result-btn:active{
             background-color: #008cff;
         }
-        
-  
 
+    h3 {
+      padding-bottom: 10px;
+      color: #fff;
     }
+
+    input {
+      width: 40%;
+      padding: 10px;
+      background: rgb(190, 190, 190);
+      @include breakpoint(mama-bear) {
+        height: 30px;
+      }
+      @include breakpoint(baby-bear) {
+        height: 20px;
+      }
+      @include breakpoint(teeny) {
+        height: 10px;
+      }
     }
 
-   
-    
+    .result-btn {
+      color: #fff;
+      letter-spacing: 2px;
+      width: 20%;
+      height: 40px;
+      background-color: #191f24;
+      border-style: none;
+    }
 
-    h3{
+    .result-btn {
+      color: #fff;
+      letter-spacing: 2px;
+      width: 20%;
+      height: 40px;
+      background-color: #191f24;
+      border-style: none;
+      @include breakpoint(mama-bear) {
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        text-align: center;
+        height: 30px;
+      }
+      @include breakpoint(baby-bear) {
+        font-size: 10px;
+        height: 20px;
+      }
+      @include breakpoint(teeny) {
+        font-size: 6px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 10px;
+      }
+    }
+
+    .result-btn:active {
+      background-color: #008cff;
+    }
+
+    .search-history {
+      width: 30%;
+      display: inline-flex;
+      flex-direction: column;
+      position: relative;
+      left: 50px;
+      word-spacing: 2px;
+      color: #fff;
+      border: 1px solid rgb(158, 158, 158);
+      border-radius: 15px;
+
+      h3 {
         margin-top: 10px;
         padding: 10px 0;
         color: #fff;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.recipe-card-holder {
+  padding-top: 10px;
+  width: 100%;
+  height: 550px;
+  margin: 5px auto;
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid $primary-color;
+  background-color: rgb(190, 190, 190);
+  flex-wrap: wrap;
+  overflow-y: auto;
+  justify-content: space-evenly;
+
+  .recipe-card {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: rgba(50, 62, 71, 0.8);
+    margin: 5px 0;
+
+    @include breakpoint(mama-bear) {
+      width: 150px;
+      height: 225px;
+      padding: 10px;
+    }
+    @include breakpoint(teeny) {
+      width: 200px;
+      height: 300px;
     }
 
-    .recipe-card-holder{
-        padding-top: 10px;
-        width:100%;
-        height: 550px;
-        margin: 5px auto ;
-        display:flex;
-        align-items: flex-start;
-        border: 1px solid $primary-color;
-        background-color: rgb(190, 190, 190);
-        flex-wrap: wrap;
-        overflow-y: auto;
-        justify-content: space-evenly;
-        
-        .recipe-card{
-            width: 200px;
-            padding: 5px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            background-color: #fff;
-            margin: 5px 0;
-
-            
-        }
-        .text-container{
-            padding: 5px;
-            height: 48px;
-            text-align: center;
-        }
-        .img-container{
-            overflow: hidden;
-            width: 100%;
-            height: 150px;
-            
-        }
+    .text-container {
+      padding: 5px;
+      height: 48px;
+      text-align: center;
     }
+    .img-container {
+      overflow: hidden;
+      width: 100%;
+      height: fit-content;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
