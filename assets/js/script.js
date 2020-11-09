@@ -46,6 +46,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var txtContainer = document.createElement("div");
   var recipeCardTxt = document.createElement("p");
   txtContainer.setAttribute("class", "text-container");
+  recipeCardTxt.innerText = recipeName;
 
   // creates div element to contain "image"
   var imgContainer = document.createElement("div");
@@ -55,6 +56,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeCard.className = "recipe-card";
   image.src = recipeImage;
 
+  //modal button labels and elements
   var recipeModalButton = document.createElement("div");
   recipeModalButton.setAttribute("class", "modal-container");
   var recipeModalButtonInput = document.createElement("input");
@@ -70,13 +72,26 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeModalButton.appendChild(btnLabel);
   recipeModalButton.appendChild(backdropLabel);
 
-  recipeCardTxt.innerText = recipeName;
+  //modal content labels and elements
+  recipeModalContentEl = document.createElement("div");
+  recipeModalContentEl.className = "modal-content";
+  var contentLabelEl = document.createElement("label");
+  contentLabelEl.setAttribute("for", "modal-toggle");
+  contentLabelEl.setAttribute("class", "modal-close");
+  contentLabelEl.innerText = "\u2715";
+  var contentText = document.createElement("h2");
+  contentText.innerText = recipeName;
+  recipeModalContentEl.appendChild(contentLabelEl);
+  recipeModalContentEl.appendChild(contentText);
+
   //set ingredients as attribute to be accessed by modal
   recipeCard.setAttribute("ingredients", ingredientArrayObject);
   recipeCard.appendChild(txtContainer);
   txtContainer.appendChild(recipeCardTxt);
   recipeCard.appendChild(imgContainer);
   imgContainer.appendChild(image);
+
+  recipeModalButton.appendChild(recipeModalContentEl);
 
   recipeCard.appendChild(recipeModalButton);
   cardHolder.appendChild(recipeCard);
