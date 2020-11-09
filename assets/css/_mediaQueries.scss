@@ -1,48 +1,14 @@
-/*@mixin responsive($breakpoint) {
-    @if $breakpoint == phone {
-        @media only screen and (max-width: 600px) { @content };
+@mixin breakpoint($point) {
+    @if $point == papa-bear {
+      @media (max-width: 1200px) { @content; }
     }
-    @if $breakpoint == tab-port {
-        @media only screen and (max-width: 900px) { @content };
+    @else if $point == mama-bear {
+      @media (max-width: 882px) { @content; }
     }
-    @if $breakpoint == tab-land {
-        @media only screen and (max-width: 1400px) { @content };
+    @else if $point == baby-bear {
+     @media (max-width: 650px)  { @content; }
     }
-    @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 1800px) { @content };
-
+    @else if $point == teeny {
+        @media (max-width: 453px) {@content; }
     }
-}*/
-@media only screen and (max-width: 1400px) {
-    html {
-      font-size: 56.25%;
-      .intro-page{
-          flex-direction: column;
-          .intro-left{
-              margin: none;
-          }
-          .intro-right{
-              margin:none;
-          }
-      }
-    }
-  }
-  
-  @media only screen and (max-width: 900px) {
-    html {
-      font-size: 50%;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    html {
-      font-size: 43.75%;
-    }
-
-  }
-  
-  @media only screen and (min-width: 1800px) {
-    html {
-      font-size: 75%;
-    }
-  }
+}

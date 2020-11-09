@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .operation-page {
   display: flex;
 
@@ -21,6 +22,23 @@
     padding-top: 10px;
     margin-left: auto;
     z-index: 1;
+=======
+.operation-page{
+    display: flex;
+ 
+    .operation-grid{
+        width: 50%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 2rem;
+        margin: 15px auto 0 auto;
+        box-shadow: 2px 4px 7px rgb(10, 12, 14); 
+        background-color: rgba(50, 62, 71, 0.9);
+        position: relative;
+    }
+>>>>>>> 817e93720a20c192759012f2ab5526e6f328b214
 
     input {
       width: 100%;
@@ -47,6 +65,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
 
+<<<<<<< HEAD
     .recipe-card {
       width: 200px;
       height: 300px;
@@ -54,6 +73,25 @@
       border-radius: 5px;
       background-color: #fff;
       margin: 5px 0;
+=======
+        .recipe-card{
+            width: 200px;
+            height: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin: 5px 0;
+            @include breakpoint(mama-bear){
+                width: 150px;
+                height: 225px;
+                padding: 10px;
+            }
+            @include breakpoint(teeny){
+                width: 200px;
+                height: 300px;
+            }
+        }
+>>>>>>> 817e93720a20c192759012f2ab5526e6f328b214
     }
   }
   .number-serving {
@@ -90,8 +128,37 @@
       padding: 10px;
       background: rgb(190, 190, 190);
     }
+<<<<<<< HEAD
     input:focus {
       background: #fff;
+=======
+
+    .result-btn{
+        color: #fff;
+        font-size: 22px;
+        letter-spacing: 1px;
+        grid-row: 6/7;
+        grid-column: 1/6;
+        width: 100px;
+        height: 60px;
+        margin-top: 30px;
+        background-color: #191f24;
+        border-style: none;
+        @include breakpoint(mama-bear){
+            font-size: 16px;
+            letter-spacing: 0.1px;
+            text-align: center;
+        }
+        @include breakpoint(baby-bear){
+            font-size: 10px;
+        }
+        @include breakpoint(teeny){
+            font-size: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+>>>>>>> 817e93720a20c192759012f2ab5526e6f328b214
     }
   }
 
@@ -118,7 +185,12 @@
     transition: 0.5s;
   }
 
+<<<<<<< HEAD
   .result-btn:active {
     background-color: #008cff;
   }
 }
+=======
+  
+}
+>>>>>>> 817e93720a20c192759012f2ab5526e6f328b214
