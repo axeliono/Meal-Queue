@@ -17,19 +17,26 @@ function getRecipe(searchTerm) {
         let recipesFound = data.hits
         var cardHolder = document.querySelector(".recipe-card-holder");
         cardHolder.innerHTML = "";
-
+        
         for (i = 0; i < recipesFound.length; i++) {
             let recipeName = data.hits[i].recipe.label;
             //console.log(recipeName);
             let recipeImage = data.hits[i].recipe.image;
             //console.log(recipeImage);
             let ingredientList = data.hits[i].recipe.ingredients;
-           // console.log(ingredientList);
-
-            displayRecipeCards(recipeName, recipeImage, ingredientList);
+            //console.log(ingredientList);
+            
         }
+        
+    
+        
+            displayRecipeCards(recipeName, recipeImage, ingredientList);
+        
+        
     })
 }
+
+
 
 function displayRecipeCards(recipeName, recipeImage, ingredientList) {
     var cardHolder = document.querySelector(".recipe-card-holder");
@@ -63,7 +70,7 @@ analyzeRecipeEl.addEventListener("click", function() {
         searchHistory.push(searchTerm);
     }
     localStorage.setItem("search",JSON.stringify(searchHistory));
-   displaySearchHistory();
+   //displaySearchHistory();
 })
 // when the clear history button is pressed it clears storage
 /*clearHistoryEl.addEventListener("click",function() {
