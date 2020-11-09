@@ -19,17 +19,17 @@
     z-index: 0;
 
     .intro-page{
-        width: 60%;
+        width: 40%;
         height: 30vh;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        padding: 2rem;
+        justify-content: space-evenly;
+        padding-top: 2rem;
         top: 150px;
         margin: auto auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
         background-color: rgba(25, 31, 36, 0.9);
+<<<<<<< HEAD
         position: relative;
 
         
@@ -40,11 +40,40 @@
             border-right: 3px;
             padding: 1rem;
 
+=======
+        background-position: relative;
+        @include breakpoint(papa-bear){
+           flex-direction: column;       
+        }
+        @include breakpoint(mama-bear){
+            width: 60%;
+        }
+        @include breakpoint(teeny){
+            width: 80%;   
+        }
+     
+        .intro-left{
+            width: 50%;
+            margin-left: 113px;
+            padding: 1rem;
+
+            @include breakpoint(papa-bear){
+                width: 100%;
+                margin-left: 0px;
+                justify-content: center;
+            }
+            @include breakpoint(teeny){
+                margin-left: 0px;
+                padding: none;
+                width: 100%;
+            }
+>>>>>>> 47cf247e653e781319d7eddef2ed457dba54eb09
             h1{
                 color: #fff;
                 font-size: 42px;
                 font-weight: 900;
                 text-align: right;
+<<<<<<< HEAD
                 padding-right: 100px;
                 font-family: 'Inconsolata', monospace;
                 
@@ -56,19 +85,66 @@
             border-left: 3px;
             padding: 1rem;
             
+=======
+                font-family: 'Times New Roman', Times, serif;
+                @include breakpoint(papa-bear){
+                    text-align:center;
+                }
+                @include breakpoint(mama-bear){
+                    margin-top: 40px;
+                }
+                @include breakpoint(teeny){
+                    margin-top: 60px;
+                    padding-bottom: 0px;
+                    font-size: 28px;
+                }
+            }
+        }
+        .intro-right{
+            width:50%;
+            margin-right: auto;
+            padding: 1rem;
+            @include breakpoint(papa-bear){
+                width: 100%;
+            }
+            @include breakpoint(teeny){
+                 padding-bottom: 3rem;
+                 border-left: none;
+                 margin-right: none;   
+            }
+>>>>>>> 47cf247e653e781319d7eddef2ed457dba54eb09
             p {
                 color: rgb(219, 219, 219);
+               
             }
         }
     }
+
+
+
+<<<<<<< HEAD
+=======
+    a {
+        display: inline-block;
+        font-weight: 900;
+        font-size: 16px;
+        text-decoration: none;
+        color: rgb(159, 197, 151);
+        letter-spacing: 2px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 15px 25px;
+        
+    }
 }
-
-
+>>>>>>> 47cf247e653e781319d7eddef2ed457dba54eb09
 
 .operation-intro {
     display: flex;
     flex-direction: column;
-    margin: 60px 50vh;
+    //margin: 60px 50vh;
+    margin: 10px 25%;
+    padding-left: 20px;
 
     h1{
         color: #fff;
@@ -83,15 +159,17 @@
 }
 
 footer{
+    background-color:black;
     width: 100%;
-    height: 100px;
+    height: 150px;
     display: flex;
     justify-content: center;
+    padding-left: 100px;
 
     p {
         padding: 10px;
         font-size: 30px;
-        color: #fff;
+        color: rgb(159, 197, 151);
     }
 
     a{
@@ -99,5 +177,14 @@ footer{
         letter-spacing: 15px;
         color: #fff;
         align-items: flex-end;
+        padding-left: 10px;
+        margin-left: 20px;
     }
+}
+}
+.you-tube{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
 }
