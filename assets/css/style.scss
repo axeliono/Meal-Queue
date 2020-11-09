@@ -17,19 +17,20 @@
     position: relative;
     overflow: visible;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .intro-page{
         width: 40%;
         height: 30vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        padding-top: 2rem;
-        top: 150px;
-        margin: auto auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
         background-color: rgba(25, 31, 36, 0.9);
-        background-position: relative;
+
         @include breakpoint(papa-bear){
            flex-direction: column;       
         }
@@ -41,8 +42,8 @@
         }
      
         .intro-left{
-            width: 50%;
-            margin-left: 113px;
+            width: 100%;
+            
             padding: 1rem;
 
             @include breakpoint(papa-bear){
@@ -59,7 +60,7 @@
                 color: #fff;
                 font-size: 42px;
                 font-weight: 900;
-                text-align: right;
+                text-align: center;
                 font-family: 'Times New Roman', Times, serif;
                 @include breakpoint(papa-bear){
                     text-align:center;
@@ -75,8 +76,7 @@
             }
         }
         .intro-right{
-            width:50%;
-            margin-right: auto;
+            width:100%;
             padding: 1rem;
             @include breakpoint(papa-bear){
                 width: 100%;
@@ -88,7 +88,7 @@
             }
             p {
                 color: rgb(219, 219, 219);
-               
+               text-align: center;
             }
         }
     }
