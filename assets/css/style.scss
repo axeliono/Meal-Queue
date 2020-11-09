@@ -1,18 +1,22 @@
-@import'mediaQueries';
+@import 'mediaQueries';
 @import 'config';
 @import 'main-form';
-@import 'contactForm';
 @import 'modal';
+@import 'navbar';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap');
 
-body {background-color:rgb(159, 197, 151)}
 .intro {
     width: 100%;
     height: 60vh;
     background: url(../images/header.jpg);
     background-size: cover;
+    -webkit-clip-path:circle(260vh at 50% -200vh); 
+    clip-path: circle(260vh at 50% -200vh);
     background-attachment: fixed;
     background-position: bottom;
-    clip-path: circle(260vh at 50% -200vh);
+    position: relative;
+    overflow: visible;
+    z-index: 0;
 
     .intro-page{
         width: 40%;
@@ -90,27 +94,7 @@ body {background-color:rgb(159, 197, 151)}
     }
 
 
-.nav-menu{ //more efx will be adopted
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    background-color: $primary-color;
-    z-index: 3;
 
-    a {
-        display: inline-block;
-        font-weight: 900;
-        font-size: 16px;
-        text-decoration: none;
-        color: rgb(159, 197, 151);
-        letter-spacing: 2px;
-        margin-right: 10px;
-        margin-left: 10px;
-        padding: 15px 25px;
-        
-    }
-}
 
 .operation-intro {
     display: flex;
