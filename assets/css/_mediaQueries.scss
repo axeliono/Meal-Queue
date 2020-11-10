@@ -1,6 +1,6 @@
 @mixin breakpoint($point) {
     @if $point == papa-bear {
-      @media (max-width: 1200px) { @content; }
+      @media (max-width: 1163px) { @content; }
     }
     @else if $point == mama-bear {
       @media (max-width: 882px) { @content; }
@@ -9,6 +9,6 @@
      @media (max-width: 650px)  { @content; }
     }
     @else if $point == teeny {
-        @media (max-width: 453px) {@content; }
+        @media (max-width: 515px) {@content; }
     }
 }
