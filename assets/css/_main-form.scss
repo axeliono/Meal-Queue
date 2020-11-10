@@ -1,3 +1,20 @@
+.description{
+    margin: 100px auto 0 auto;
+    width: 60%;
+    color: rgb(207, 207, 207);
+    // text-align: center;
+
+    h1{
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .why-use{
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        line-height: 150%;
+    }
+}
 
 
 .operation-page{
@@ -5,12 +22,13 @@
     margin-top: 200px;
  
     .operation-box{
+        color: #fff;
         width: 60%;
         height: 100%;
         padding: 2rem;
         margin: 15px auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
-        background-color: rgba(50, 62, 71, 0.9);
+        background-color: rgba(3, 95, 41, 0.9);
         position: relative;
     }
 
@@ -31,6 +49,15 @@
             width: 40%;
             padding: 10px;
             background: rgb(190, 190, 190);
+            @include breakpoint(mama-bear){
+                height: 30px;
+            }
+            @include breakpoint(baby-bear){
+                height: 20px;
+            }
+            @include breakpoint(teeny){
+                height: 10px;
+            }
         }
 
         input:focus{
@@ -44,6 +71,24 @@
         height: 40px;
         background-color: #191f24;
         border-style: none;
+        @include breakpoint(mama-bear){
+            font-size: 14px;
+            letter-spacing: 0.1px;
+            text-align: center;
+            height: 30px;
+        }
+        @include breakpoint(baby-bear){
+            font-size: 10px;
+            height: 20px;
+    
+        }   
+        @include breakpoint(teeny){
+            font-size: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 10px;
+        }
         }
 
         .result-btn:hover{
@@ -70,9 +115,7 @@
                 padding-left: 20px;
             }
         }
-
-    }
-    }
+  } }
 
    
     
@@ -103,18 +146,37 @@
             border-radius: 5px;
             background-color: #fff;
             margin: 5px 0;
+            @include breakpoint(papa-bear){
+                width: 150px;
+                height:225px;
+                padding: 10px;
 
+            }
+            
             
         }
         .text-container{
             padding: 5px;
             height: 48px;
             text-align: center;
+            p{
+                font-size: smaller;
+                @include breakpoint(papa-bear){
+                    font-size: 12px;
+                }
+            }
         }
         .img-container{
             overflow: hidden;
             width: 100%;
             height: 150px;
-            
+            img{ 
+                height: 150px;
+                width: 200px;
+                @include breakpoint(papa-bear){
+                    height: 112.5px;
+                    width: 150px ;
+                }
+            } 
         }
     }

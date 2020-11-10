@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.min.css"/>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>MEAL QUEUE</title>
 </head>
 <body>
@@ -23,23 +23,14 @@
             </div>
         </div>
     </header>
-<!-- reinserted this div from here -->
-<div id="description" class="description">
-    <h1>About Us:</h1>
-    <p class="why-use">We all do our part to keep each other safe by social distancing 
-        and avoiding large crowds, but now, meals have become a monotonous task. How many times 
-        can we eat at the same local restaurants? And how healthy is that? Here's a change! We are here to HELP YOU! <strong>Meal <i>Q</i>ueue!</strong> 
-        Enter a meal idea and get the recipes to cook something creative and different!</p>
-</div>
-
-<div class="operation-intro" id="how-to-use">
-    <h1 class="main-text">
-        How to use:
-    </h1>
-    <p>1. Enter Recipe Name. ex: Chicken Carbonara</p>
-    <p>2. Click "Display Recipe" and there you have it. A list of Ingredients reQuired! EASY!</p>
-    <p>3. Want to see someone else do it with you? Choose a video to help!</p>
-</div>
+    <!-- reinserted this div from here -->
+    <div class="description">
+        <h1>About Us</h1>
+        <p class="why-use">We all do our part to keep each other safe by social distancing 
+            and avoiding large crowds, but now, meals have become a monotonous task. How many times 
+            can we eat at the same local restaurants? And how healthy is that? Here's a change! <strong>Meal <i>Q</i>ueue!</strong> 
+            Enter a meal idea and get the recipes to cook something creative and different!</p>
+    </div>
 
     <div id="sidebar">
         <div class="toggle-btn" onclick="toggleSidebar(this)">
@@ -49,24 +40,39 @@
         </div>  
         <div class="list">
           <div class="item"><a class="link-menu" href="#home">Home</a></div>
-          <div class="item"><a class="link-menu" href="#description">About us</a></div>
+          <div class="item"><a class="link-menu" href="#">About us</a></div>
           <div class="item"><a class="link-menu" href="#recipe-function">Get Recipe</a></div>
+        </div>
+        <div class="search-history" id="search-history">
+            <h3>Look up your search history!</h3>
+            <div id="history-box">
+
+            </div>
         </div>
       </div>
 
     <!-- Main function -->
+    <div>
     <div class="operation-page" id="recipe-function">
         <div class="operation-box">
+            <div class="how-to-use">
+                <h1 class="main-text">
+                    How to use
+                </h1>
+                <ol>
+                    <li>Enter Recipe Name. ex: Chicken Carbonara</li>
+                    <li>Click "Display Recipe" and there you have it. A list of Ingredients reQuired! EASY!</li>
+                    <li> Want to see someone else do it with you? Choose a video to help!</li>
+                </ol>
+
+            </div>
             <div class="recipe-name" id="recipe-name">
                 <h3>
                     Enter Recipe Name
                 </h3>
-                <input type="text" placeholder="Enter to search" id="name-input"/>
-                <button class="result-btn" id="result-btn">Display</button>
-                <div class="search-history" id="search-history">
-                    <h3>Look up your search history!</h3>
-
-                </div>
+                <input type="text" placeholder="Enter to search" autocomplete="off" id="name-input" required/>
+                <button class="result-btn" id="result-btn">ANALYZE</button>
+                
             </div>
             
                 <div class="list-title">
@@ -74,20 +80,33 @@
                 </div>
             <div class="recipe-card-holder" id="recipe-card-holder">
             </div>
+  
+            <!-- Modal Section -->
+        <div class="modal-container">
+            <input type="checkbox" id="modal-toggle">
+            <label for="modal-toggle" class="modal-btn"></label>
+            <label for="modal-toggle" class="modal-backdrop"></label>
+            <div class="modal-content">
+                <label for="modal-toggle" class="modal-close">&#x2715</label>
+                <h2 class="modal-title-el">modal</h2>
+            </div>
         </div>
-    </div>    
-
+    </div>   
+        
+    </div>
     <div class="you-tube">
         <button class="video-btn" id="video-btn" type="submit">Get Cooking Tutorial!</button>
-        <iframe id="player" type="text/html" width="640" height="390"
+        <iframe cid="player" type="text/html" width="640" height="390"
         src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
         frameborder="0"></iframe>
     </div>
+    </div>
+   
+    
     <footer>
         <div class="credit">
             <p>
-                &copy; Meal <i>Q</i>ueue
-                
+                &copy; Meal <i>Q</i>ueue      
             </p>
             <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
             <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
