@@ -166,6 +166,9 @@ analyzeRecipeEl.addEventListener("click", function() {
     if (searchHistory.includes(searchTerm) == false) {
         searchHistory.push(searchTerm);
     }
+    if (searchTerm === "" || searchTerm.value === false) {
+      window.prompt("please put in different value");
+    }
     localStorage.setItem("search",JSON.stringify(searchHistory));
    displaySearchHistory();
 
