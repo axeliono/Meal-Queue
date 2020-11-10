@@ -1,3 +1,20 @@
+.description{
+    margin: 100px auto 0 auto;
+    width: 60%;
+    color: rgb(207, 207, 207);
+    // text-align: center;
+
+    h1{
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .why-use{
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        line-height: 150%;
+    }
+}
 
 
 .operation-page{
@@ -5,12 +22,13 @@
     margin-top: 200px;
  
     .operation-box{
+        color: #fff;
         width: 60%;
         height: 100%;
         padding: 2rem;
         margin: 15px auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
-        background-color: rgba(50, 62, 71, 0.9);
+        background-color: rgba(3, 95, 41, 0.9);
         position: relative;
     }
 
