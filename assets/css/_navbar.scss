@@ -26,7 +26,9 @@
     margin:5px 0px;
     cursor:pointer;
   }
-
+.toggle-btn .active {
+  background-color: rgb(124, 160, 124);
+}
 
   .list{
       margin-top: 100px;
