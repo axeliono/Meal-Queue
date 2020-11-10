@@ -48,8 +48,8 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   // take the text of each index of the object holding the array of ingredients
 
   var txtContainer = document.createElement("div");
-  var recipeCardTxt = document.createElement("p");
   txtContainer.setAttribute("class", "text-container");
+  var recipeCardTxt = document.createElement("p");
   recipeCardTxt.innerText = recipeName;
 
   // creates div element to contain "image"
@@ -69,6 +69,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var btnLabel = document.createElement("label");
   btnLabel.setAttribute("for", "modal-toggle");
   btnLabel.className = "modal-btn";
+  btnLabel.innerText = "See More"
   var backdropLabel = document.createElement("label");
   backdropLabel.setAttribute("for", "modal-toggle");
   backdropLabel.className = "modal-backdrop";
@@ -90,10 +91,11 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
 
   //set ingredients as attribute to be accessed by modal
   recipeCard.setAttribute("ingredients", ingredientArrayObject);
-  recipeCard.appendChild(txtContainer);
   txtContainer.appendChild(recipeCardTxt);
   recipeCard.appendChild(imgContainer);
+  recipeCard.appendChild(txtContainer);
   imgContainer.appendChild(image);
+  // imgContainer.appendChild(recipeCardTxt);
 
   recipeModalButton.appendChild(recipeModalContentEl);
 
@@ -150,6 +152,7 @@ function displaySearchHistory() {
 
 
 displaySearchHistory();
+<<<<<<< HEAD
 // was causing issues. will revisit.
 //if (searchHistory.length > 0) {
    //getRecipe(searchHistory[searchHistory.length - 1]);
@@ -180,3 +183,9 @@ analyzeRecipeEl.addEventListener("click", function() {
     localStorage.setItem("search",JSON.stringify(searchHistory));
     displaySearchHistory();
  })*/
+=======
+if (searchHistory.length > 0) {
+   getRecipe(searchHistory[searchHistory.length - 1]);
+}*/
+
+>>>>>>> b93ed7ccc8a848ec498dcb1c37edf0b94653f802
