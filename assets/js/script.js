@@ -1,4 +1,5 @@
 //edamam API
+debugger;
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
 var analyzeRecipeEl = document.getElementById("result-btn");
@@ -6,8 +7,8 @@ var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 const recipeName = document.getElementById("name-input").value;
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
 //var clearHistoryEl = 
-//var historyEl = document.querySelector(".operation-right");
-//let searchTerm = "";
+var historyEl = document.querySelector("#history-box");
+let searchTerm = "";
 
 function getRecipe(searchTerm) {
     
@@ -32,7 +33,7 @@ function getRecipe(searchTerm) {
               //put each ingredient into array
               ingredientArrayObject.ingredients.push(ingredientList[x].text);
             }
-            console.log(ingredientArrayObject);
+            //console.log(ingredientArrayObject);
             displayRecipeCards(recipeName, recipeImage, ingredientList);
           }
         
@@ -127,30 +128,8 @@ function displayYT(id) {
   );
 }
 
-var videoBtnEl = document.getElementById("video-btn");
-videoBtnEl.addEventListener("click", function () {
-  getYT();
-});
-
-// when a recipe is searched its put in local storage
-analyzeRecipeEl.addEventListener("click", function() {
-    searchTerm = document.getElementById("name-input").value;
-    getRecipe(searchTerm);
-    if (searchHistory.includes(searchTerm) == false) {
-        searchHistory.push(searchTerm);
-    }
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-   //displaySearchHistory();
-})
-// when the clear history button is pressed it clears storage
-/*clearHistoryEl.addEventListener("click",function() {
-    searchHistory = [];
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
- })*/
-
  //will display past searches on side
-/*function displaySearchHistory() {
+function displaySearchHistory() {
    historyEl.innerHTML = "";
    for (var i = 0; i < searchHistory.length; i++) {
       var pastRecipe = document.createElement("input");
@@ -167,11 +146,31 @@ analyzeRecipeEl.addEventListener("click", function() {
          getRecipe(recipeNames);  
       })
       historyEl.append(pastRecipe);
-      
-
 }}
 
 displaySearchHistory();
-if (searchHistory.length > 0) {
-   getRecipe(searchHistory[searchHistory.length - 1]);
-}*/
+// was causing issues. will revisit.
+//if (searchHistory.length > 0) {
+   //getRecipe(searchHistory[searchHistory.length - 1]);
+//}
+var videoBtnEl = document.getElementById("video-btn");
+videoBtnEl.addEventListener("click", function () {
+  getYT();
+});
+
+// when a recipe is searched its put in local storage
+analyzeRecipeEl.addEventListener("click", function() {
+    searchTerm = document.getElementById("name-input").value;
+    getRecipe(searchTerm);
+    if (searchHistory.includes(searchTerm) == false) {
+        searchHistory.push(searchTerm);
+    }
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+   displaySearchHistory();
+})
+// when the clear history button is pressed it clears storage
+/*clearHistoryEl.addEventListener("click",function() {
+    searchHistory = [];
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
+ })*/
