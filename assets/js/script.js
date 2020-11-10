@@ -1,5 +1,4 @@
 //edamam API
-debugger;
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
 var analyzeRecipeEl = document.getElementById("result-btn");
@@ -146,7 +145,9 @@ function displaySearchHistory() {
          getRecipe(recipeNames);  
       })
       historyEl.append(pastRecipe);
+      
 }}
+
 
 displaySearchHistory();
 // was causing issues. will revisit.
@@ -167,7 +168,9 @@ analyzeRecipeEl.addEventListener("click", function() {
     }
     localStorage.setItem("search",JSON.stringify(searchHistory));
    displaySearchHistory();
+
 })
+
 // when the clear history button is pressed it clears storage
 /*clearHistoryEl.addEventListener("click",function() {
     searchHistory = [];
