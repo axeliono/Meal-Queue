@@ -9,6 +9,21 @@ $secondary-color: #408d45;
 }
 body{
     background: $primary-color;
-    // z-index: -2;
 }
 
+
+// scrollbar color change to green
+::-webkit-scrollbar{
+    width: 15px;
+
+    
+}
+
+::-webkit-scrollbar-thumb{
+    background:rgb(116, 116, 116);
+    border-radius:20px;
+
+    &:hover{
+        background:rgb(182, 182, 182);
+    }
+}
