@@ -1,14 +1,15 @@
 //edamam API
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
-var analyzeRecipeEl = document.getElementById("result-btn");
-var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-const recipeName = document.getElementById("name-input").value;
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
+var analyzeRecipeEl = document.getElementById("result-btn");
+const recipeName = document.getElementById("name-input").value;
+var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 //var clearHistoryEl = 
 //var historyEl = document.querySelector(".operation-right");
 //let searchTerm = "";
 
+// Need description here
 function getRecipe(searchTerm) {
     
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
@@ -33,13 +34,13 @@ function getRecipe(searchTerm) {
               ingredientArrayObject.ingredients.push(ingredientList[x].text);
             }
             console.log(ingredientArrayObject);
-            displayRecipeCards(recipeName, recipeImage, ingredientList);
+            displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
           }
         
     })
 }
 
-
+// Need description here
 function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var cardHolder = document.querySelector(".recipe-card-holder");
 
@@ -77,62 +78,66 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeModalButton.appendChild(btnLabel);
   recipeModalButton.appendChild(backdropLabel);
 
+  // It retreives incredient object to modal
+  btnLabel.addEventListener("click", function(){
+    
+  })
+
   //modal content labels and elements
   recipeModalContentEl = document.createElement("div");
   recipeModalContentEl.className = "modal-content";
+
+  // Create closing icon "X" on top right
   var contentLabelEl = document.createElement("label");
   contentLabelEl.setAttribute("for", "modal-toggle");
   contentLabelEl.setAttribute("class", "modal-close");
   contentLabelEl.innerText = "\u2715";
+
+  // Create modal title element inside of container : contentTitle
+  var contentTitle = document.createElement("div");
+  contentTitle.setAttribute("class", "content-title");
   var contentText = document.createElement("h2");
   contentText.innerText = recipeName;
   recipeModalContentEl.appendChild(contentLabelEl);
-  recipeModalContentEl.appendChild(contentText);
+  recipeModalContentEl.appendChild(contentTitle);
+  contentTitle.appendChild(contentText);
 
   //set ingredients as attribute to be accessed by modal
-  recipeCard.setAttribute("ingredients", ingredientArrayObject);
+  // Create div element that will contain ingredient
+  var ingredientBox = document.createElement("div");
+  ingredientBox.setAttribute("class", "ingredient-box");
+  var ingredientSpan = document.createElement("span");
+  ingredientSpan.setAttribute("class", "get-ingredients");
+  var arrayLine = document.createElement("ol");
+  arrayLine.setAttribute("class", "ingredient-list");
+  var arrayList = document.createElement("li");
+  
+
+  ingredientSpan.innerHTML = ingredientArrayObject.ingredients;
+
+
+
+  recipeModalContentEl.appendChild(ingredientBox);
+  ingredientBox.appendChild(ingredientSpan);
+  ingredientSpan.appendChild(arrayLine);
+  arrayLine.appendChild(arrayList);
+
+
+  // recipeCard.setAttribute("ingredients", ingredientArrayObject);
+
+
+
+
+  // Append to the browser
   txtContainer.appendChild(recipeCardTxt);
   recipeCard.appendChild(imgContainer);
   recipeCard.appendChild(txtContainer);
   imgContainer.appendChild(image);
-  // imgContainer.appendChild(recipeCardTxt);
 
   recipeModalButton.appendChild(recipeModalContentEl);
-
   recipeCard.appendChild(recipeModalButton);
   cardHolder.appendChild(recipeCard);
 }
-
-// YOUTUBE API
-function getYT() {
-  var recipeName = document.getElementById("name-input").value;
-  let ytURL = `https://youtube.googleapis.com/youtube/v3/search?&part=snippet&maxResults=2&q=${recipeName} + "making"&key=${ytApiKey}`;
-  fetch(ytURL)
-    .then(function (response) {
-      console.log(recipeName);
-      return response.json();
-    })
-    .then(function (data) {
-      var id = data.items[0].id.videoId;
-      console.log(id);
-      displayYT(id);
-    });
-}
-
-function displayYT(id) {
-  var playerEl = document.getElementById("player");
-  playerEl.setAttribute(
-    "src",
-    "http://www.youtube.com/embed/" +
-      id +
-      "?enablejsapi=1&origin=http://example.com"
-  );
-}
-
-var videoBtnEl = document.getElementById("video-btn");
-videoBtnEl.addEventListener("click", function () {
-  getYT();
-});
 
 // when a recipe is searched its put in local storage
 analyzeRecipeEl.addEventListener("click", function() {
