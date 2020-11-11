@@ -113,8 +113,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var arrayList = document.createElement("li");
   
 
-  ingredientSpan.innerHTML = ingredientArrayObject.ingredients;
-
+  arrayList.innerHTML = ingredientArrayObject.ingredients[i];
 
 
   recipeModalContentEl.appendChild(ingredientBox);
