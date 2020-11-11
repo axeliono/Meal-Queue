@@ -104,29 +104,34 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
 
   //set ingredients as attribute to be accessed by modal
   // Create div element that will contain ingredient
-  var ingredientBox = document.createElement("div");
-  ingredientBox.setAttribute("class", "ingredient-box");
   var ingredientSpan = document.createElement("span");
-  ingredientSpan.setAttribute("class", "get-ingredients");
+  ingredientSpan.setAttribute("class", "ingredient-box");
   var arrayLine = document.createElement("ol");
   arrayLine.setAttribute("class", "ingredient-list");
   var arrayList = document.createElement("li");
   
+    // Need more help
+  arrayList.innerHTML = ingredientArrayObject.ingredients[i];
 
-  ingredientSpan.innerHTML = ingredientArrayObject.ingredients;
+// Create div element to contain Youtube video
+  var youtubeContainer = document.createElement("div");
+  youtubeContainer.setAttribute("class", "video-container");
+  var youtubeBox = document.createElement("div");
+  youtubeBox.setAttribute("class", "youtube-box");
+  var videoBtn = document.createElement("button");
+  videoBtn.setAttribute("id", "video-btn");
+  videoBtn.setAttribute("type", "submit");
+  var frameBox = document.createElement("div");
+  frameBox.setAttribute("class","frame-box");
+  var videoFrame = document.createElement("iframe");
+  videoFrame.setAttribute("cid", "player");
+//   videoFrame.setAttribute("type", "text/html");
+  videoFrame.setAttribute("width", "640px");
+  videoFrame.setAttribute("height", "390");
+  videoFrame.setAttribute("src", "http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com");
 
-
-
-  recipeModalContentEl.appendChild(ingredientBox);
-  ingredientBox.appendChild(ingredientSpan);
-  ingredientSpan.appendChild(arrayLine);
-  arrayLine.appendChild(arrayList);
-
-
-  // recipeCard.setAttribute("ingredients", ingredientArrayObject);
-
-
-
+  
+  videoBtn.innerText= "Watch Cooking Tutorial";
 
   // Append to the browser
   txtContainer.appendChild(recipeCardTxt);
@@ -137,6 +142,24 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeModalButton.appendChild(recipeModalContentEl);
   recipeCard.appendChild(recipeModalButton);
   cardHolder.appendChild(recipeCard);
+
+  // Append to the modal -- ingredients
+  recipeModalContentEl.appendChild(ingredientSpan);
+  ingredientSpan.appendChild(arrayLine);
+  arrayLine.appendChild(arrayList);
+
+  // Append to the modal -- ingredients
+  recipeModalContentEl.appendChild(ingredientSpan);
+  // Append to the modal -- youtube
+  recipeModalContentEl.appendChild(youtubeContainer);
+  youtubeContainer.appendChild(youtubeBox);
+  youtubeContainer.appendChild(youtubeBox);
+  youtubeBox.appendChild(videoBtn);
+  youtubeContainer.appendChild(frameBox);
+  frameBox.appendChild(videoFrame);
+
+
+
 }
 
 // when a recipe is searched its put in local storage

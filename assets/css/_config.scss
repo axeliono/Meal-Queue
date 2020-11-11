@@ -1,11 +1,19 @@
-$primary-color:  #77c46a;
-$secondary-color: #408d45;
+$primary-color: #333533;
+$secondary-color: #cfdbd5;
+$sub-secondary: #E8EDDF;
+$intro-text: #F5CB5C;
+$main-text: #333533;
+$footer-color: #242423;
+$footer-text: #fefae0;
+
+
 
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     background: $primary-color;

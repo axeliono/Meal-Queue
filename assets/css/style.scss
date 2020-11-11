@@ -4,32 +4,52 @@
 @import 'modal';
 @import 'navbar';
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@600;900&display=swap');
 
 .intro {
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     background: url(../images/header.jpg);
     background-size: cover;
-    -webkit-clip-path:circle(260vh at 50% -200vh); 
-    clip-path: circle(260vh at 50% -200vh);
+    clip-path: circle(360vh at 50% -260vh);
     background-attachment: fixed;
     background-position: bottom;
     position: relative;
     overflow: visible;
     z-index: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    .arrow{
+        margin-bottom: -200px;
+
+        a{
+            color: rgb(177, 177, 177);
+            font-size: 80px;
+            transition: all 0.35s;
+            
+            &:hover{
+                color: #fff;
+            }
+        }
+    }
+    
     .intro-page{
-        width: 40%;
-        height: 30vh;
+        margin-bottom: 120px;
+        // width: 60%;
+        // height: 40vh;
+        width: 60%;
+        height: 50%;
         display: flex;
+        justify-content: center;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        box-shadow: 2px 4px 7px rgb(10, 12, 14); 
-        background-color:  rgba(3, 95, 41, 0.9);
+        box-shadow: 2px 4px 8px #0c0c0c;
+        background-color: rgba(3, 3, 3, 0.7);
+
+        
 
         @include breakpoint(papa-bear){
            flex-direction: column;       
@@ -42,8 +62,9 @@
         }
      
         .intro-left{
-            width: 100%;
+            width: 60%;
             padding: 1rem;
+            z-index: 2;
 
             @include breakpoint(papa-bear){
                 width: 100%;
@@ -56,11 +77,11 @@
                 width: 100%;
             }
             h1{
-                color: #fff;
-                font-size: 42px;
-                font-weight: 900;
-                text-align: center;
-                font-family: 'Times New Roman', Times, serif;
+                font-size: 62px;
+                margin-bottom: 40px;
+                text-transform: uppercase;
+                color:  $intro-text;
+
                 @include breakpoint(papa-bear){
                     text-align:center;
                 }
@@ -73,68 +94,72 @@
                     font-size: 28px;
                 }
             }
-        }
-        .intro-right{
-            width:100%;
-            padding: 1rem;
-            @include breakpoint(papa-bear){
-                width: 100%;
-            }
-            @include breakpoint(teeny){
-                 padding-bottom: 3rem;
-                 border-left: none;
-                 margin-right: none;   
-            }
-            p {
-                color: rgb(219, 219, 219);
-               text-align: center;
+
+            p{
+                color: $intro-text;
+                font-size: 18px;
+                line-height: 140%;
+                letter-spacing: 1px;
             }
         }
     }
 }
 
-
-
-.operation-intro {
-    display: flex;
-    flex-direction: column;
-    //margin: 60px 50vh;
-    margin: 10px 25%;
-    padding-left: 20px;
-
-    h1{
-        color: #fff;
-        font-size: 32px;
-        font-weight: 900;
-    }
-    p{
-        padding-top: 10px;
-        color: #fff;
-        font-size: 16px;
-    }
-}
-
-footer{
-    background-color:rgba(3, 95, 41, 0.9);
+footer {
     width: 100%;
-    height: 15%;
+    height: 300px;
+    background-color: $footer-color;
+    color: $footer-text;
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    justify-content: space-evenly;
+    padding: 10px;
 
+    .credit{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-    p {
-        font-size: 30px;
-        color: #fff;
-        margin: 5px;
+        a{
+            font-size: 50px;
+            color: #F5CB5C;
+            padding: 1rem;
+
+            &:hover {
+                color: #ff9900;
+            }
+        }
+
+        p{
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .date {
+            font-size: 18px;
+        }
     }
 
-    a{
-        font-size: 30px;
-        letter-spacing: 15px;
-        color: #fff;
-        align-items: flex-end;
-        padding-left: 10px;
-        margin-left: 20px;
+    .contribution{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 30px;
+
+        h3{
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        li{
+            
+            text-transform: uppercase;
+            list-style: none;
+            padding: 5px 0;
+        }
     }
+    
 }

@@ -1,49 +1,69 @@
-.description{
-    margin: 100px auto 0 auto;
-    width: 60%;
-    color: rgb(207, 207, 207);
-    // text-align: center;
 
-    h1{
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-
-    .why-use{
-        letter-spacing: 1px;
-        word-spacing: 2px;
-        line-height: 150%;
-    }
-}
 
 
 .operation-page{
     display: flex;
-    margin: 100px auto;
+    margin: 150px auto;
  
     .operation-box{
-        color: #fff;
         width: 60%;
         height: 100%;
         padding: 2rem;
         margin: 15px auto 0 auto;
         box-shadow: 2px 4px 7px rgb(10, 12, 14); 
-        background-color: rgba(3, 95, 41, 0.9);
+        background-color: $secondary-color;
         position: relative;
     }
 
-    .how-to-use{
-        color: rgb(219, 218, 218);
-        
+    .mainform-text{
+      display: flex;
+
+      .form-title{
+        color: $main-text;
+        width: 50%;
+        margin-right: auto;
+
+      h1{
+        font-family: 'Martel', serif;
+        text-align: end;
+        font-size: 50px;
+      }
+
+      .m {
+        margin: 30px 150px -20px auto;
+      }
+
+      .q{
+        margin-right: 130px;
+        padding-bottom: 20px;
+
+        span{
+          color:  #ff9900;
+        }
+      }
+    
+    }
+      .how-to-use{
+        color: $main-text;
+        width: 50%;
+        margin-left: auto;
+        margin-top: 20px;
+
+        .how-to{
+          color: $main-text;
+        }
 
         ol {
-            margin: 10px auto 20px 20px;
-            
-
-            li{
-                word-spacing: 1px;
-            }
+              margin: 10px auto 20px 0;
         }
+
+        li{
+              padding: 5px;
+              word-spacing: 1px;  
+        }
+        
+      }
+    
     }
 
     .recipe-name{
@@ -54,12 +74,20 @@
         
 
         h3{
+            margin-top: 20px;
             padding-bottom: 10px;
-            color: #fff;
+            color: $main-text;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 40px;
         }
         
-        
+        .input-box{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 10px;
         input{
+          justify-content: center;
             width: 40%;
             padding: 10px;
             background: rgb(190, 190, 190);
@@ -80,11 +108,11 @@
         }
 
         .result-btn{
-        color: #fff;
+        color: $main-text;
         letter-spacing: 2px;
         width: 20%;
         height: 40px;
-        background-color: #191f24;
+        background-color: #f5cb5c;
         border-style: none;
         @include breakpoint(mama-bear){
             font-size: 14px;
@@ -107,14 +135,14 @@
         }
 
         .result-btn:hover{
-            background-color: #225986;
+            background-color: #ffd45f;
             transition: 0.5s;
         }
     
         .result-btn:active{
-            background-color: #008cff;
+            background-color: #abd1be;
         }
-        
+      }
         .search-history{
             width: 30%;
             display: inline-flex;
@@ -128,13 +156,14 @@
 
     h3 {
       padding-bottom: 10px;
-      color: #fff;
+      color: $main-text;
     }
 
     input {
       width: 40%;
       padding: 10px;
       background: rgb(190, 190, 190);
+      border-radius: 15px;
       @include breakpoint(mama-bear) {
         height: 30px;
       }
@@ -181,9 +210,6 @@
       }
     }
 
-    .result-btn:active {
-      background-color: #008cff;
-    }
   }
   .list-title{
     color: #fff;
@@ -209,13 +235,13 @@
     margin-bottom: 15px;
     border-radius: 5px;
     
-    background-color:rgb(221, 218, 218);
+    background-color:$secondary-color;
     margin: 5px 0;
     height: 300px;
     transition: 0.35s;
 
     &:hover{
-        background-color: rgb(255, 255, 255);
+        background-color:$sub-secondary;
     }
 }
 
@@ -235,7 +261,7 @@
         filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 
         &:hover{
-            filter: drop-shadow(-1px 4px 3px rgb(178, 255, 210));
+            filter: drop-shadow(-1px 4px 3px rgba(255, 186, 209, 0.925));
         }
     }
 
@@ -252,7 +278,8 @@
         justify-content: center;
         align-items: center;
         p{
-            text-align: center;
+          color: black;
+          text-align: center;
           }
     }
   
