@@ -129,10 +129,10 @@ function displayYT(id) {
   );
 }
 
-var videoBtnEl = document.getElementById("video-btn");
-videoBtnEl.addEventListener("click", function () {
-  getYT();
-});
+// var videoBtnEl = document.getElementById("video-btn");
+// videoBtnEl.addEventListener("click", function () {
+//   getYT();
+// });
 
 // when a recipe is searched its put in local storage
 analyzeRecipeEl.addEventListener("click", function() {
