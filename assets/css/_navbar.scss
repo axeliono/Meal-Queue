@@ -9,7 +9,7 @@
     background:rgb(78, 177, 78);
     transition:all 300ms linear;
     @include breakpoint(papa-bear){
-      width:250px
+      width:250px;
     }
   }
   #sidebar.active {
