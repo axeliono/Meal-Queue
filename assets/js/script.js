@@ -5,17 +5,22 @@ var analyzeRecipeEl = document.getElementById("result-btn");
 var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 const recipeName = document.getElementById("name-input").value;
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
-//var clearHistoryEl = 
+var clearHistoryEl = document.querySelector(".btn");
 var historyEl = document.querySelector("#history-box");
 let searchTerm = "";
 
 function getRecipe(searchTerm) {
-    
+    console.log(searchTerm);
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
     fetch(recipeURL).then(function(response) {
         return response.json()
     })
     .then(function(data) {
+      if (!searchTerm || data.count === 0){
+        window.alert("try again");
+      }
+      //localStorage.setItem("search",JSON.stringify(searchTerm));
+      //console.log(data.count);
         let recipesFound = data.hits
         var cardHolder = document.querySelector(".recipe-card-holder");
         cardHolder.innerHTML = "";
@@ -140,8 +145,8 @@ function displaySearchHistory() {
       pastRecipe.setAttribute("value", searchHistory[i]);
       let recipeNames = searchHistory[i];
       pastRecipe.addEventListener("click",function() {
-          console.log(this.value);
-          console.log(recipeNames);
+          //console.log(this.value);
+          //console.log(recipeNames);
           var searchInput =  document.getElementById("name-input");
           searchInput.value = recipeNames;
          getRecipe(recipeNames);  
@@ -149,43 +154,33 @@ function displaySearchHistory() {
       historyEl.append(pastRecipe);
       
 }}
-
-
 displaySearchHistory();
-<<<<<<< HEAD
 // was causing issues. will revisit.
 //if (searchHistory.length > 0) {
    //getRecipe(searchHistory[searchHistory.length - 1]);
-//}
-var videoBtnEl = document.getElementById("video-btn");
-videoBtnEl.addEventListener("click", function () {
-  getYT();
-});
+// //}
+// var videoBtnEl = document.getElementById("video-btn");
+// videoBtnEl.addEventListener("click", function () {
+//   getYT();
+// });
 
 // when a recipe is searched its put in local storage
 analyzeRecipeEl.addEventListener("click", function() {
     searchTerm = document.getElementById("name-input").value;
+    console.log(searchTerm);
     getRecipe(searchTerm);
     if (searchHistory.includes(searchTerm) == false) {
         searchHistory.push(searchTerm);
     }
-    if (searchTerm === "" || searchTerm.value === false) {
-      window.prompt("please put in different value");
-    }
+    
     localStorage.setItem("search",JSON.stringify(searchHistory));
    displaySearchHistory();
 
 })
 
 // when the clear history button is pressed it clears storage
-/*clearHistoryEl.addEventListener("click",function() {
+clearHistoryEl.addEventListener("click",function() {
     searchHistory = [];
     localStorage.setItem("search",JSON.stringify(searchHistory));
     displaySearchHistory();
- })*/
-=======
-if (searchHistory.length > 0) {
-   getRecipe(searchHistory[searchHistory.length - 1]);
-}*/
-
->>>>>>> b93ed7ccc8a848ec498dcb1c37edf0b94653f802
+ })
