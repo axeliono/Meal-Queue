@@ -149,6 +149,42 @@ analyzeRecipeEl.addEventListener("click", function() {
     // localStorage.setItem("search",JSON.stringify(searchHistory));
    //displaySearchHistory();
 })
+
+// YOUTUBE API
+ function getYT(recipeName) {
+
+   console.log("WORKING")
+   var recipeName = document.getElementById("name-input").value;
+   let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=pizza&type=video&key=${ytApiKey}&maxResults=2`;
+//   // fetch(ytURL)
+//   //   .then(response => response.json())
+//   //   .then( data => {
+//   //     console.log(data.items[0].id.videoId)
+//   //   var id = data.items[0].id.videoId;
+//   //   var videoURL =  "http://www.youtube.com/embed/" + id + "?enablejsapi=1&origin=http://example.com";
+//   //   var iframe  = document.createElement("iframe");
+//   //       iframe.className = "video";
+//   //       iframe.setAttribute("src", videoURL);
+//   //       console.log(iframe)
+//   //       recipeModalContentEl.appendChild(iframe);
+   }
+
+
+// function displayYT(id) {
+//   create DOM element to append to modal
+//   var playerEl = document.getElementById("player");
+//   playerEl.setAttribute(
+//     "src",
+//     "http://www.youtube.com/embed/" +
+//       id +
+//       "?enablejsapi=1&origin=http://example.com"
+//   );
+// }
+
+//var videoBtnEl = document.getElementById("video-btn");
+//videoBtnEl.addEventListener("click", function () {
+  //getYT();
+//});
 // when the clear history button is pressed it clears storage
 // /*clearHistoryEl.addEventListener("click",function() {
 //     searchHistory = [];
