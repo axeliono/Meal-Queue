@@ -4,17 +4,10 @@ const apiKey = "736b0810150196f28b8c1028864f5f3f";
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
 var analyzeRecipeEl = document.getElementById("result-btn");
 const recipeName = document.getElementById("name-input").value;
-<<<<<<< HEAD
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
 var clearHistoryEl = document.querySelector(".btn");
 var historyEl = document.querySelector("#history-box");
 let searchTerm = "";
-=======
-var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-//var clearHistoryEl = 
-//var historyEl = document.querySelector(".operation-right");
-//let searchTerm = "";
->>>>>>> 794667af1db178f244df562fc8def8b652d32419
 
 // Need description here
 function getRecipe(searchTerm) {
@@ -45,13 +38,8 @@ function getRecipe(searchTerm) {
               //put each ingredient into array
               ingredientArrayObject.ingredients.push(ingredientList[x].text);
             }
-<<<<<<< HEAD
-            //console.log(ingredientArrayObject);
-            displayRecipeCards(recipeName, recipeImage, ingredientList);
-=======
             console.log(ingredientArrayObject);
             displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
->>>>>>> 794667af1db178f244df562fc8def8b652d32419
           }
         
     })
