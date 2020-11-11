@@ -15,8 +15,6 @@
         line-height: 150%;
     }
 }
-
-
 .operation-page{
     display: flex;
     margin-top: 200px;
@@ -140,6 +138,7 @@
         justify-content: space-evenly;
         
         .recipe-card{
+            color: #191f24;
             width: 200px;
             padding: 5px;
             margin-bottom: 5px;
