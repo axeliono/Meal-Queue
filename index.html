@@ -9,29 +9,29 @@
 </head>
 <body>
     <header class="intro" id="home">
-        <!-- Nav bar -->
         <div class="intro-page">
             <div class="intro-left">
-                <h1 class="intro-text">
-                    Meal Queue
+                <h1>
+                    About Us
                 </h1>
-            </div>
-            <div class="intro-right">
-                <p class="instruction">
-                    We are here to help you choose a creative delicious meal to impress your friends and family! 
+                <p>
+                    We all do our part to keep each other safe by social distancing 
+                    and avoiding large crowds, but now, meals have become a monotonous task. How many times 
+                    can we eat at the same local restaurants? And how healthy is that? Here's a change! 
+                    <span>
+                        Meal Queue!
+                    </span> 
+                    Enter a meal idea and get the recipes to cook something creative and different!
                 </p>
+                </div>
             </div>
         </div>
-    </header>
-    <!-- reinserted this div from here -->
-    <div class="description">
-        <h1>About Us</h1>
-        <p class="why-use">We all do our part to keep each other safe by social distancing 
-            and avoiding large crowds, but now, meals have become a monotonous task. How many times 
-            can we eat at the same local restaurants? And how healthy is that? Here's a change! <strong>Meal <i>Q</i>ueue!</strong> 
-            Enter a meal idea and get the recipes to cook something creative and different!</p>
-    </div>
+        <div class="arrow">
+        <a href="#recipe-function"><i class="fa fa-angle-down"></i></a>
+        </div>
+    </header> 
 
+    <!-- Side menu start -->
     <div id="sidebar">
         <div class="toggle-btn" onclick="toggleSidebar(this)">
             <span></span>
@@ -39,10 +39,11 @@
             <span></span>
         </div>  
         <div class="list">
-          <div class="item"><a class="link-menu" href="#home">Home</a></div>
-          <div class="item"><a class="link-menu" href="#">About us</a></div>
-          <div class="item"><a class="link-menu" href="#recipe-function">Get Recipe</a></div>
+            <a class="link-menu" href="#home"><div class="item">Home</div></a>
+            <a class="link-menu" href="#"><div class="item">About us</div></a>
+            <a class="link-menu" href="#recipe-function"><div class="item">Get Recipe</div></a>
         </div>
+        <!-- Search History box inside of side menu -->
         <div class="search-history" id="search-history">
             <h3>Look up your search history!</h3>
             <button class="btn" type="button" id="clear-history">Clear</button>
@@ -53,27 +54,37 @@
       </div>
 
     <!-- Main function -->
-    <div>
     <div class="operation-page" id="recipe-function">
         <div class="operation-box">
-            <div class="how-to-use">
-                <h1 class="main-text">
-                    How to use
-                </h1>
-                <ol>
-                    <li>Enter Recipe Name. ex: Chicken Carbonara</li>
-                    <li>Click "Display Recipe" and there you have it. A list of Ingredients reQuired! EASY!</li>
-                    <li> Want to see someone else do it with you? Choose a video to help!</li>
-                </ol>
+            <!-- Contains text -->
+            <div class="mainform-text">
+                <div class="form-title">
+                    <h1 class="m">
+                        Meal 
+                    </h1>
+                    <h1 class="q"><span>Q</span>ueue</h1>
+                </div>
+                <div class="how-to-use">
+                    <h2 class="how-to">
+                        How to use
+                    </h2>
+                    <ol>
+                        <li>Enter Recipe Name.</li>
+                        <li>Click "ANALYZE" button.</li>
+                        <li> Click any card to see ingredients and video clip</li>
 
+                    </ol>
+                </div>
             </div>
+            <!-- Recipe name search Input -->
             <div class="recipe-name" id="recipe-name">
                 <h3>
                     Enter Recipe Name
                 </h3>
-                <input type="text" placeholder="Enter to search" onclick="this.value=''" autocomplete="off" id="name-input" required/>
-                <button class="result-btn" id="result-btn" onclick=>ANALYZE</button>
-                
+                <div class="input-box">
+                    <input type="text" placeholder="Enter to search" onclick="this.value=''" autocomplete="off" id="name-input" required/>
+                    <button class="result-btn" id="result-btn">ANALYZE</button>
+                </div>
             </div>
             
             <!-- <div class="list-title">
@@ -84,19 +95,42 @@
             </span>
         </div>   
     </div>
- 
-
-   
+<!--  
+    <div class="you-tube">
+        <button class="video-btn" id="video-btn" type="submit">Get Cooking Tutorial!</button>
+        <iframe cid="player" type="text/html" width="640" height="390"
+        src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+        frameborder="0"></iframe>
+    </div>
+    -->
     
     <footer>
+        <div class="contribution">
+            <h3>Contributed By</h3>
+            <div class="name">
+                <ul>
+                    <li>GREEN, CHANDLER</li>
+                    <li>Jimenez, Jason</li>
+                    <li>Sullivan, Richard</li>
+                    <li>Peters, Ryan</li>
+                    <li>Sung, Yunik</li>
+                    <li>Tocker, Julia</li>
+                </ul>
+            </div>
+        </div>
         <div class="credit">
-            <p>
-                &copy; Meal <i>Q</i>ueue      
-            </p>
+            <div class="link">
             <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
             <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter-square"></i></a>
-            <div class='team-name'><p class='team'>collaboration by: chandler jason julia ricky ryan yunik</p></div>
+            <a href="https://github.com/axeliono/group-project-1.git"><i class="fab fa-github"></i></a>
+        </div>
+            <p>
+                &copy; Meal <i>Q</i>ueue      
+            </p>
+            <p class=date>
+                November 2020 - present
+            </p>
         </div>
     </footer>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>

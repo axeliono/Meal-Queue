@@ -8,13 +8,20 @@
     .modal-btn {
       color: #333;
       cursor: pointer;
-      box-shadow: 0 5px 5px -5px rgba(0, 228, 114, 0.925);
+      box-shadow: 0 5px 5px -5px #8D7840;
       transition:  0.35s;
       
       &:hover{
         box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
       }
     }
+
+    .get-ingredients{
+      li{
+        text-align: start;
+      }
+    }
+    
 
 
   .modal-content,
