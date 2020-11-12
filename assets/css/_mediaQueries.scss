@@ -1,14 +1,26 @@
 @mixin breakpoint($point) {
+    @if $point == big-small {
+      @media (max-width: 1500px) {@content;}
+    }
     @if $point == papa-bear {
       @media (max-width: 1163px) { @content; }
     }
     @else if $point == mama-bear {
-      @media (max-width: 882px) { @content; }
+      @media (max-width: 1025px) { @content; }
+    }
+    @else if $point == auntie-bear{
+      @media (max-width: 905px){ @content; }
+    }
+    @else if $point == 780{
+      @media (max-width:780px){ @content; }
     }
     @else if $point == baby-bear {
      @media (max-width: 650px)  { @content; }
     }
     @else if $point == teeny {
-        @media (max-width: 515px) {@content; }
+        @media (max-width: 559px) {@content; }
+    }
+    @else if $point == smallest {
+      @media (max-width: 350px ) {@content; }
     }
 }
