@@ -52,6 +52,13 @@
 
   #sidebar div.list div.item {
     padding:25px 10px;
+    @include breakpoint(teeny){
+      font-size: smaller;
+      text-orientation: upright;
+      writing-mode: vertical-lr;
+      font-weight: 300;
+
+    }
   }
 
   .item:hover{
@@ -83,7 +90,10 @@
       text-align: center;
       margin-top: 140px;
       padding:15px 10px;
+      @include breakpoint(teeny){
+       display: none;
     }
+  }
 
     #history-box{
       margin: 0 10px;
