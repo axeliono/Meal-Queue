@@ -55,6 +55,9 @@
         @include breakpoint(teeny){
             width: 80%;   
         }
+        @include breakpoint(smallest){
+            overflow: hidden;
+        }
      
         .intro-left{
             width: 60%;
@@ -88,6 +91,9 @@
                     padding-bottom: 0px;
                     font-size: 28px;
                 }
+                @include breakpoint(smallest){
+                    font-size: 18px;
+                  }
             }
 
             p{
@@ -95,6 +101,9 @@
                 font-size: 18px;
                 line-height: 140%;
                 letter-spacing: 1px;
+                @include breakpoint(smallest){
+                    font-size: 14px;
+                  }
             }
         }
     }
@@ -120,6 +129,9 @@ footer {
             font-size: 50px;
             color: #F5CB5C;
             padding: 1rem;
+            @include breakpoint(smallest){
+                font-size: smaller;
+              }
 
             &:hover {
                 color: #ff9900;
@@ -129,6 +141,9 @@ footer {
         p{
             margin-top: 20px;
             font-size: 22px;
+            @include breakpoint(smallest){
+                font-size: 14px;
+              }
         }
 
         .date {

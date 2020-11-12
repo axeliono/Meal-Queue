@@ -18,6 +18,9 @@
      @media (max-width: 650px)  { @content; }
     }
     @else if $point == teeny {
-        @media (max-width: 515px) {@content; }
+        @media (max-width: 559px) {@content; }
+    }
+    @else if $point == smallest {
+      @media (max-width: 350px ) {@content; }
     }
 }
