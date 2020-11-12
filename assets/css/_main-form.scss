@@ -15,6 +15,7 @@
         position: relative;
         @include breakpoint(teeny){
           margin: auto;
+          width: 100%;
     }
   }
     .mainform-text{
@@ -323,6 +324,9 @@
           }
           @include breakpoint (auntie-bear){
             font-size: 11px;
+          }
+          @include breakpoint(teeny){
+            font-size: 10px;
           }
           }
     }
