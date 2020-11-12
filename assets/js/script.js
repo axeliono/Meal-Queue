@@ -4,7 +4,7 @@ const apiKey = "736b0810150196f28b8c1028864f5f3f";
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
 var analyzeRecipeEl = document.getElementById("result-btn");
 const recipeName = document.getElementById("name-input").value;
-var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+// var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 //var clearHistoryEl = 
 //var historyEl = document.querySelector(".operation-right");
 //let searchTerm = "";
@@ -166,10 +166,10 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
 analyzeRecipeEl.addEventListener("click", function() {
     searchTerm = document.getElementById("name-input").value;
     getRecipe(searchTerm);
-    if (searchHistory.includes(searchTerm) == false) {
-        searchHistory.push(searchTerm);
-    }
-    localStorage.setItem("search",JSON.stringify(searchHistory));
+    // if (searchHistory.includes(searchTerm) == false) {
+    //     searchHistory.push(searchTerm);
+    // }
+    // localStorage.setItem("search",JSON.stringify(searchHistory));
    //displaySearchHistory();
 })
 // when the clear history button is pressed it clears storage
