@@ -46,6 +46,7 @@
         <!-- Search History box inside of side menu -->
         <div class="search-history" id="search-history">
             <h3>Look up your search history!</h3>
+            <button class="btn" type="button" id="clear-history">Clear</button>
             <span id="history-box">
 
             </span>
@@ -81,7 +82,7 @@
                     Enter Recipe Name
                 </h3>
                 <div class="input-box">
-                    <input type="text" placeholder="Enter to search" autocomplete="off" id="name-input" required/>
+                    <input type="text" placeholder="Enter to search" onclick="this.value=''" autocomplete="off" id="name-input" required/>
                     <button class="result-btn" id="result-btn">ANALYZE</button>
                 </div>
             </div>
