@@ -5,24 +5,22 @@
   justify-content: center;
   align-items: center;
 
-    .modal-btn {
-      color: #333;
-      cursor: pointer;
-      box-shadow: 0 5px 5px -5px #8D7840;
-      transition:  0.35s;
-      
-      &:hover{
-        box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
-      }
-    }
+  .modal-btn {
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 5px 5px -5px #8d7840;
+    transition: 0.35s;
 
-    .get-ingredients{
-      li{
-        text-align: start;
-      }
+    &:hover {
+      box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
     }
-    
+  }
 
+  .get-ingredients {
+    li {
+      text-align: start;
+    }
+  }
 
   .modal-content,
   .modal-backdrop {
@@ -85,6 +83,7 @@
     }
     &.active ~ .modal-content,
     &:checked ~ .modal-content {
+      overflow: scroll;
       text-align: center;
       opacity: 1;
       background-color: #fff;
