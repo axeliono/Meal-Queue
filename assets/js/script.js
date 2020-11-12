@@ -210,21 +210,36 @@ analyzeRecipeEl.addEventListener("click", function () {
       pastRecipe.setAttribute("value", searchHistory[i]);
       let recipeNames = searchHistory[i];
       pastRecipe.addEventListener("click",function() {
-          console.log(this.value);
-          console.log(recipeNames);
+          //console.log(this.value);
+          //console.log(recipeNames);
           var searchInput =  document.getElementById("name-input");
           searchInput.value = recipeNames;
          getRecipe(recipeNames);  
       })
       historyEl.append(pastRecipe);
       
-
 }}
-
 displaySearchHistory();
-if (searchHistory.length > 0) {
-   getRecipe(searchHistory[searchHistory.length - 1]);
-}*/
+
+
+
+// var videoBtnEl = document.getElementById("video-btn");
+// videoBtnEl.addEventListener("click", function () {
+//   getYT();
+// });
+
+//starts recipe search
+analyzeRecipeEl.addEventListener("click", function() {
+  searchTerm = document.getElementById("name-input").value;
+  getRecipe(searchTerm);
+})
+
+// when the clear history button is pressed it clears storage
+clearHistoryEl.addEventListener("click",function() {
+    searchHistory = [];
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
+ })
 
 var loadNecessaryVariables = function (event) {
   modalUp = false;
