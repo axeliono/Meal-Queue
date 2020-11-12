@@ -1,4 +1,4 @@
-
+@use 'mediaQueries';
 
 #sidebar {
     position:fixed;
@@ -9,6 +9,21 @@
     background: #F5CB5C;
     transition:all 300ms linear;
     z-index: 3;
+    @include breakpoint(big-small){
+      width: 250px;
+    }
+    @include breakpoint(papa-bear){
+      width: 200px;
+    }
+    @include breakpoint(mama-bear){
+      width: 150px;
+    }
+    @include breakpoint(baby-bear){
+      width: 100px;
+    }
+    @include breakpoint(teeny){
+      width: 50px;
+    }
   }
   #sidebar.active {
     left:0px;

@@ -22,11 +22,21 @@
         color: $main-text;
         width: 50%;
         margin-right: auto;
+       
 
       h1{
         font-family: 'Martel', serif;
         text-align: end;
         font-size: 50px;
+        @include breakpoint(780){
+          font-size: 35px;
+        }
+        @include breakpoint(teeny){
+          font-size: 20px;
+        }
+        @include breakpoint(smallest){
+          display: none;
+        }
       }
 
       .m {
@@ -51,6 +61,9 @@
 
         .how-to{
           color: $main-text;
+          @include breakpoint(smallest){
+            display: none;
+          }
         }
 
         ol {
@@ -59,7 +72,13 @@
 
         li{
               padding: 5px;
-              word-spacing: 1px;  
+              word-spacing: 1px;
+              @include breakpoint(780){
+                font-size: smaller;
+              }  
+              @include breakpoint(smallest){
+                display: none;
+              }
         }
         
       }
@@ -80,6 +99,9 @@
             text-align: center;
             margin-bottom: 5px;
             font-size: 40px;
+            @include breakpoint(smallest){
+              font-size: 15px;
+            }
         }
         
         .input-box{
@@ -247,19 +269,34 @@
     &:hover{
         background-color:$sub-secondary;
         box-shadow: 2px 4px 7px rgba(245, 203, 92, 0.3);
+    @include breakpoint(papa-bear){
+      width: 175px;
+      height: 250px;
     }
-}
-
-    @include breakpoint(mama-bear) {
+    @include breakpoint(mama-bear){
       width: 150px;
       height: 225px;
-      padding: 10px;
     }
-    @include breakpoint(teeny) {
-      width: 200px;
-      height: 300px;
+    @include breakpoint(auntie-bear){
+      width: 125px;
+      height: 200px;
+    }
+    @include breakpoint(780){
+      width: 100px;
+      height: 175px;
+    }
+    @include breakpoint(teeny){
+      width: 75px;
+      height: 150px;
+      margin: 10px, 0;
     }
 
+    
+    &:hover{
+        background-color:$sub-secondary;
+    }
+    
+  
     .img-container {
         width: 100%;
         display: flex;
@@ -285,8 +322,11 @@
         p{
           color: black;
           text-align: center;
+          @include breakpoint(780){
+            font-size: smaller;
+          }
           }
     }
-  
   }
 }
+}}

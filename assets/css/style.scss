@@ -50,16 +50,14 @@
         box-shadow: 2px 4px 8px #0c0c0c;
         background-color: rgba(3, 3, 3, 0.7);
 
-        
-
-        @include breakpoint(papa-bear){
-           flex-direction: column;       
-        }
         @include breakpoint(mama-bear){
             width: 60%;
         }
         @include breakpoint(teeny){
             width: 80%;   
+        }
+        @include breakpoint(smallest){
+            overflow: hidden;
         }
      
         .intro-left{
@@ -69,7 +67,7 @@
 
             @include breakpoint(papa-bear){
                 width: 100%;
-                display: flex;
+                
                 justify-content: center;
             }
             @include breakpoint(teeny){
@@ -94,6 +92,9 @@
                     padding-bottom: 0px;
                     font-size: 28px;
                 }
+                @include breakpoint(smallest){
+                    font-size: 18px;
+                  }
             }
 
             p{
@@ -101,6 +102,9 @@
                 font-size: 18px;
                 line-height: 140%;
                 letter-spacing: 1px;
+                @include breakpoint(smallest){
+                    font-size: 14px;
+                  }
             }
         }
     }
@@ -126,6 +130,9 @@ footer {
             font-size: 50px;
             color: #F5CB5C;
             padding: 1rem;
+            @include breakpoint(smallest){
+                font-size: smaller;
+              }
 
             &:hover {
                 color: #ff9900;
@@ -135,6 +142,9 @@ footer {
         p{
             margin-top: 20px;
             font-size: 22px;
+            @include breakpoint(smallest){
+                font-size: 14px;
+              }
         }
 
         .date {
@@ -153,6 +163,9 @@ footer {
         h3{
             font-size: 32px;
             margin-bottom: 20px;
+            @include breakpoint(teeny){
+                font-size: smaller;
+            }
         }
 
         li{
@@ -160,6 +173,9 @@ footer {
             text-transform: uppercase;
             list-style: none;
             padding: 5px 0;
+            @include breakpoint(teeny){
+                font-size: smaller;
+            }
         }
     }
     
