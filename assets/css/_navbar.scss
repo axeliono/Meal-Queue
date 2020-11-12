@@ -40,7 +40,7 @@
     box-shadow: 4px 2px 8px black;
     background:#F2D47D;
     margin:5px 0px;
-    cursor:pointer;
+    cursor: pointer;
   }
 .toggle-btn .active {
   background-color: rgb(124, 160, 124);
@@ -84,6 +84,7 @@
     position: relative;
     word-spacing: 2px;
     color: $primary-color;
+    
 
 
     h3{
@@ -100,4 +101,7 @@
       height: auto;
       overflow-y: auto;
     }
+      .recipe-space{
+        cursor: pointer;
+      }
 }
