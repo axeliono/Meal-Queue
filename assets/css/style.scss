@@ -49,11 +49,6 @@
         box-shadow: 2px 4px 8px #0c0c0c;
         background-color: rgba(3, 3, 3, 0.7);
 
-        
-
-        @include breakpoint(papa-bear){
-           flex-direction: column;       
-        }
         @include breakpoint(mama-bear){
             width: 60%;
         }
@@ -68,7 +63,7 @@
 
             @include breakpoint(papa-bear){
                 width: 100%;
-                display: flex;
+                
                 justify-content: center;
             }
             @include breakpoint(teeny){
@@ -152,6 +147,9 @@ footer {
         h3{
             font-size: 32px;
             margin-bottom: 20px;
+            @include breakpoint(teeny){
+                font-size: smaller;
+            }
         }
 
         li{
@@ -159,6 +157,9 @@ footer {
             text-transform: uppercase;
             list-style: none;
             padding: 5px 0;
+            @include breakpoint(teeny){
+                font-size: smaller;
+            }
         }
     }
     
