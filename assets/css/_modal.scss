@@ -80,6 +80,7 @@
       visibility: visible;
       opacity: 1;
       transition: opacity 0.15s ease-in;
+      overflow: scroll;
     }
     &.active ~ .modal-content,
     &:checked ~ .modal-content {

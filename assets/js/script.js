@@ -240,7 +240,7 @@ clearHistoryEl.addEventListener("click",function() {
     localStorage.setItem("search",JSON.stringify(searchHistory));
     displaySearchHistory();
  })
-
+*/
 var loadNecessaryVariables = function (event) {
   modalUp = false;
   currentlyHoveredRecipeIngredients.push(
