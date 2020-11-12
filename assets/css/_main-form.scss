@@ -1,332 +1,322 @@
-
-
-
 .operation-page{
+  display: flex;
+  margin: 150px auto;
+
+  .operation-box{
+      width: 60%;
+      height: 100%;
+      padding: 2rem;
+      margin: 15px auto 0 auto;
+      box-shadow: 2px 4px 7px rgb(10, 12, 14); 
+      background-color: $secondary-color;
+      position: relative;
+  }
+
+  .mainform-text{
     display: flex;
-    margin: 150px auto;
- 
-    .operation-box{
-        width: 60%;
-        height: 100%;
-        padding: 2rem;
-        margin: 15px auto 0 auto;
-        box-shadow: 2px 4px 7px rgb(10, 12, 14); 
-        background-color: $secondary-color;
-        position: relative;
+
+    .form-title{
+      color: $main-text;
+      width: 50%;
+      margin-right: auto;
+     
+
+    h1{
+      font-family: 'Martel', serif;
+      text-align: end;
+      font-size: 50px;
+      @include breakpoint(780){
+        font-size: 35px;
+      }
+      @include breakpoint(teeny){
+        font-size: 20px;
+      }
+      @include breakpoint(smallest){
+        display: none;
+      }
     }
 
-    .mainform-text{
-      display: flex;
+    .m {
+      margin: 30px 150px -20px auto;
+    }
 
-      .form-title{
+    .q{
+      margin-right: 130px;
+      padding-bottom: 20px;
+
+      span{
+        color:  #ff9900;
+      }
+    }
+  
+  }
+    .how-to-use{
+      color: $main-text;
+      width: 50%;
+      margin-left: auto;
+      margin-top: 20px;
+
+      .how-to{
         color: $main-text;
-        width: 50%;
-        margin-right: auto;
-       
-
-      h1{
-        font-family: 'Martel', serif;
-        text-align: end;
-        font-size: 50px;
-        @include breakpoint(780){
-          font-size: 35px;
-        }
-        @include breakpoint(teeny){
-          font-size: 20px;
-        }
         @include breakpoint(smallest){
           display: none;
         }
       }
 
-      .m {
-        margin: 30px 150px -20px auto;
+      ol {
+            margin: 10px auto 20px 0;
       }
 
-      .q{
-        margin-right: 130px;
-        padding-bottom: 20px;
-
-        span{
-          color:  #ff9900;
-        }
-      }
-    
-    }
-      .how-to-use{
-        color: $main-text;
-        width: 50%;
-        margin-left: auto;
-        margin-top: 20px;
-
-        .how-to{
-          color: $main-text;
-          @include breakpoint(smallest){
-            display: none;
-          }
-        }
-
-        ol {
-              margin: 10px auto 20px 0;
-        }
-
-        li{
-              padding: 5px;
-              word-spacing: 1px;
-              @include breakpoint(780){
-                font-size: smaller;
-              }  
-              @include breakpoint(smallest){
-                display: none;
-              }
-        }
-        
-      }
-    
-    }
-
-    .recipe-name{
-        width:100%;
-        padding-top: 10px;
-        margin-right: auto;
-  
-        
-
-        h3{
-            margin-top: 20px;
-            padding-bottom: 10px;
-            color: $main-text;
-            text-align: center;
-            margin-bottom: 5px;
-            font-size: 40px;
+      li{
+            padding: 5px;
+            word-spacing: 1px;
+            @include breakpoint(780){
+              font-size: smaller;
+            }  
             @include breakpoint(smallest){
-              font-size: 15px;
+              display: none;
             }
-        }
-        
-        .input-box{
-          display: flex;
-          justify-content: center;
-          margin-bottom: 10px;
-        input{
-            justify-content: center;
-            width: 40%;
-            padding: 10px;
-            background: rgb(190, 190, 190);
-            border: none;
-            outline: none;
-            @include breakpoint(mama-bear){
-                height: 30px;
-            }
-            @include breakpoint(baby-bear){
-                height: 20px;
-            }
-            @include breakpoint(teeny){
-                height: 10px;
-            }
-            margin-bottom: 20px;
-        }
+      }
+      
+    }
+  
+  }
 
-        input:focus{
-            background: #fff;
-        }
+  .recipe-name{
+      width:100%;
+      padding-top: 10px;
+      margin-right: auto;
 
-        .result-btn{
-        color: $main-text;
-        letter-spacing: 2px;
-        width: 20%;
-        height: 35px;
-        background-color: #f5cb5c;
-        border: none;
-        outline: none;
+      
+
+      h3{
+          margin-top: 20px;
+          padding-bottom: 10px;
+          color: $main-text;
+          text-align: center;
+          margin-bottom: 5px;
+          font-size: 40px;
+          @include breakpoint(smallest){
+            font-size: 15px;
+          }
+      }
+      
+      .input-box{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      input{
+        justify-content: center;
+        width: 40%;
+        padding: 10px;
+        background: rgb(190, 190, 190);
+        border:none;
+        text-transform: uppercase;
         @include breakpoint(mama-bear){
-            font-size: 14px;
-            letter-spacing: 0.1px;
-            text-align: center;
             height: 30px;
         }
         @include breakpoint(baby-bear){
-            font-size: 10px;
             height: 20px;
-    
-        }   
+        }
         @include breakpoint(teeny){
-            font-size: 6px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             height: 10px;
         }
-        }
-
-        .result-btn:hover{
-            background-color: #fde39b;
-            transition: 0.1s;
-        }
-    
-        .result-btn:active{
-            background-color: #abd1be;
-            transition: 0.1s;
-        }
+        margin-bottom: 20px;
       }
-        .search-history{
-            width: 30%;
-            display: inline-flex;
-            flex-direction: column;
-            position: relative;
-            left: 50px;
-            word-spacing: 2px;
-            color: #fff;
-            border: 1px solid rgb(158, 158, 158);
-            border-radius: 15px;
 
-    h3 {
-      padding-bottom: 10px;
+      input:focus{
+          background: #fff;
+      }
+
+      .result-btn{
       color: $main-text;
-    }
-
-    input {
-      width: 40%;
-      padding: 10px;
-      background: rgb(190, 190, 190);
-      border-radius: 15px;
-      @include breakpoint(mama-bear) {
-        height: 30px;
-      }
-      @include breakpoint(baby-bear) {
-        height: 20px;
-      }
-      @include breakpoint(teeny) {
-        height: 10px;
-      }
-    }
-
-    .result-btn {
-      color: #fff;
       letter-spacing: 2px;
       width: 20%;
-      height: 40px;
-      background-color: #191f24;
+      height: 35px;
+      background-color: #f5cb5c;
       border-style: none;
-    }
+      @include breakpoint(mama-bear){
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          text-align: center;
+          height: 30px;
+      }
+      @include breakpoint(baby-bear){
+          font-size: 10px;
+          height: 20px;
+  
+      }   
+      @include breakpoint(teeny){
+          font-size: 6px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          height: 10px;
+      }
+      }
 
-    .result-btn {
-      color: #fff;
-      letter-spacing: 2px;
-      width: 20%;
-      height: 40px;
-      background-color: #191f24;
-      border-style: none;
-      @include breakpoint(mama-bear) {
-        font-size: 14px;
-        letter-spacing: 0.1px;
-        text-align: center;
-        height: 30px;
+      .result-btn:hover{
+          background-color: #ffd45f;
+          transition: 0.5s;
       }
-      @include breakpoint(baby-bear) {
-        font-size: 10px;
-        height: 20px;
-      }
-      @include breakpoint(teeny) {
-        font-size: 6px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 10px;
+  
+      .result-btn:active{
+          background-color: #abd1be;
       }
     }
+      .search-history{
+          width: 30%;
+          display: inline-flex;
+          flex-direction: column;
+          position: relative;
+          left: 50px;
+          word-spacing: 2px;
+          color: #fff;
+          border: 1px solid rgb(158, 158, 158);
+          border-radius: 15px;
 
+  h3 {
+    padding-bottom: 10px;
+    color: $main-text;
   }
-  .list-title{
+
+  input {
+    width: 40%;
+    padding: 10px;
+    background: rgb(190, 190, 190);
+    border-radius: 15px;
+    @include breakpoint(mama-bear) {
+      height: 30px;
+    }
+    @include breakpoint(baby-bear) {
+      height: 20px;
+    }
+    @include breakpoint(teeny) {
+      height: 10px;
+    }
+  }
+
+  .result-btn {
     color: #fff;
-    margin: 15px 0;
+    letter-spacing: 2px;
+    width: 20%;
+    height: 40px;
+    background-color: #191f24;
+    border-style: none;
   }
+
+  .result-btn {
+    color: #fff;
+    letter-spacing: 2px;
+    width: 20%;
+    height: 40px;
+    background-color: #191f24;
+    border-style: none;
+    @include breakpoint(mama-bear) {
+      font-size: 14px;
+      letter-spacing: 0.1px;
+      text-align: center;
+      height: 30px;
+    }
+    @include breakpoint(baby-bear) {
+      font-size: 10px;
+      height: 20px;
+    }
+    @include breakpoint(teeny) {
+      font-size: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 10px;
+    }
+  }
+
+}
+.list-title{
+  color: #fff;
+  margin: 15px 0;
+}
 
 }
 
 .recipe-card-holder {
-    padding-top: 10px;
-    width: 100%;
-    height: auto;
-    margin: 5px auto;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    justify-content: space-evenly;
+  padding-top: 10px;
+  width: 100%;
+  height: auto;
+  margin: 5px auto;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  justify-content: space-evenly;
 
-  .recipe-card {
-    width: 200px;
-    padding: 5px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.4);
-    background-color:$secondary-color;
-    margin: 5px 0;
-    height: 300px;
-    transition: 0.35s;
+.recipe-card {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color:$secondary-color;
+  margin: 5px 0;
+  height: 300px;
+  transition: 0.35s;
+  @include breakpoint(papa-bear){
+    width: 175px;
+    height: 250px;
+  }
+  @include breakpoint(mama-bear){
+    width: 150px;
+    height: 225px;
+  }
+  @include breakpoint(auntie-bear){
+    width: 125px;
+    height: 200px;
+  }
+  @include breakpoint(780){
+    width: 100px;
+    height: 175px;
+  }
+  @include breakpoint(teeny){
+    width: 75px;
+    height: 150px;
+    margin: 10px, 0;
+  }
 
-    &:hover{
-        background-color:$sub-secondary;
-        box-shadow: 2px 4px 7px rgba(245, 203, 92, 0.3);
-    @include breakpoint(papa-bear){
-      width: 175px;
-      height: 250px;
-    }
-    @include breakpoint(mama-bear){
-      width: 150px;
-      height: 225px;
-    }
-    @include breakpoint(auntie-bear){
-      width: 125px;
-      height: 200px;
-    }
-    @include breakpoint(780){
-      width: 100px;
-      height: 175px;
-    }
-    @include breakpoint(teeny){
-      width: 75px;
-      height: 150px;
-      margin: 10px, 0;
-    }
-
-    
-    &:hover{
-        background-color:$sub-secondary;
-    }
-    
   
-    .img-container {
-        width: 100%;
-        display: flex;
-        filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+  &:hover{
+      background-color:$sub-secondary;
+  }
+  
 
-        &:hover{
-            filter: drop-shadow(-1px 4px 3px rgba(255, 186, 209, 0.925));
-        }
-    }
+  .img-container {
+      width: 100%;
+      display: flex;
+      filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 
-      img {
-        width: 100%;
-        clip-path: circle(50%);
-
+      &:hover{
+          filter: drop-shadow(-1px 4px 3px rgba(255, 186, 209, 0.925));
       }
+  }
 
-    .text-container{
-        margin: 3px;
-        height: 51px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        p{
-          color: black;
-          text-align: center;
-          @include breakpoint(780){
-            font-size: smaller;
-          }
-          }
+    img {
+      width: 100%;
+      clip-path: circle(50%);
+
     }
+
+  .text-container{
+      margin: 3px;
+      height: 51px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        color: black;
+        text-align: center;
+        @include breakpoint(780){
+          font-size: smaller;
+        }
+        }
   }
 }
-}}
+}
+}
