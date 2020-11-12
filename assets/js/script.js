@@ -4,24 +4,22 @@ const apiKey = "736b0810150196f28b8c1028864f5f3f";
 const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
 var analyzeRecipeEl = document.getElementById("result-btn");
 const recipeName = document.getElementById("name-input").value;
-const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
+var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var clearHistoryEl = document.querySelector(".btn");
 var historyEl = document.querySelector("#history-box");
 let searchTerm = "";
 
 // Need description here
 function getRecipe(searchTerm) {
-    console.log(searchTerm);
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
     fetch(recipeURL).then(function(response) {
         return response.json()
     })
     .then(function(data) {
-      if (!searchTerm || data.count === 0){
-        window.alert("try again");
-      }
-      //localStorage.setItem("search",JSON.stringify(searchTerm));
-      //console.log(data.count);
+      // if (!searchTerm || data.count === 0){
+      //   window.alert("try again");
+      //   return;
+      // }
         let recipesFound = data.hits
         var cardHolder = document.querySelector(".recipe-card-holder");
         cardHolder.innerHTML = "";
@@ -38,11 +36,16 @@ function getRecipe(searchTerm) {
               //put each ingredient into array
               ingredientArrayObject.ingredients.push(ingredientList[x].text);
             }
-            console.log(ingredientArrayObject);
+            //console.log(ingredientArrayObject);
             displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
           }
         
     })
+    if (searchHistory.includes(searchTerm) == false) {
+      searchHistory.push(searchTerm);
+   }
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
 }
 
 // Need description here
@@ -162,27 +165,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   youtubeBox.appendChild(videoBtn);
   youtubeContainer.appendChild(frameBox);
   frameBox.appendChild(videoFrame);
-
-
-
 }
-
-// when a recipe is searched its put in local storage
-analyzeRecipeEl.addEventListener("click", function() {
-    searchTerm = document.getElementById("name-input").value;
-    getRecipe(searchTerm);
-    if (searchHistory.includes(searchTerm) == false) {
-        searchHistory.push(searchTerm);
-    }
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-   //displaySearchHistory();
-})
-// when the clear history button is pressed it clears storage
-/*clearHistoryEl.addEventListener("click",function() {
-    searchHistory = [];
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
- })*/
 
  //will display past searches on side
 function displaySearchHistory() {
@@ -205,27 +188,18 @@ function displaySearchHistory() {
       
 }}
 displaySearchHistory();
-// was causing issues. will revisit.
-//if (searchHistory.length > 0) {
-   //getRecipe(searchHistory[searchHistory.length - 1]);
-// //}
+
+
+
 // var videoBtnEl = document.getElementById("video-btn");
 // videoBtnEl.addEventListener("click", function () {
 //   getYT();
 // });
 
-// when a recipe is searched its put in local storage
+//starts recipe search
 analyzeRecipeEl.addEventListener("click", function() {
-    searchTerm = document.getElementById("name-input").value;
-    console.log(searchTerm);
-    getRecipe(searchTerm);
-    if (searchHistory.includes(searchTerm) == false) {
-        searchHistory.push(searchTerm);
-    }
-    
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-   displaySearchHistory();
-
+  searchTerm = document.getElementById("name-input").value;
+  getRecipe(searchTerm);
 })
 
 // when the clear history button is pressed it clears storage
@@ -234,3 +208,4 @@ clearHistoryEl.addEventListener("click",function() {
     localStorage.setItem("search",JSON.stringify(searchHistory));
     displaySearchHistory();
  })
+
