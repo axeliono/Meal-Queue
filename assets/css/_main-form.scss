@@ -87,10 +87,12 @@
           justify-content: center;
           margin-bottom: 10px;
         input{
-          justify-content: center;
+            justify-content: center;
             width: 40%;
             padding: 10px;
             background: rgb(190, 190, 190);
+            border: none;
+            outline: none;
             @include breakpoint(mama-bear){
                 height: 30px;
             }
@@ -111,9 +113,10 @@
         color: $main-text;
         letter-spacing: 2px;
         width: 20%;
-        height: 40px;
+        height: 35px;
         background-color: #f5cb5c;
-        border-style: none;
+        border: none;
+        outline: none;
         @include breakpoint(mama-bear){
             font-size: 14px;
             letter-spacing: 0.1px;
@@ -135,12 +138,13 @@
         }
 
         .result-btn:hover{
-            background-color: #ffd45f;
-            transition: 0.5s;
+            background-color: #fde39b;
+            transition: 0.1s;
         }
     
         .result-btn:active{
             background-color: #abd1be;
+            transition: 0.1s;
         }
       }
         .search-history{
@@ -234,7 +238,7 @@
     padding: 5px;
     margin-bottom: 15px;
     border-radius: 5px;
-    
+    box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.4);
     background-color:$secondary-color;
     margin: 5px 0;
     height: 300px;
@@ -242,6 +246,7 @@
 
     &:hover{
         background-color:$sub-secondary;
+        box-shadow: 2px 4px 7px rgba(245, 203, 92, 0.3);
     }
 }
 

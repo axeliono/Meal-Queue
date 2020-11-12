@@ -78,11 +78,6 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeModalButton.appendChild(btnLabel);
   recipeModalButton.appendChild(backdropLabel);
 
-  // It retreives incredient object to modal
-  btnLabel.addEventListener("click", function(){
-    
-  })
-
   //modal content labels and elements
   recipeModalContentEl = document.createElement("div");
   recipeModalContentEl.className = "modal-content";
