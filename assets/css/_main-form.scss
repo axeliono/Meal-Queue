@@ -14,14 +14,6 @@
 
   .mainform-text{
     display: flex;
-<<<<<<< HEAD
-
-    .form-title{
-      color: $main-text;
-      width: 50%;
-      margin-right: auto;
-     
-=======
     margin: 150px auto;
  
     .operation-box{
@@ -45,7 +37,6 @@
         width: 50%;
         margin-right: auto;
        
->>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
 
     h1{
       font-family: 'Martel', serif;
@@ -145,15 +136,11 @@
             height: 20px;
         }
         @include breakpoint(teeny){
-<<<<<<< HEAD
-            height: 10px;
-=======
             font-size: 6px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             height: 15px;
->>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
         }
         margin-bottom: 20px;
       }
@@ -335,8 +322,6 @@
       width: 100%;
       clip-path: circle(50%);
 
-<<<<<<< HEAD
-=======
     .text-container{
         margin: 3px;
         height: 51px;
@@ -359,7 +344,6 @@
             font-size: 10px;
           }
           }
->>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
     }
 
   .text-container{

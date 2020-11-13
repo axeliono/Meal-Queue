@@ -85,26 +85,16 @@
     justify-content: center;
     position: relative;
     word-spacing: 2px;
-<<<<<<< HEAD
-    color: #333533;
-=======
     color: $primary-color;
     
->>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
 
 
     h3{
       text-align: center;
       margin-top: 140px;
       padding:15px 10px;
-<<<<<<< HEAD
-      border-bottom: 1px solid gray;
-      font-size: 22px;
-      text-transform: uppercase;
-=======
       @include breakpoint(teeny){
        display: none;
->>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
     }
   }
 
@@ -131,27 +121,7 @@
         }
       }
     }
-<<<<<<< HEAD
-      #clear-history {
-        padding: 5px 10px;
-        font-size: 16px;
-        background: #cdf1fc;
-        transition: 0.35s;
-        border-radius: 4px;
-        text-align: center;
-
-        &:hover{
-          background: #87e2fd;
-        }
-
-        &:active {
-          transform: scale(0.9)
-        }
-      }
-    
-=======
       .recipe-space{
         cursor: pointer;
       }
->>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
 }
