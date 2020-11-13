@@ -87,7 +87,6 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.15s ease-in;
-    overflow: scroll;
   }
   &.active ~ .modal-content,
   &:checked ~ .modal-content {
@@ -130,6 +129,12 @@
 .ingredient-box {
   margin: 10px 30px;
   padding-bottom: 30px;
+
+  .ingredient-list {
+    li {
+      line-height: 110%;
+    }
+  }
 }
 
 .youtube-box {
