@@ -40,7 +40,7 @@
     box-shadow: 4px 2px 8px black;
     background:#F2D47D;
     margin:5px 0px;
-    cursor:pointer;
+    cursor: pointer;
   }
 .toggle-btn .active {
   background-color: rgb(124, 160, 124);
@@ -52,6 +52,13 @@
 
   #sidebar div.list div.item {
     padding:25px 10px;
+    @include breakpoint(teeny){
+      font-size: smaller;
+      text-orientation: upright;
+      writing-mode: vertical-lr;
+      font-weight: 300;
+
+    }
   }
 
   .item:hover{
@@ -78,17 +85,28 @@
     justify-content: center;
     position: relative;
     word-spacing: 2px;
+<<<<<<< HEAD
     color: #333533;
+=======
+    color: $primary-color;
+    
+>>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
 
 
     h3{
       text-align: center;
       margin-top: 140px;
       padding:15px 10px;
+<<<<<<< HEAD
       border-bottom: 1px solid gray;
       font-size: 22px;
       text-transform: uppercase;
+=======
+      @include breakpoint(teeny){
+       display: none;
+>>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
     }
+  }
 
     #history-box{
       margin: 20px 5px;
@@ -113,6 +131,7 @@
         }
       }
     }
+<<<<<<< HEAD
       #clear-history {
         padding: 5px 10px;
         font-size: 16px;
@@ -130,4 +149,9 @@
         }
       }
     
+=======
+      .recipe-space{
+        cursor: pointer;
+      }
+>>>>>>> bfcc9de39c98e79dd1eb8e6224cb50a9bb0d8796
 }

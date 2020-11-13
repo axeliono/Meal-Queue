@@ -21,7 +21,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    @include breakpoint(baby-bear){
+        height:50vh;
+    
+    }
     .arrow{
         margin-bottom: -200px;
 
@@ -53,11 +56,15 @@
         @include breakpoint(mama-bear){
             width: 60%;
         }
+        @include breakpoint(baby-bear){
+            height: 75%;
+            overflow-y: auto;
+        }
         @include breakpoint(teeny){
             width: 80%;   
         }
         @include breakpoint(smallest){
-            overflow: hidden;
+            overflow: auto;
         }
      
         .intro-left{
@@ -86,6 +93,9 @@
                 }
                 @include breakpoint(mama-bear){
                     margin-top: 40px;
+                }
+                @include breakpoint(baby-bear){
+                    font-size: 35px;
                 }
                 @include breakpoint(teeny){
                     margin-top: 60px;
