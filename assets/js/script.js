@@ -1,22 +1,26 @@
 //edamam API
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
-const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
+const ytApiKey = "AIzaSyB3bKG3FylPE4UG5N1yTdWFWXcvEAUUlec";
 var analyzeRecipeEl = document.getElementById("result-btn");
 const recipeName = document.getElementById("name-input").value;
-// var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-//var clearHistoryEl = 
-//var historyEl = document.querySelector(".operation-right");
-//let searchTerm = "";
+//var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+var clearHistoryEl = document.querySelector(".btn");
+var historyEl = document.querySelector("#history-box");
+let searchTerm = "";
+
 
 // Need description here
 function getRecipe(searchTerm) {
-    
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
     fetch(recipeURL).then(function(response) {
         return response.json()
     })
     .then(function(data) {
+      // if (!searchTerm || data.count === 0){
+      //   window.alert("try again");
+      //   return;
+      // }
         let recipesFound = data.hits
         var cardHolder = document.querySelector(".recipe-card-holder");
         cardHolder.innerHTML = "";
@@ -33,11 +37,16 @@ function getRecipe(searchTerm) {
               //put each ingredient into array
               ingredientArrayObject.ingredients.push(ingredientList[x].text);
             }
-            console.log(ingredientArrayObject);
+            //console.log(ingredientArrayObject);
             displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
           }
         
     })
+    if (searchHistory.includes(searchTerm) == false) {
+      searchHistory.push(searchTerm);
+   }
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
 }
 
 // Need description here
@@ -121,15 +130,8 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var videoBtn = document.createElement("button");
   videoBtn.setAttribute("id", "video-btn");
   videoBtn.setAttribute("type", "submit");
-  var frameBox = document.createElement("div");
-  frameBox.setAttribute("class","frame-box");
-  var videoFrame = document.createElement("iframe");
-  videoFrame.setAttribute("cid", "player");
-//   videoFrame.setAttribute("type", "text/html");
-  videoFrame.setAttribute("width", "640px");
-  videoFrame.setAttribute("height", "390");
-  videoFrame.setAttribute("src", "http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com");
-
+  
+  videoBtn.onclick = getYT();
   
   videoBtn.innerText= "Watch Cooking Tutorial";
 
@@ -155,54 +157,74 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   youtubeContainer.appendChild(youtubeBox);
   youtubeContainer.appendChild(youtubeBox);
   youtubeBox.appendChild(videoBtn);
-  youtubeContainer.appendChild(frameBox);
-  frameBox.appendChild(videoFrame);
-
-
-
+  //YOUTUBE API
+function getYT(recipeName) {
+  var recipeName = document.getElementById("name-input").value;
+  let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeName}&type=video&key=${ytApiKey}&maxResults=2`;
+  fetch(ytURL)
+    .then(response => response.json())
+    .then( data => {
+      //console.log(data.items[0].id.videoId)
+      var id = data.items[0].id.videoId;
+      const videoURL =  "http://www.youtube.com/embed/" + id + "?enablejsapi=1&origin=http://example.com";  
+      var frameBox = document.createElement("div");
+      frameBox.setAttribute("class","frame-box");
+      var videoFrame = document.createElement("iframe");
+      videoFrame.setAttribute("cid", "player");
+      videoFrame.setAttribute("src", videoURL)
+  
+    //   videoFrame.setAttribute("type", "text/html");
+      videoFrame.setAttribute("width", "640px");
+      videoFrame.setAttribute("height", "390");
+      youtubeContainer.appendChild(frameBox);
+      frameBox.appendChild(videoFrame);
+      
+   })
+  console.log("WORKING")
+  }
+  
+  
+ 
 }
 
-// when a recipe is searched its put in local storage
+
+
+ //will display past searches on side
+// function displaySearchHistory() {
+//    historyEl.innerHTML = "";
+//    for (var i = 0; i < searchHistory.length; i++) {
+//       var pastRecipe = document.createElement("input");
+//       pastRecipe.setAttribute("type","text");
+//       pastRecipe.setAttribute("readonly",true);
+//       pastRecipe.setAttribute("class", "recipe-space");
+//       pastRecipe.setAttribute("value", searchHistory[i]);
+//       let recipeNames = searchHistory[i];
+//       pastRecipe.addEventListener("click",function() {
+//           //console.log(this.value);
+//           //console.log(recipeNames);
+//           var searchInput =  document.getElementById("name-input");
+//           searchInput.value = recipeNames;
+//          getRecipe(recipeNames);  
+//       })
+//       historyEl.append(pastRecipe);
+      
+// }}
+// displaySearchHistory();
+
+
+//starts recipe search
 analyzeRecipeEl.addEventListener("click", function() {
-    searchTerm = document.getElementById("name-input").value;
-    getRecipe(searchTerm);
-    // if (searchHistory.includes(searchTerm) == false) {
-    //     searchHistory.push(searchTerm);
-    // }
-    // localStorage.setItem("search",JSON.stringify(searchHistory));
-   //displaySearchHistory();
+  searchTerm = document.getElementById("name-input").value;
+  getRecipe(searchTerm);
 })
+
 // when the clear history button is pressed it clears storage
-/*clearHistoryEl.addEventListener("click",function() {
+clearHistoryEl.addEventListener("click",function() {
     searchHistory = [];
     localStorage.setItem("search",JSON.stringify(searchHistory));
     displaySearchHistory();
- })*/
+ })
 
- //will display past searches on side
-/*function displaySearchHistory() {
-   historyEl.innerHTML = "";
-   for (var i = 0; i < searchHistory.length; i++) {
-      var pastRecipe = document.createElement("input");
-      pastRecipe.setAttribute("type","text");
-      pastRecipe.setAttribute("readonly",true);
-      pastRecipe.setAttribute("class", "recipe-space");
-      pastRecipe.setAttribute("value", searchHistory[i]);
-      let recipeNames = searchHistory[i];
-      pastRecipe.addEventListener("click",function() {
-          console.log(this.value);
-          console.log(recipeNames);
-          var searchInput =  document.getElementById("name-input");
-          searchInput.value = recipeNames;
-         getRecipe(recipeNames);  
-      })
-      historyEl.append(pastRecipe);
-      
+//  videoBtn.addEventListener("submit", function{
 
-}}
-
-displaySearchHistory();
-if (searchHistory.length > 0) {
-   getRecipe(searchHistory[searchHistory.length - 1]);
-}*/
-
+//  })
