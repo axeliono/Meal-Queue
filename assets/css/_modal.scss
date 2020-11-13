@@ -4,28 +4,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-    .modal-btn {
-      color: #333;
-      cursor: pointer;
-      box-shadow: 0 5px 5px -5px #8D7840;
-      transition:  0.35s;
-      @include breakpoint(teeny){
-        font-size: 10px;
-      }
-      &:hover{
-        box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
-      }
+  .modal-btn {
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 5px 5px -5px #8d7840;
+    transition: 0.35s;
+    @include breakpoint(teeny) {
+      font-size: 10px;
     }
-
-    .get-ingredients{
-      li{
-        text-align: start;
-      }
+    &:hover {
+      box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
     }
-    
-
-
+  }
+  .get-ingredients {
+    li {
+      text-align: start;
+    }
+  }
   .modal-content,
   .modal-backdrop {
     height: 0;
@@ -109,49 +104,41 @@
       }
     }
   }
-  
-  .content-title{
+  .content-title {
     text-align: center;
     margin: 10px 0;
     padding: 10px 0;
     border-bottom: 1px solid #fd7a0f;
-
     h2 {
       text-transform: uppercase;
       font-size: 32px;
       color: #f5b400;
     }
   }
-
-  .ingredient-box{
+  .ingredient-box {
     margin: 10px 30px;
     padding-bottom: 30px;
   }
-
-  .youtube-box{
+  .youtube-box {
     text-align: center;
     margin: 20px 0;
-    button{
+    button {
       padding: 10px;
       text-transform: uppercase;
       border: 1px solid transparent;
       background-color: #f58300;
       transition: 0.35s;
       color: #fff;
-
-      &:hover{
+      &:hover {
         background-color: #ffa844f1;
         color: #000;
       }
-
       &:active {
         transform: scale(0.9);
       }
     }
   }
-
-  .frame-box{
+  .frame-box {
     text-align: center;
   }
-
 }
