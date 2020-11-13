@@ -21,18 +21,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    @include breakpoint(baby-bear){
+        height:50vh;
+    
+    }
     .arrow{
         margin-bottom: -200px;
 
         a{
-            color: rgb(177, 177, 177);
+            color: #F5CB5C;
             font-size: 80px;
             transition: all 0.35s;
             
             &:hover{
-                color: #fff;
+                color: #ff6739;
             }
+
         }
     }
     
@@ -52,11 +56,15 @@
         @include breakpoint(mama-bear){
             width: 60%;
         }
+        @include breakpoint(baby-bear){
+            height: 75%;
+            overflow-y: auto;
+        }
         @include breakpoint(teeny){
             width: 80%;   
         }
         @include breakpoint(smallest){
-            overflow: hidden;
+            overflow: auto;
         }
      
         .intro-left{
@@ -85,6 +93,9 @@
                 }
                 @include breakpoint(mama-bear){
                     margin-top: 40px;
+                }
+                @include breakpoint(baby-bear){
+                    font-size: 35px;
                 }
                 @include breakpoint(teeny){
                     margin-top: 60px;
