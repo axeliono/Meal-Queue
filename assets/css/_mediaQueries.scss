@@ -11,8 +11,11 @@
     @else if $point == auntie-bear{
       @media (max-width: 905px){ @content; }
     }
-    @else if $point == 780{
+    @else if $point == (780){
       @media (max-width:780px){ @content; }
+    }
+    @else if $point == (716){
+      @media (max-width:716px){@content; }
     }
     @else if $point == baby-bear {
      @media (max-width: 650px)  { @content; }
@@ -21,6 +24,6 @@
         @media (max-width: 559px) {@content; }
     }
     @else if $point == smallest {
-      @media (max-width: 350px ) {@content; }
+      @media (max-width: 400px ) {@content; }
     }
 }
