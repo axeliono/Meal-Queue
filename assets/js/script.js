@@ -8,18 +8,19 @@ var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var clearHistoryEl = document.querySelector(".btn");
 var historyEl = document.querySelector("#history-box");
 let searchTerm = "";
-
 // Need description here
 function getRecipe(searchTerm) {
+  debugger;
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
     fetch(recipeURL).then(function(response) {
         return response.json()
     })
     .then(function(data) {
-      // if (!searchTerm || data.count === 0){
-      //   window.alert("try again");
-      //   return;
-      // }
+       if (!searchTerm || data.count === 0){
+        window.alert("try again");
+       return
+      }
+    
         let recipesFound = data.hits
         var cardHolder = document.querySelector(".recipe-card-holder");
         cardHolder.innerHTML = "";
@@ -188,8 +189,6 @@ function displaySearchHistory() {
       
 }}
 displaySearchHistory();
-
-
 
 // var videoBtnEl = document.getElementById("video-btn");
 // videoBtnEl.addEventListener("click", function () {
