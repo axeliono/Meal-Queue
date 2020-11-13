@@ -345,21 +345,8 @@
           }
           }
     }
-
-  .text-container{
-      margin: 3px;
-      height: 51px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      p{
-        color: black;
-        text-align: center;
-        @include breakpoint(780){
-          font-size: smaller;
-        }
-        }
   }
+  
 }
 }
-}
+}}
