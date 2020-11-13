@@ -16,10 +16,7 @@ function getRecipe(searchTerm) {
         return response.json()
     })
     .then(function(data) {
-      // if (!searchTerm || data.count === 0){
-      //   window.alert("try again");
-      //   return;
-      // }
+     
         let recipesFound = data.hits
         var cardHolder = document.querySelector(".recipe-card-holder");
         cardHolder.innerHTML = "";
@@ -39,13 +36,16 @@ function getRecipe(searchTerm) {
             //console.log(ingredientArrayObject);
             displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
           }
-        
+          if (data.count === 0) {
+            console.log("No Responses found");
+          } else {
+            localStorage.setItem("search", JSON.stringify(searchHistory));
+            displaySearchHistory();}
     })
     if (searchHistory.includes(searchTerm) == false) {
       searchHistory.push(searchTerm);
    }
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
+   
 }
 
 // Need description here
