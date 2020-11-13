@@ -207,3 +207,4 @@ clearHistoryEl.addEventListener("click",function() {
     displaySearchHistory();
  })
 
+
