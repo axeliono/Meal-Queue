@@ -10,7 +10,9 @@
       cursor: pointer;
       box-shadow: 0 5px 5px -5px #8D7840;
       transition:  0.35s;
-      
+      @include breakpoint(teeny){
+        font-size: 10px;
+      }
       &:hover{
         box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
       }

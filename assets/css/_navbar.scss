@@ -40,7 +40,7 @@
     box-shadow: 4px 2px 8px black;
     background:#F2D47D;
     margin:5px 0px;
-    cursor:pointer;
+    cursor: pointer;
   }
 .toggle-btn .active {
   background-color: rgb(124, 160, 124);
@@ -52,6 +52,13 @@
 
   #sidebar div.list div.item {
     padding:25px 10px;
+    @include breakpoint(teeny){
+      font-size: smaller;
+      text-orientation: upright;
+      writing-mode: vertical-lr;
+      font-weight: 300;
+
+    }
   }
 
   .item:hover{
@@ -77,17 +84,24 @@
     position: relative;
     word-spacing: 2px;
     color: $primary-color;
+    
 
 
     h3{
       text-align: center;
       margin-top: 140px;
       padding:15px 10px;
+      @include breakpoint(teeny){
+       display: none;
     }
+  }
 
     #history-box{
       margin: 0 10px;
       height: auto;
       overflow-y: auto;
     }
+      .recipe-space{
+        cursor: pointer;
+      }
 }
