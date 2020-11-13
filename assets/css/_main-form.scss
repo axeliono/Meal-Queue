@@ -10,33 +10,20 @@
       box-shadow: 2px 4px 7px rgb(10, 12, 14); 
       background-color: $secondary-color;
       position: relative;
+      @include breakpoint(teeny){
+        margin: auto;
+        width: 100%;
+  }
   }
 
   .mainform-text{
     display: flex;
-    margin: 150px auto;
- 
-    .operation-box{
-        width: 60%;
-        height: 100%;
-        padding: 2rem;
-        margin: 15px auto 0 auto;
-        box-shadow: 2px 4px 7px rgb(10, 12, 14); 
-        background-color: $secondary-color;
-        position: relative;
-        @include breakpoint(teeny){
-          margin: auto;
-          width: 100%;
-    }
-  }
-    .mainform-text{
-      display: flex;
 
-      .form-title{
-        color: $main-text;
-        width: 50%;
-        margin-right: auto;
-       
+    .form-title{
+      color: $main-text;
+      width: 50%;
+      margin-right: auto;
+     
 
     h1{
       font-family: 'Martel', serif;
@@ -345,8 +332,7 @@
           }
           }
     }
-  }
-  
 }
 }
-}}
+}
+}

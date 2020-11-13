@@ -93,6 +93,9 @@
       text-align: center;
       margin-top: 140px;
       padding:15px 10px;
+      border-bottom: 1px solid gray;
+      font-size: 22px;
+      text-transform: uppercase;
       @include breakpoint(teeny){
        display: none;
     }
@@ -115,13 +118,28 @@
         background-color: transparent;
         text-align: center;
         text-transform: uppercase;
+        cursor: pointer;
 
         &:hover{
           background-color:  #ffe8aa;
         }
       }
     }
-      .recipe-space{
-        cursor: pointer;
+      #clear-history {
+        padding: 5px 10px;
+        font-size: 16px;
+        background: #cdf1fc;
+        transition: 0.35s;
+        border-radius: 4px;
+        text-align: center;
+
+        &:hover{
+          background: #87e2fd;
+        }
+
+        &:active {
+          transform: scale(0.9)
+        }
       }
-}
+    }
+    
