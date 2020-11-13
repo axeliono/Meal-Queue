@@ -5,47 +5,48 @@ const ytApiKey = "AIzaSyBfA_iWGNboQ7NaUCYZK0b7BytWLfSkbX4";
 var analyzeRecipeEl = document.getElementById("result-btn");
 const recipeName = document.getElementById("name-input").value;
 var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-var clearHistoryEl = document.querySelector(".btn");
-var historyEl = document.querySelector("#history-box");
-let searchTerm = "";
+var indexValueCounter = 0;
+var allIngredientArray = [];
+var currentlyHoveredRecipeIngredients = [];
+var modalUp = false;
+//var clearHistoryEl =
+//var historyEl = document.querySelector(".operation-right");
+//let searchTerm = "";
 
 // Need description here
 function getRecipe(searchTerm) {
-    let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
-    fetch(recipeURL).then(function(response) {
-        return response.json()
+  let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
+  fetch(recipeURL)
+    .then(function (response) {
+      return response.json();
     })
-    .then(function(data) {
-      // if (!searchTerm || data.count === 0){
-      //   window.alert("try again");
-      //   return;
-      // }
-        let recipesFound = data.hits
-        var cardHolder = document.querySelector(".recipe-card-holder");
-        cardHolder.innerHTML = "";
-        
-        for (i = 0; i < recipesFound.length; i++) {
-            let recipeName = data.hits[i].recipe.label;
-            //console.log(recipeName);
-            let recipeImage = data.hits[i].recipe.image;
-            //console.log(recipeImage);
-            let ingredientList = data.hits[i].recipe.ingredients;
-            //console.log(ingredientList);
-            var ingredientArrayObject = { ingredients: [] };
-            for (x = 0; x < ingredientList.length; x++) {
-              //put each ingredient into array
-              ingredientArrayObject.ingredients.push(ingredientList[x].text);
-            }
-            //console.log(ingredientArrayObject);
-            displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
-          }
-        
-    })
-    if (searchHistory.includes(searchTerm) == false) {
-      searchHistory.push(searchTerm);
-   }
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
+    .then(function (data) {
+      indexValueCounter = 0;
+      let recipesFound = data.hits;
+      var cardHolder = document.querySelector(".recipe-card-holder");
+      cardHolder.innerHTML = "";
+
+      for (i = 0; i < recipesFound.length; i++) {
+        let recipeName = data.hits[i].recipe.label;
+        //console.log(recipeName);
+        let recipeImage = data.hits[i].recipe.image;
+        //console.log(recipeImage);
+        let ingredientList = data.hits[i].recipe.ingredients;
+        //console.log(ingredientList);
+        var ingredientArrayObject = {
+          ingredients: [],
+          name: recipeName,
+          picture: recipeImage,
+        };
+        for (x = 0; x < ingredientList.length; x++) {
+          //put each ingredient into array
+          ingredientArrayObject.ingredients.push(ingredientList[x].text);
+        }
+        allIngredientArray.push(ingredientArrayObject);
+        //console.log(ingredientArrayObject);
+        displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
+      }
+    });
 }
 
 // Need description here
@@ -69,6 +70,11 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeCard.className = "recipe-card";
   image.src = recipeImage;
 
+  txtContainer.appendChild(recipeCardTxt);
+  recipeCard.appendChild(imgContainer);
+  recipeCard.appendChild(txtContainer);
+  imgContainer.appendChild(image);
+
   //modal button labels and elements
   var recipeModalButton = document.createElement("div");
   recipeModalButton.setAttribute("class", "modal-container");
@@ -78,7 +84,15 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var btnLabel = document.createElement("label");
   btnLabel.setAttribute("for", "modal-toggle");
   btnLabel.className = "modal-btn";
-  btnLabel.innerText = "See More"
+  recipeCardTxt.setAttribute("name", recipeName);
+  recipeCardTxt.setAttribute("ingredients", ingredientArrayObject.ingredients);
+
+  console.log(recipeCardTxt.getAttribute("ingredients"));
+
+  btnLabel.innerText = "See More";
+  btnLabel.setAttribute("index-value", indexValueCounter);
+  indexValueCounter++;
+
   var backdropLabel = document.createElement("label");
   backdropLabel.setAttribute("for", "modal-toggle");
   backdropLabel.className = "modal-backdrop";
@@ -87,9 +101,15 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeModalButton.appendChild(backdropLabel);
 
   // It retreives incredient object to modal
-  btnLabel.addEventListener("click", function(){
-    
-  })
+  btnLabel.addEventListener("mouseenter", function (event) {
+    loadNecessaryVariables(event);
+  });
+  btnLabel.addEventListener("mouseleave", function (event) {
+    if (modalUp === false) {
+      removeUnnecessaryVariables(event);
+    }
+  });
+  btnLabel.addEventListener("click", populateModalContent);
 
   //modal content labels and elements
   recipeModalContentEl = document.createElement("div");
@@ -105,7 +125,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var contentTitle = document.createElement("div");
   contentTitle.setAttribute("class", "content-title");
   var contentText = document.createElement("h2");
-  contentText.innerText = recipeName;
+  contentText.setAttribute("class", "title");
   recipeModalContentEl.appendChild(contentLabelEl);
   recipeModalContentEl.appendChild(contentTitle);
   contentTitle.appendChild(contentText);
@@ -116,12 +136,10 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   ingredientSpan.setAttribute("class", "ingredient-box");
   var arrayLine = document.createElement("ol");
   arrayLine.setAttribute("class", "ingredient-list");
-  var arrayList = document.createElement("li");
-  
-    // Need more help
-  arrayList.innerHTML = ingredientArrayObject.ingredients[i];
 
-// Create div element to contain Youtube video
+  // Need more help
+
+  // Create div element to contain Youtube video
   var youtubeContainer = document.createElement("div");
   youtubeContainer.setAttribute("class", "video-container");
   var youtubeBox = document.createElement("div");
@@ -130,22 +148,20 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   videoBtn.setAttribute("id", "video-btn");
   videoBtn.setAttribute("type", "submit");
   var frameBox = document.createElement("div");
-  frameBox.setAttribute("class","frame-box");
+  frameBox.setAttribute("class", "frame-box");
   var videoFrame = document.createElement("iframe");
   videoFrame.setAttribute("cid", "player");
-//   videoFrame.setAttribute("type", "text/html");
+  videoFrame.setAttribute("type", "text/html");
   videoFrame.setAttribute("width", "640px");
   videoFrame.setAttribute("height", "390");
-  videoFrame.setAttribute("src", "http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com");
+  videoFrame.setAttribute(
+    "src",
+    "http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+  );
 
-  
-  videoBtn.innerText= "Watch Cooking Tutorial";
+  videoBtn.innerText = "Watch Cooking Tutorial";
 
   // Append to the browser
-  txtContainer.appendChild(recipeCardTxt);
-  recipeCard.appendChild(imgContainer);
-  recipeCard.appendChild(txtContainer);
-  imgContainer.appendChild(image);
 
   recipeModalButton.appendChild(recipeModalContentEl);
   recipeCard.appendChild(recipeModalButton);
@@ -154,7 +170,6 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   // Append to the modal -- ingredients
   recipeModalContentEl.appendChild(ingredientSpan);
   ingredientSpan.appendChild(arrayLine);
-  arrayLine.appendChild(arrayList);
 
   // Append to the modal -- ingredients
   recipeModalContentEl.appendChild(ingredientSpan);
@@ -167,8 +182,25 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   frameBox.appendChild(videoFrame);
 }
 
- //will display past searches on side
-function displaySearchHistory() {
+// when a recipe is searched its put in local storage
+analyzeRecipeEl.addEventListener("click", function () {
+  searchTerm = document.getElementById("name-input").value;
+  getRecipe(searchTerm);
+  if (searchHistory.includes(searchTerm) == false) {
+    searchHistory.push(searchTerm);
+  }
+  localStorage.setItem("search", JSON.stringify(searchHistory));
+  //displaySearchHistory();
+});
+// when the clear history button is pressed it clears storage
+/*clearHistoryEl.addEventListener("click",function() {
+    searchHistory = [];
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
+ })*/
+
+//will display past searches on side
+/*function displaySearchHistory() {
    historyEl.innerHTML = "";
    for (var i = 0; i < searchHistory.length; i++) {
       var pastRecipe = document.createElement("input");
@@ -208,4 +240,34 @@ clearHistoryEl.addEventListener("click",function() {
     localStorage.setItem("search",JSON.stringify(searchHistory));
     displaySearchHistory();
  })
+*/
+var loadNecessaryVariables = function (event) {
+  modalUp = false;
+  currentlyHoveredRecipeIngredients.push(
+    allIngredientArray[event.target.getAttribute("index-value")]
+  );
+  console.log(currentlyHoveredRecipeIngredients);
+};
 
+var removeUnnecessaryVariables = function (event) {
+  currentlyHoveredRecipeIngredients = [];
+  console.log(currentlyHoveredRecipeIngredients);
+};
+
+var populateModalContent = function () {
+  modalUp = true;
+  var title = document.querySelector(".title");
+  title.innerHTML = currentlyHoveredRecipeIngredients[0].name;
+  var orderedList = document.querySelector(".ingredient-list");
+  orderedList.innerHTML = "";
+  for (
+    i = 0;
+    i < currentlyHoveredRecipeIngredients[0].ingredients.length;
+    i++
+  ) {
+    var listItem = document.createElement("li");
+    listItem.innerText = currentlyHoveredRecipeIngredients[0].ingredients[i];
+    orderedList.appendChild(listItem);
+  }
+  currentlyHoveredRecipeIngredients = [];
+};
