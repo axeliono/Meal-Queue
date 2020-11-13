@@ -130,6 +130,8 @@ body {
   width: 40%;
   padding: 10px;
   background: #bebebe;
+  border: none;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 @media (max-width: 1025px) {
@@ -154,7 +156,7 @@ body {
   color: #333533;
   letter-spacing: 2px;
   width: 20%;
-  height: 40px;
+  height: 35px;
   background-color: #f5cb5c;
   border-style: none;
 }
@@ -428,16 +430,13 @@ body {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.15s ease-in;
-  overflow: scroll;
 }
 .modal-container #modal-toggle.active ~ .modal-content,
 .modal-container #modal-toggle:checked ~ .modal-content {
-  overflow: scroll;
-  text-align: center;
   opacity: 1;
   background-color: #fff;
   width: 50vw;
-  height: 75vh;
+  height: 70vh;
   padding: 10px 30px;
   position: fixed;
   left: calc(25%);
@@ -448,12 +447,52 @@ body {
   cursor: auto;
   visibility: visible;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 400px) {
   .modal-container #modal-toggle.active ~ .modal-content,
   .modal-container #modal-toggle:checked ~ .modal-content {
     left: 0;
   }
+}
+.modal-container .content-title {
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #fd7a0f;
+}
+.modal-container .content-title h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  color: #f5b400;
+}
+.modal-container .ingredient-box {
+  margin: 10px 30px;
+  padding-bottom: 30px;
+}
+.modal-container .youtube-box {
+  text-align: center;
+  margin: 20px 0;
+}
+.modal-container .youtube-box button {
+  padding: 10px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background-color: #f58300;
+  transition: 0.35s;
+  color: #fff;
+}
+.modal-container .youtube-box button:hover {
+  background-color: #ffa844f1;
+  color: #000;
+}
+.modal-container .youtube-box button:active {
+  transform: scale(0.9);
+}
+.modal-container .frame-box {
+  text-align: center;
 }
 @use 'mediaQueries';
 #sidebar {
@@ -533,6 +572,8 @@ body {
   height: auto;
   display: inline-flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   word-spacing: 2px;
   color: #333533;
@@ -541,11 +582,44 @@ body {
   text-align: center;
   margin-top: 140px;
   padding: 15px 10px;
+  border-bottom: 1px solid gray;
+  font-size: 22px;
+  text-transform: uppercase;
 }
 .search-history #history-box {
-  margin: 0 10px;
+  margin: 20px 5px;
   height: auto;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-history #history-box .recipe-space {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 0;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+}
+.search-history #history-box .recipe-space:hover {
+  background-color: #ffe8aa;
+}
+.search-history #clear-history {
+  padding: 5px 10px;
+  font-size: 16px;
+  background: #cdf1fc;
+  transition: 0.35s;
+  border-radius: 4px;
+  text-align: center;
+}
+.search-history #clear-history:hover {
+  background: #87e2fd;
+}
+.search-history #clear-history:active {
+  transform: scale(0.9);
 }
 .intro {
   width: 100%;
@@ -567,12 +641,12 @@ body {
   margin-bottom: -200px;
 }
 .intro .arrow a {
-  color: #b1b1b1;
+  color: #f5cb5c;
   font-size: 80px;
   transition: all 0.35s;
 }
 .intro .arrow a:hover {
-  color: #fff;
+  color: #ff6739;
 }
 .intro .intro-page {
   margin-bottom: 120px;
