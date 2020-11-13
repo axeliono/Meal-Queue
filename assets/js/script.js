@@ -9,9 +9,9 @@ var indexValueCounter = 0;
 var allIngredientArray = [];
 var currentlyHoveredRecipeIngredients = [];
 var modalUp = false;
-//var clearHistoryEl =
-//var historyEl = document.querySelector(".operation-right");
-//let searchTerm = "";
+var clearHistoryEl = document.querySelector(".btn");
+var historyEl = document.querySelector("#history-box");
+let searchTerm = "";
 
 // Need description here
 function getRecipe(searchTerm) {
@@ -46,8 +46,15 @@ function getRecipe(searchTerm) {
         //console.log(ingredientArrayObject);
         displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
       }
+      if (data.count === 0) {
+        console.log("No Responses found");
+      } else {
+        localStorage.setItem("search", JSON.stringify(searchHistory));
+        displaySearchHistory();}
     });
-}
+    if (searchHistory.includes(searchTerm) == false) {
+      searchHistory.push(searchTerm);
+}}
 
 // Need description here
 function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
@@ -182,25 +189,9 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   frameBox.appendChild(videoFrame);
 }
 
-// when a recipe is searched its put in local storage
-analyzeRecipeEl.addEventListener("click", function () {
-  searchTerm = document.getElementById("name-input").value;
-  getRecipe(searchTerm);
-  if (searchHistory.includes(searchTerm) == false) {
-    searchHistory.push(searchTerm);
-  }
-  localStorage.setItem("search", JSON.stringify(searchHistory));
-  //displaySearchHistory();
-});
-// when the clear history button is pressed it clears storage
-/*clearHistoryEl.addEventListener("click",function() {
-    searchHistory = [];
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
- })*/
 
 //will display past searches on side
-/*function displaySearchHistory() {
+function displaySearchHistory() {
    historyEl.innerHTML = "";
    for (var i = 0; i < searchHistory.length; i++) {
       var pastRecipe = document.createElement("input");
@@ -221,26 +212,14 @@ analyzeRecipeEl.addEventListener("click", function () {
 }}
 displaySearchHistory();
 
-
-
 // var videoBtnEl = document.getElementById("video-btn");
 // videoBtnEl.addEventListener("click", function () {
 //   getYT();
 // });
 
 //starts recipe search
-analyzeRecipeEl.addEventListener("click", function() {
-  searchTerm = document.getElementById("name-input").value;
-  getRecipe(searchTerm);
-})
 
-// when the clear history button is pressed it clears storage
-clearHistoryEl.addEventListener("click",function() {
-    searchHistory = [];
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
- })
-*/
+
 var loadNecessaryVariables = function (event) {
   modalUp = false;
   currentlyHoveredRecipeIngredients.push(
@@ -271,3 +250,14 @@ var populateModalContent = function () {
   }
   currentlyHoveredRecipeIngredients = [];
 };
+analyzeRecipeEl.addEventListener("click", function() {
+  searchTerm = document.getElementById("name-input").value;
+  getRecipe(searchTerm);
+})
+
+ //when the clear history button is pressed it clears storage
+clearHistoryEl.addEventListener("click",function() {
+    searchHistory = [];
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
+ })
