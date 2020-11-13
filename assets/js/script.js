@@ -133,6 +133,8 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   videoBtn.setAttribute("type", "submit");
   videoBtn.onclick = getYT();
   videoBtn.innerText= "Watch Cooking Tutorial";
+  var frameBox = document.createElement("div");
+    frameBox.setAttribute("class","frame-box");
 
   // Append to the browser
   txtContainer.appendChild(recipeCardTxt);
@@ -159,7 +161,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
  
   function getYT(recipeName) {
     var recipeName = document.getElementById("name-input").value;
-    let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeName}&type=video&key=${ytApiKey}&maxResults=2`;
+    let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeName}+ "making"&type=video&key=${ytApiKey}&maxResults=2`;
     fetch(ytURL)
       .then(response => response.json())
       .then( data => {
@@ -183,33 +185,6 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   
 
 };
-  
- //YOUTUBE API
-
- function getYT(recipeName) {
-  var recipeName = document.getElementById("name-input").value;
-  let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeName}&type=video&key=${ytApiKey}&maxResults=2`;
-  fetch(ytURL)
-    .then(response => response.json())
-    .then( data => {
-      //console.log(data.items[0].id.videoId)
-      var id = data.items[0].id.videoId;
-      const videoURL =  "http://www.youtube.com/embed/" + id + "?enablejsapi=1&origin=http://example.com";  
-      var frameBox = document.createElement("div");
-      frameBox.setAttribute("class","frame-box");
-      var videoFrame = document.createElement("iframe");
-      videoFrame.setAttribute("cid", "player");
-      videoFrame.setAttribute("src", videoURL)
-      
-  
-    //   videoFrame.setAttribute("type", "text/html");
-      videoFrame.setAttribute("width", "640px");
-      videoFrame.setAttribute("height", "390");
-      youtubeContainer.appendChild(frameBox);
-      frameBox.appendChild(videoFrame);
-   })
-  }
-
 
 
 
