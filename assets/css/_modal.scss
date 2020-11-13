@@ -87,11 +87,10 @@
     }
     &.active ~ .modal-content,
     &:checked ~ .modal-content {
-      text-align: center;
       opacity: 1;
       background-color: #fff;
       width: 50vw;
-      height: 50vh;
+      height: 70vh;
       padding: 10px 30px;
       position: fixed;
       left: calc(25%);
@@ -102,9 +101,57 @@
       cursor: auto;
       visibility: visible;
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
       @media (max-width: 400px) {
         left: 0;
       }
     }
   }
+  
+  .content-title{
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #fd7a0f;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 32px;
+      color: #f5b400;
+    }
+  }
+
+  .ingredient-box{
+    margin: 10px 30px;
+    padding-bottom: 30px;
+  }
+
+  .youtube-box{
+    text-align: center;
+    margin: 20px 0;
+    button{
+      padding: 10px;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      background-color: #f58300;
+      transition: 0.35s;
+      color: #fff;
+
+      &:hover{
+        background-color: #ffa844f1;
+        color: #000;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .frame-box{
+    text-align: center;
+  }
+
 }
