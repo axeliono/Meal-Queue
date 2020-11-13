@@ -19,10 +19,11 @@
       width: 150px;
     }
     @include breakpoint(baby-bear){
-      width: 100px;
-    }
-    @include breakpoint(teeny){
-      width: 50px;
+     height: 200px;
+     width:100%;
+     z-index: 8;
+     left: -9999px;
+     transition:all 300ms;
     }
   }
   #sidebar.active {
@@ -41,6 +42,7 @@
     background:#F2D47D;
     margin:5px 0px;
     cursor: pointer;
+   
   }
 .toggle-btn .active {
   background-color: rgb(124, 160, 124);
@@ -48,17 +50,16 @@
 
   .list{
       margin-top: 100px;
+      @include breakpoint(baby-bear){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
   }
 
   #sidebar div.list div.item {
     padding:25px 10px;
-    @include breakpoint(teeny){
-      font-size: smaller;
-      text-orientation: upright;
-      writing-mode: vertical-lr;
-      font-weight: 300;
-
-    }
+    
   }
 
   .item:hover{

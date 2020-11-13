@@ -25,6 +25,13 @@
         height:50vh;
     
     }
+    @include breakpoint(teeny){
+        height: 25vh;
+    }
+    @include breakpoint(smallest){
+        display: none;
+    }
+    
     .arrow{
         margin-bottom: -200px;
 
@@ -63,7 +70,7 @@
             width: 80%;   
         }
         @include breakpoint(smallest){
-            overflow: auto;
+           
         }
      
         .intro-left{
@@ -94,15 +101,15 @@
                     margin-top: 40px;
                 }
                 @include breakpoint(baby-bear){
-                    font-size: 35px;
+                    font-size: 30px;
                 }
                 @include breakpoint(teeny){
                     margin-top: 60px;
                     padding-bottom: 0px;
-                    font-size: 28px;
+                    font-size: 22px;
                 }
                 @include breakpoint(smallest){
-                    font-size: 18px;
+                    font-size: 14px;
                   }
             }
 
@@ -111,9 +118,12 @@
                 font-size: 18px;
                 line-height: 140%;
                 letter-spacing: 1px;
-                @include breakpoint(smallest){
+                @include breakpoint(baby-bear){
                     font-size: 14px;
                   }
+                @include breakpoint(teeny){
+                    font-size: 12px;
+                }
             }
         }
     }
