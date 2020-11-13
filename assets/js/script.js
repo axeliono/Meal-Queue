@@ -10,7 +10,7 @@ var historyEl = document.querySelector("#history-box");
 let searchTerm = "";
 // Need description here
 function getRecipe(searchTerm) {
-  debugger;
+  
     let recipeURL = `https://api.edamam.com/search?app_id=${appID}&app_key=${apiKey}&q=${searchTerm}`;
     fetch(recipeURL).then(function(response) {
         return response.json()

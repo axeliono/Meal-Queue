@@ -1,7 +1,6 @@
 .operation-page{
   display: flex;
   margin: 150px auto;
-
   .operation-box{
       width: 60%;
       height: 100%;
@@ -15,16 +14,12 @@
         width: 100%;
   }
   }
-
   .mainform-text{
     display: flex;
-
     .form-title{
       color: $main-text;
       width: 50%;
       margin-right: auto;
-     
-
     h1{
       font-family: 'Martel', serif;
       text-align: end;
@@ -39,38 +34,31 @@
         display: none;
       }
     }
-
     .m {
       margin: 30px 150px -20px auto;
     }
-
     .q{
       margin-right: 130px;
       padding-bottom: 20px;
-
       span{
-        color:  #ff9900;
+        color:  #FF9900;
       }
     }
-  
   }
     .how-to-use{
       color: $main-text;
       width: 50%;
       margin-left: auto;
       margin-top: 20px;
-
       .how-to{
         color: $main-text;
         @include breakpoint(smallest){
           display: none;
         }
       }
-
       ol {
             margin: 10px auto 20px 0;
       }
-
       li{
             padding: 5px;
             word-spacing: 1px;
@@ -81,18 +69,12 @@
               display: none;
             }
       }
-      
     }
-  
   }
-
   .recipe-name{
       width:100%;
       padding-top: 10px;
       margin-right: auto;
-
-      
-
       h3{
           margin-top: 20px;
           padding-bottom: 10px;
@@ -104,7 +86,6 @@
             font-size: 15px;
           }
       }
-      
       .input-box{
         display: flex;
         justify-content: center;
@@ -131,17 +112,15 @@
         }
         margin-bottom: 20px;
       }
-
       input:focus{
           background: #fff;
       }
-
       .result-btn{
       color: $main-text;
       letter-spacing: 2px;
       width: 20%;
       height: 35px;
-      background-color: #f5cb5c;
+      background-color: #F5CB5C;
       border-style: none;
       @include breakpoint(mama-bear){
           font-size: 14px;
@@ -152,7 +131,6 @@
       @include breakpoint(baby-bear){
           font-size: 10px;
           height: 20px;
-  
       }   
       @include breakpoint(teeny){
           font-size: 6px;
@@ -162,14 +140,12 @@
           height: 10px;
       }
       }
-
       .result-btn:hover{
-          background-color: #ffd45f;
+          background-color: #FFD45F;
           transition: 0.5s;
       }
-  
       .result-btn:active{
-          background-color: #abd1be;
+          background-color: #ABD1BE;
       }
     }
       .search-history{
@@ -182,12 +158,10 @@
           color: #fff;
           border: 1px solid rgb(158, 158, 158);
           border-radius: 15px;
-
   h3 {
     padding-bottom: 10px;
     color: $main-text;
   }
-
   input {
     width: 40%;
     padding: 10px;
@@ -203,22 +177,20 @@
       height: 10px;
     }
   }
-
   .result-btn {
     color: #fff;
     letter-spacing: 2px;
     width: 20%;
     height: 40px;
-    background-color: #191f24;
+    background-color: #191F24;
     border-style: none;
   }
-
   .result-btn {
     color: #fff;
     letter-spacing: 2px;
     width: 20%;
     height: 40px;
-    background-color: #191f24;
+    background-color: #191F24;
     border-style: none;
     @include breakpoint(mama-bear) {
       font-size: 14px;
@@ -238,15 +210,12 @@
       height: 10px;
     }
   }
-
 }
 .list-title{
   color: #fff;
   margin: 15px 0;
 }
-
 }
-
 .recipe-card-holder {
   padding-top: 10px;
   width: 100%;
@@ -257,7 +226,6 @@
   flex-wrap: wrap;
   overflow-y: auto;
   justify-content: space-evenly;
-
 .recipe-card {
   width: 200px;
   padding: 5px;
@@ -288,27 +256,20 @@
     height: 150px;
     margin: 10px, 0;
   }
-
-  
   &:hover{
       background-color:$sub-secondary;
   }
-  
-
   .img-container {
       width: 100%;
       display: flex;
       filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
-
       &:hover{
           filter: drop-shadow(-1px 4px 3px rgba(255, 186, 209, 0.925));
       }
   }
-
     img {
       width: 100%;
       clip-path: circle(50%);
-
     .text-container{
         margin: 3px;
         height: 51px;
