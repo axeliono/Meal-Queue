@@ -1,13 +1,14 @@
 //edamam API
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
-const ytApiKey = "AIzaSyB3bKG3FylPE4UG5N1yTdWFWXcvEAUUlec";
+const ytApiKey = "AIzaSyBP_BVHyh3I4DYpn17uQ--82M8G0rIIfYo";
 var analyzeRecipeEl = document.getElementById("result-btn");
 const recipeName = document.getElementById("name-input").value;
 //var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var clearHistoryEl = document.querySelector(".btn");
 var historyEl = document.querySelector("#history-box");
 let searchTerm = "";
+
 
 
 // Need description here
@@ -130,9 +131,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var videoBtn = document.createElement("button");
   videoBtn.setAttribute("id", "video-btn");
   videoBtn.setAttribute("type", "submit");
-  
   videoBtn.onclick = getYT();
-  
   videoBtn.innerText= "Watch Cooking Tutorial";
 
   // Append to the browser
@@ -157,8 +156,37 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   youtubeContainer.appendChild(youtubeBox);
   youtubeContainer.appendChild(youtubeBox);
   youtubeBox.appendChild(videoBtn);
-  //YOUTUBE API
-function getYT(recipeName) {
+ 
+  function getYT(recipeName) {
+    var recipeName = document.getElementById("name-input").value;
+    let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeName}&type=video&key=${ytApiKey}&maxResults=2`;
+    fetch(ytURL)
+      .then(response => response.json())
+      .then( data => {
+        //console.log(data.items[0].id.videoId)
+        var id = data.items[0].id.videoId;
+        const videoURL =  "http://www.youtube.com/embed/" + id + "?enablejsapi=1&origin=http://example.com";  
+        var frameBox = document.createElement("div");
+        frameBox.setAttribute("class","frame-box");
+        var videoFrame = document.createElement("iframe");
+        videoFrame.setAttribute("cid", "player");
+        videoFrame.setAttribute("src", videoURL)
+        
+    
+      //   videoFrame.setAttribute("type", "text/html");
+        videoFrame.setAttribute("width", "640px");
+        videoFrame.setAttribute("height", "390");
+        youtubeContainer.appendChild(frameBox);
+        frameBox.appendChild(videoFrame);
+     })
+    }
+  
+
+};
+  
+ //YOUTUBE API
+
+ function getYT(recipeName) {
   var recipeName = document.getElementById("name-input").value;
   let ytURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeName}&type=video&key=${ytApiKey}&maxResults=2`;
   fetch(ytURL)
@@ -172,20 +200,16 @@ function getYT(recipeName) {
       var videoFrame = document.createElement("iframe");
       videoFrame.setAttribute("cid", "player");
       videoFrame.setAttribute("src", videoURL)
+      
   
     //   videoFrame.setAttribute("type", "text/html");
       videoFrame.setAttribute("width", "640px");
       videoFrame.setAttribute("height", "390");
       youtubeContainer.appendChild(frameBox);
       frameBox.appendChild(videoFrame);
-      
    })
-  console.log("WORKING")
   }
-  
-  
- 
-}
+
 
 
 
@@ -225,6 +249,4 @@ clearHistoryEl.addEventListener("click",function() {
     displaySearchHistory();
  })
 
-//  videoBtn.addEventListener("submit", function{
 
-//  })
