@@ -181,9 +181,9 @@ function displaySearchHistory() {
   }
 }
 displaySearchHistory();
+
 function toggleSidebar(ref){
   document.getElementById("sidebar").classList.toggle('active');
-  
 }
 
 var loadNecessaryVariables = function (event) {
