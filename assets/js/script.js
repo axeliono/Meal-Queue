@@ -166,6 +166,7 @@ function displaySearchHistory() {
     pastRecipe.setAttribute("readonly", true);
     pastRecipe.setAttribute("class", "recipe-space");
     pastRecipe.setAttribute("value", searchHistory[i]);
+    pastRecipe.setAttribute("onclick", toggleSidebar(this));
     let recipeNames = searchHistory[i];
     pastRecipe.addEventListener("click", function () {
       //console.log(this.value);
@@ -173,11 +174,17 @@ function displaySearchHistory() {
       var searchInput = document.getElementById("name-input");
       searchInput.value = recipeNames;
       getRecipe(recipeNames);
+    
+
     });
     historyEl.append(pastRecipe);
   }
 }
 displaySearchHistory();
+function toggleSidebar(ref){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
 
 var loadNecessaryVariables = function (event) {
   modalUp = false;
