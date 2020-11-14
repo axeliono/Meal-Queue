@@ -112,6 +112,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
     }
   });
   btnLabel.addEventListener("click", populateModalContent);
+  btnLabel.addEventListener("click", getYT());
 
   //modal content labels and elements
   recipeModalContentEl = document.createElement("div");
