@@ -3,15 +3,14 @@ const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
 const ytApiKey = "AIzaSyBP_BVHyh3I4DYpn17uQ--82M8G0rIIfYo";
 var analyzeRecipeEl = document.getElementById("result-btn");
-const recipeName = document.getElementById("name-input").value;
-var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+//var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var indexValueCounter = 0;
 var allIngredientArray = [];
 var currentlyHoveredRecipeIngredients = [];
 var modalUp = false;
-//var clearHistoryEl =
-//var historyEl = document.querySelector(".operation-right");
-//let searchTerm = "";
+var clearHistoryEl = document.querySelector(".btn");
+var historyEl = document.querySelector("#history-box");
+let searchTerm = "";
 
 
 
@@ -48,8 +47,15 @@ function getRecipe(searchTerm) {
         //console.log(ingredientArrayObject);
         displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
       }
+      if (data.count === 0) {
+        console.log("No Responses found");
+      } else {
+        localStorage.setItem("search", JSON.stringify(searchHistory));
+        displaySearchHistory();}
     });
-}
+    if (searchHistory.includes(searchTerm) == false) {
+      searchHistory.push(searchTerm);
+}}
 
 // Need description here
 function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
@@ -112,7 +118,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
     }
   });
   btnLabel.addEventListener("click", populateModalContent);
-  btnLabel.addEventListener("click", getYT());
+  //btnLabel.addEventListener("click", getYT());
 
   //modal content labels and elements
   recipeModalContentEl = document.createElement("div");
@@ -150,18 +156,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   var videoBtn = document.createElement("button");
   videoBtn.setAttribute("id", "video-btn");
   videoBtn.setAttribute("type", "submit");
-  var frameBox = document.createElement("div");
-  frameBox.setAttribute("class", "frame-box");
-  var videoFrame = document.createElement("iframe");
-  videoFrame.setAttribute("cid", "player");
-  videoFrame.setAttribute("type", "text/html");
-  videoFrame.setAttribute("width", "640px");
-  videoFrame.setAttribute("height", "390");
-  videoFrame.setAttribute(
-    "src",
-    "http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
-  );
-
+  
   videoBtn.innerText = "Watch Cooking Tutorial";
 
   // Append to the browser
@@ -197,58 +192,17 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
         videoFrame.setAttribute("cid", "player");
         videoFrame.setAttribute("src", videoURL)
         
-    
-      //   videoFrame.setAttribute("type", "text/html");
         videoFrame.setAttribute("width", "640px");
+        videoFrame.setAttribute("type", "text/html");
         videoFrame.setAttribute("height", "390");
         youtubeContainer.appendChild(frameBox);
         frameBox.appendChild(videoFrame);
      })
-    }
+    }}
   
 
-// when a recipe is searched its put in local storage
-analyzeRecipeEl.addEventListener("click", function () {
-  searchTerm = document.getElementById("name-input").value;
-  getRecipe(searchTerm);
-  if (searchHistory.includes(searchTerm) == false) {
-    searchHistory.push(searchTerm);
-  }
-  localStorage.setItem("search", JSON.stringify(searchHistory));
-  //displaySearchHistory();
-});
-// when the clear history button is pressed it clears storage
-/*clearHistoryEl.addEventListener("click",function() {
-    searchHistory = [];
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
- })*/
 
 //will display past searches on side
-/*function displaySearchHistory() {
-   historyEl.innerHTML = "";
-   for (var i = 0; i < searchHistory.length; i++) {
-      var pastRecipe = document.createElement("input");
-      pastRecipe.setAttribute("type","text");
-      pastRecipe.setAttribute("readonly",true);
-      pastRecipe.setAttribute("class", "recipe-space");
-      pastRecipe.setAttribute("value", searchHistory[i]);
-      let recipeNames = searchHistory[i];
-      pastRecipe.addEventListener("click",function() {
-          //console.log(this.value);
-          //console.log(recipeNames);
-          var searchInput =  document.getElementById("name-input");
-          searchInput.value = recipeNames;
-         getRecipe(recipeNames);  
-      })
-      historyEl.append(pastRecipe);
-      
-}}
-displaySearchHistory();
-
-
-
- //will display past searches on side
 // function displaySearchHistory() {
 //    historyEl.innerHTML = "";
 //    for (var i = 0; i < searchHistory.length; i++) {
@@ -271,19 +225,8 @@ displaySearchHistory();
 // displaySearchHistory();
 
 
-//starts recipe search
-analyzeRecipeEl.addEventListener("click", function() {
-  searchTerm = document.getElementById("name-input").value;
-  getRecipe(searchTerm);
-})
 
-// when the clear history button is pressed it clears storage
-clearHistoryEl.addEventListener("click",function() {
-    searchHistory = [];
-    localStorage.setItem("search",JSON.stringify(searchHistory));
-    displaySearchHistory();
- })
-*/
+
 var loadNecessaryVariables = function (event) {
   modalUp = false;
   currentlyHoveredRecipeIngredients.push(
@@ -314,3 +257,14 @@ var populateModalContent = function () {
   }
   currentlyHoveredRecipeIngredients = [];
 };
+analyzeRecipeEl.addEventListener("click", function() {
+  searchTerm = document.getElementById("name-input").value;
+  getRecipe(searchTerm);
+})
+
+ //when the clear history button is pressed it clears storage
+clearHistoryEl.addEventListener("click",function() {
+    searchHistory = [];
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    displaySearchHistory();
+ });
