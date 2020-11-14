@@ -4,13 +4,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  
   .modal-btn {
     color: #333;
     cursor: pointer;
     box-shadow: 0 5px 5px -5px #8d7840;
     transition: 0.35s;
-    @include breakpoint(teeny) {
-      font-size: 10px;
+    @include breakpoint(mid-tablet){
+      font-size: 16px;
+    }
+    @include breakpoint(new-mobile){
+      font-size: 12px;
+    }
+    @include breakpoint(old-mobile){
+      font-size: 12px;
     }
     &:hover {
       box-shadow: 0 5px 5px -5px rgba(228, 0, 76, 0.925);
@@ -21,7 +29,15 @@
       text-align: start;
     }
   }
-  .modal-content,
+  .modal-content {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+  }
   .modal-backdrop {
     height: 0;
     width: 0;
@@ -99,7 +115,20 @@
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      @media (max-width: 400px) {
+      @include breakpoint(big-tablet){
+        width:100%;
+        left: 0;
+      }
+      @include breakpoint(mid-tablet){
+        width:100%;
+        left: 0;
+      }
+      @include breakpoint(new-mobile){
+        width:100%;
+        left: 0;
+      }
+      @include breakpoint(old-mobile){
+        width:100%;
         left: 0;
       }
     }

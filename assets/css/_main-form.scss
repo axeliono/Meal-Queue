@@ -10,43 +10,104 @@
       box-shadow: 2px 4px 7px rgb(10, 12, 14); 
       background-color: $secondary-color;
       position: relative;
-      @include breakpoint(teeny){
+
+      @include breakpoint(big-tablet){
         margin: auto;
-        width: 100%;
-  }
+        width: 80%;
+      }
+      @include breakpoint(mid-tablet){
+          margin: auto;
+          width: 100%;
+      }
+      @include breakpoint(new-mobile){
+          margin: auto;
+          width: 100%;
+
+      }
+      @include breakpoint(old-mobile){
+          margin: auto;
+          width: 100%;
+      }
+      
   }
 
   .mainform-text{
     display: flex;
 
+    
+    @include breakpoint(mid-tablet){
+        flex-direction: column;
+    }
+    @include breakpoint(new-mobile){
+      flex-direction: column;
+    }
+    @include breakpoint(old-mobile){
+      flex-direction: column;
+    }
+
+
     .form-title{
       color: $main-text;
       width: 50%;
       margin-right: auto;
+
+      @include breakpoint(mid-tablet){
+        margin: auto;
+      }
+      @include breakpoint(new-mobile){
+        margin: auto;
+      }
+      @include breakpoint(old-mobile){
+        margin: auto;
+      }
      
 
     h1{
       font-family: 'Martel', serif;
       text-align: end;
       font-size: 50px;
-      @include breakpoint(780){
-        font-size: 35px;
+
+      @include breakpoint(mid-tablet){
+        text-align: center;
+        font-size: 40px;
       }
-      @include breakpoint(teeny){
-        font-size: 20px;
+      @include breakpoint(new-mobile){
+        text-align: center;
+        font-size: 30px;
       }
-      @include breakpoint(smallest){
-        display: none;
+      @include breakpoint(old-mobile){
+        text-align: center;
+        font-size: 30px;
       }
     }
 
     .m {
       margin: 30px 150px -20px auto;
+
+      @include breakpoint(mid-tablet){
+        margin: auto;
+      }
+      @include breakpoint(new-mobile){
+        margin: auto;
+      }
+      @include breakpoint(old-mobile){
+        margin: auto;
+      }
     }
 
     .q{
       margin-right: 130px;
       padding-bottom: 20px;
+
+      @include breakpoint(mid-tablet){
+        margin: auto;
+      }
+      @include breakpoint(new-mobile){
+        margin: auto;
+      }
+      @include breakpoint(old-mobile){
+        margin: auto;
+      }
 
       span{
         color:  #ff9900;
@@ -60,10 +121,31 @@
       margin-left: auto;
       margin-top: 20px;
 
+      @include breakpoint(mid-tablet){
+        margin: auto auto auto 10px;
+        width: 100%;
+        padding: 10px;
+      }
+      @include breakpoint(new-mobile){
+        margin: auto auto auto 10px;
+        width: 100%;
+      }
+      @include breakpoint(old-mobile){
+        margin: auto auto auto 10px;
+        width: 100%;
+      }
+
       .how-to{
         color: $main-text;
-        @include breakpoint(smallest){
-          display: none;
+
+        @include breakpoint(mid-tablet){
+          font-size: 22px;
+        }
+        @include breakpoint(new-mobile){
+          font-size: 22px;
+        }
+        @include breakpoint(old-mobile){
+          font-size: 22px;
         }
       }
 
@@ -74,12 +156,6 @@
       li{
             padding: 5px;
             word-spacing: 1px;
-            @include breakpoint(780){
-              font-size: smaller;
-            }  
-            @include breakpoint(smallest){
-              display: none;
-            }
       }
       
     }
@@ -91,7 +167,7 @@
       padding-top: 10px;
       margin-right: auto;
 
-      
+   
 
       h3{
           margin-top: 20px;
@@ -100,8 +176,15 @@
           text-align: center;
           margin-bottom: 5px;
           font-size: 40px;
-          @include breakpoint(smallest){
-            font-size: 15px;
+          
+          @include breakpoint(mid-tablet){
+            font-size: 30px;
+          }
+          @include breakpoint(new-mobile){
+            font-size: 22px;
+          }
+          @include breakpoint(old-mobile){
+            font-size: 22px;
           }
       }
       
@@ -109,6 +192,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
+        
       input{
         justify-content: center;
         width: 40%;
@@ -116,20 +200,20 @@
         background: rgb(190, 190, 190);
         border:none;
         text-transform: uppercase;
-        @include breakpoint(mama-bear){
-            height: 30px;
-        }
-        @include breakpoint(baby-bear){
-            height: 20px;
-        }
-        @include breakpoint(teeny){
-            font-size: 6px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            height: 15px;
-        }
         margin-bottom: 20px;
+
+        @include breakpoint(mid-tablet){
+          width: 80%;
+          padding: 10px;
+        }
+        @include breakpoint(new-mobile){
+          width: 80%;
+          padding: 10px;
+        }
+        @include breakpoint(old-mobile){
+          width: 80%;
+          padding: 10px;
+        }
       }
 
       input:focus{
@@ -143,24 +227,16 @@
       height: 35px;
       background-color: #f5cb5c;
       border-style: none;
-      @include breakpoint(mama-bear){
-          font-size: 14px;
-          letter-spacing: 0.1px;
-          text-align: center;
-          height: 30px;
-      }
-      @include breakpoint(baby-bear){
-          font-size: 10px;
-          height: 20px;
-  
-      }   
-      @include breakpoint(teeny){
-          font-size: 6px;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          height: 10px;
-      }
+
+        @include breakpoint(mid-tablet){
+          width: 40%;
+        }
+        @include breakpoint(new-mobile){
+          width: 40%;
+        }
+        @include breakpoint(old-mobile){
+          width: 40%;
+        }
       }
 
       .result-btn:hover{
@@ -172,79 +248,6 @@
           background-color: #abd1be;
       }
     }
-      .search-history{
-          width: 30%;
-          display: inline-flex;
-          flex-direction: column;
-          position: relative;
-          left: 50px;
-          word-spacing: 2px;
-          color: #fff;
-          border: 1px solid rgb(158, 158, 158);
-          border-radius: 15px;
-
-  h3 {
-    padding-bottom: 10px;
-    color: $main-text;
-  }
-
-  input {
-    width: 40%;
-    padding: 10px;
-    background: rgb(190, 190, 190);
-    border-radius: 15px;
-    @include breakpoint(mama-bear) {
-      height: 30px;
-    }
-    @include breakpoint(baby-bear) {
-      height: 20px;
-    }
-    @include breakpoint(teeny) {
-      height: 10px;
-    }
-  }
-
-  .result-btn {
-    color: #fff;
-    letter-spacing: 2px;
-    width: 20%;
-    height: 40px;
-    background-color: #191f24;
-    border-style: none;
-  }
-
-  .result-btn {
-    color: #fff;
-    letter-spacing: 2px;
-    width: 20%;
-    height: 40px;
-    background-color: #191f24;
-    border-style: none;
-    @include breakpoint(mama-bear) {
-      font-size: 14px;
-      letter-spacing: 0.1px;
-      text-align: center;
-      height: 30px;
-    }
-    @include breakpoint(baby-bear) {
-      font-size: 10px;
-      height: 20px;
-    }
-    @include breakpoint(teeny) {
-      font-size: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: 10px;
-    }
-  }
-
-}
-.list-title{
-  color: #fff;
-  margin: 15px 0;
-}
-
 }
 
 .recipe-card-holder {
@@ -267,27 +270,16 @@
   margin: 5px 0;
   height: 300px;
   transition: 0.35s;
-  @include breakpoint(papa-bear){
-    width: 175px;
-    height: 250px;
-  }
-  @include breakpoint(mama-bear){
-    width: 150px;
-    height: 225px;
-  }
-  @include breakpoint(auntie-bear){
-    width: 125px;
-    height: 200px;
-  }
-  @include breakpoint(780){
-    width: 100px;
-    height: 175px;
-  }
-  @include breakpoint(teeny){
-    width: 75px;
-    height: 150px;
-    margin: 10px, 0;
-  }
+    @include breakpoint(mid-tablet){
+      font-size: 30px;
+    }
+    @include breakpoint(new-mobile){
+      font-size: 30px;
+    }
+    @include breakpoint(old-mobile){
+      font-size: 30px;
+    }
+  
 
   
   &:hover{
@@ -318,20 +310,17 @@
         p{
           color: black;
           text-align: center;
-          @include breakpoint(papa-bear){
-            font-size: 14px;
+          @include breakpoint(mid-tablet){
+            font-size: 16px;
           }
-          @include breakpoint(780){
+          @include breakpoint(new-mobile){
             font-size: 12px;
           }
-          @include breakpoint (auntie-bear){
-            font-size: 11px;
-          }
-          @include breakpoint(teeny){
-            font-size: 10px;
+          @include breakpoint(old-mobile){
+            font-size: 12px;
           }
           }
     }
-}
+
 }
 }
