@@ -22,6 +22,10 @@ option to view a video tutorial.
 * 27.6% of JavaScript
 * 13.5% of HTML
 
+## API
+* Edamam for retreiving recipe data
+* Youtube for clip of cooking tutorial
+
 
 ## Contributed By
 * Peters, Ryan 
