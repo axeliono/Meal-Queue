@@ -8,13 +8,13 @@ option to view a video tutorial.
 
 ## Responsive
 
-* Desktop Screen
+## Desktop Screen
 ![](/assets/images/mealQ.jpg)
 
-* Tablet Screen
+## Tablet Screen
 ![](/assets/images/tablet-device.jpg)
 
-* Mobile Screen
+## Mobile Screen
 ![](/assets/images/mobile-device.jpg)
 
 ## Built With
