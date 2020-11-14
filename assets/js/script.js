@@ -252,18 +252,17 @@ function createYoutubeElements() {
     youtubeContainer.setAttribute("class", "video-container");
     var youtubeBox = document.createElement("div");
     youtubeBox.setAttribute("class", "youtube-box");
-    var videoBtn = document.createElement("button");
-    videoBtn.setAttribute("id", "video-btn");
-    videoBtn.setAttribute("type", "submit");
+    var videoTitle = document.createElement("h1");
+    videoTitle.setAttribute("class", "video-title");
 
-    videoBtn.innerText = "Watch Cooking Tutorial";
+    videoTitle.innerText = "HOW TO COOK TUTORIAL";
 
     // Append to the modal -- youtube
     var recipeModalContentEl = document.querySelector(".modal-content");
     recipeModalContentEl.appendChild(youtubeContainer);
     youtubeContainer.appendChild(youtubeBox);
     youtubeContainer.appendChild(youtubeBox);
-    youtubeBox.appendChild(videoBtn);
+    youtubeBox.appendChild(videoTitle);
 
     var frameBox = document.createElement("div");
     frameBox.setAttribute("class", "frame-box");

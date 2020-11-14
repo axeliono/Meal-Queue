@@ -2,6 +2,20 @@
   display: flex;
   margin: 150px auto;
 
+  @include breakpoint(big-tablet){
+    margin: 0;
+  }
+  @include breakpoint(mid-tablet){
+    margin: 0;
+  }
+  @include breakpoint(new-mobile){
+    margin: 0;
+
+  }
+  @include breakpoint(old-mobile){
+    margin: 0;
+  }
+
   .operation-box{
       width: 60%;
       height: 100%;
