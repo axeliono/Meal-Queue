@@ -151,20 +151,12 @@
   .youtube-box {
     text-align: center;
     margin: 20px 0;
-    button {
+    .video-title {
       padding: 10px;
       text-transform: uppercase;
-      border: 1px solid transparent;
-      background-color: #f58300;
-      transition: 0.35s;
-      color: #fff;
-      &:hover {
-        background-color: #ffa844f1;
-        color: #000;
-      }
-      &:active {
-        transform: scale(0.9);
-      }
+      border-bottom: 1px solid gray;
+      color: #f58300;
+      font-size: 30px;
     }
   }
   .frame-box {
