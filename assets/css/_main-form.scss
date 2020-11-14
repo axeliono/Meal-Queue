@@ -13,21 +13,20 @@
 
       @include breakpoint(big-tablet){
         margin: auto;
-        width: 60%;
-
+        width: 80%;
       }
       @include breakpoint(mid-tablet){
           margin: auto;
-          width: 60%;
+          width: 100%;
       }
       @include breakpoint(new-mobile){
           margin: auto;
-          width: 80%;
+          width: 100%;
 
       }
       @include breakpoint(old-mobile){
           margin: auto;
-          width: 80%;
+          width: 100%;
       }
       
   }
@@ -271,27 +270,16 @@
   margin: 5px 0;
   height: 300px;
   transition: 0.35s;
-  @include breakpoint(papa-bear){
-    width: 175px;
-    height: 250px;
-  }
-  @include breakpoint(mama-bear){
-    width: 150px;
-    height: 225px;
-  }
-  @include breakpoint(auntie-bear){
-    width: 125px;
-    height: 200px;
-  }
-  @include breakpoint(780){
-    width: 100px;
-    height: 175px;
-  }
-  @include breakpoint(teeny){
-    width: 75px;
-    height: 150px;
-    margin: 10px, 0;
-  }
+    @include breakpoint(mid-tablet){
+      font-size: 30px;
+    }
+    @include breakpoint(new-mobile){
+      font-size: 30px;
+    }
+    @include breakpoint(old-mobile){
+      font-size: 30px;
+    }
+  
 
   
   &:hover{
@@ -322,17 +310,14 @@
         p{
           color: black;
           text-align: center;
-          @include breakpoint(papa-bear){
-            font-size: 14px;
+          @include breakpoint(mid-tablet){
+            font-size: 16px;
           }
-          @include breakpoint(780){
+          @include breakpoint(new-mobile){
             font-size: 12px;
           }
-          @include breakpoint (auntie-bear){
-            font-size: 11px;
-          }
-          @include breakpoint(teeny){
-            font-size: 10px;
+          @include breakpoint(old-mobile){
+            font-size: 12px;
           }
           }
     }
