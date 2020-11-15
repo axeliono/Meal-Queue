@@ -157,6 +157,11 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   ingredientSpan.appendChild(arrayLine);
 }
 
+function toggleSidebar(ref){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+
 //will display past searches on side
 function displaySearchHistory() {
   historyEl.innerHTML = "";
@@ -172,12 +177,15 @@ function displaySearchHistory() {
       //console.log(recipeNames);
       var searchInput = document.getElementById("name-input");
       searchInput.value = recipeNames;
+      pastRecipe.setAttribute("onclick", toggleSidebar(this));
       getRecipe(recipeNames);
+      
     });
     historyEl.append(pastRecipe);
   }
 }
 displaySearchHistory();
+
 
 var loadNecessaryVariables = function (event) {
   modalUp = false;
