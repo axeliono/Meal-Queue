@@ -1,7 +1,7 @@
 //edamam API
 const appID = "3e035de5";
 const apiKey = "736b0810150196f28b8c1028864f5f3f";
-const ytApiKey = "AIzaSyBP_BVHyh3I4DYpn17uQ--82M8G0rIIfYo";
+const ytApiKey = "AIzaSyDUGUtMn7OfvQS1kh2R63tR-bs1QW0reac";
 var analyzeRecipeEl = document.getElementById("result-btn");
 var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var indexValueCounter = 0;
@@ -27,26 +27,26 @@ function getRecipe(searchTerm) {
 
       for (i = 0; i < recipesFound.length; i++) {
         let recipeName = data.hits[i].recipe.label;
-        //console.log(recipeName);
+        // console.log(recipeName);
         let recipeImage = data.hits[i].recipe.image;
-        //console.log(recipeImage);
+        // console.log(recipeImage);
         let ingredientList = data.hits[i].recipe.ingredients;
-        //console.log(ingredientList);
+        // console.log(ingredientList);
         var ingredientArrayObject = {
           ingredients: [],
           name: recipeName,
           picture: recipeImage,
         };
-        for (x = 0; x < ingredientList.length; x++) {
+        for (j = 0; j < ingredientList.length; j++) {
           //put each ingredient into array
-          ingredientArrayObject.ingredients.push(ingredientList[x].text);
+          ingredientArrayObject.ingredients.push(ingredientList[j].text);
         }
         allIngredientArray.push(ingredientArrayObject);
-        //console.log(ingredientArrayObject);
+        // console.log(ingredientArrayObject);
         displayRecipeCards(recipeName, recipeImage, ingredientArrayObject);
       }
       if (data.count === 0) {
-        console.log("No Responses found");
+        // console.log("No Responses found");
       } else {
         localStorage.setItem("search", JSON.stringify(searchHistory));
         displaySearchHistory();
@@ -95,7 +95,7 @@ function displayRecipeCards(recipeName, recipeImage, ingredientArrayObject) {
   recipeCardTxt.setAttribute("name", recipeName);
   recipeCardTxt.setAttribute("ingredients", ingredientArrayObject.ingredients);
 
-  console.log(recipeCardTxt.getAttribute("ingredients"));
+  // console.log(recipeCardTxt.getAttribute("ingredients"));
 
   btnLabel.innerText = "See More";
   btnLabel.setAttribute("index-value", indexValueCounter);
@@ -168,8 +168,8 @@ function displaySearchHistory() {
     pastRecipe.setAttribute("value", searchHistory[i]);
     let recipeNames = searchHistory[i];
     pastRecipe.addEventListener("click", function () {
-      //console.log(this.value);
-      //console.log(recipeNames);
+      // console.log(this.value);
+      // console.log(recipeNames);
       var searchInput = document.getElementById("name-input");
       searchInput.value = recipeNames;
       getRecipe(recipeNames);
@@ -179,17 +179,18 @@ function displaySearchHistory() {
 }
 displaySearchHistory();
 
+
 var loadNecessaryVariables = function (event) {
   modalUp = false;
   currentlyHoveredRecipeIngredients.push(
     allIngredientArray[event.target.getAttribute("index-value")]
   );
-  console.log(currentlyHoveredRecipeIngredients);
+  // console.log(currentlyHoveredRecipeIngredients);
 };
 
 var removeUnnecessaryVariables = function (event) {
   currentlyHoveredRecipeIngredients = [];
-  console.log(currentlyHoveredRecipeIngredients);
+  // console.log(currentlyHoveredRecipeIngredients);
 };
 
 var populateModalContent = function () {
@@ -207,8 +208,10 @@ var populateModalContent = function () {
     var listItem = document.createElement("li");
     listItem.innerText = currentlyHoveredRecipeIngredients[0].ingredients[i];
     orderedList.appendChild(listItem);
+    console.log(currentlyHoveredRecipeIngredients[0].ingredients[i])
   }
   currentlyHoveredRecipeIngredients = [];
+
 };
 
 analyzeRecipeEl.addEventListener("click", function () {
@@ -228,7 +231,7 @@ function getYT(recipeName) {
   fetch(ytURL)
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data.items[0].id.videoId)
+      // console.log(data.items[0].id.videoId)
       var id = data.items[0].id.videoId;
       const videoURL =
         "http://www.youtube.com/embed/" +
