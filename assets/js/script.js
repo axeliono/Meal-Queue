@@ -24,6 +24,7 @@ function getRecipe(searchTerm) {
       let recipesFound = data.hits;
       var cardHolder = document.querySelector(".recipe-card-holder");
       cardHolder.innerHTML = "";
+      allIngredientArray= [];
 
       for (i = 0; i < recipesFound.length; i++) {
         let recipeName = data.hits[i].recipe.label;
@@ -199,11 +200,12 @@ var removeUnnecessaryVariables = function (event) {
   currentlyHoveredRecipeIngredients = [];
   console.log(currentlyHoveredRecipeIngredients);
 };
-
+//title needs a reset
 var populateModalContent = function () {
   createYoutubeElements();
   modalUp = true;
   var title = document.querySelector(".title");
+  console.log(title);
   title.innerHTML = currentlyHoveredRecipeIngredients[0].name;
   var orderedList = document.querySelector(".ingredient-list");
   orderedList.innerHTML = "";
