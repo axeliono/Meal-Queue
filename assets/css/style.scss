@@ -21,13 +21,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include breakpoint(baby-bear){
-        height:50vh;
     
-    }
+    // Media-Query
+        @include breakpoint(big-tablet){
+            margin: auto;
+            width: 100%;
+            height: 65vh;
+
+        }
+        @include breakpoint(mid-tablet){
+            margin: auto;
+            width: 100%;
+            height: 40vh;
+        }
+        @include breakpoint(new-mobile){
+            margin: auto;
+            width: 100%;
+            background: url(../images/header.jpg);
+            background-size: cover;
+        }
+        @include breakpoint(old-mobile){
+            margin: auto;
+            width: 100%;
+            background: url(../images/header.jpg);
+            background-size: cover;
+        }
     .arrow{
         margin-bottom: -200px;
-
+      
         a{
             color: #F5CB5C;
             font-size: 80px;
@@ -37,7 +58,20 @@
                 color: #ff6739;
             }
 
-        }
+        }  
+            // Media-Query
+            @include breakpoint(big-tablet){
+                display:none;
+            }
+            @include breakpoint(mid-tablet){
+                display:none;
+            }
+            @include breakpoint(new-mobile){
+                display:none;
+            }
+            @include breakpoint(old-mobile){
+                display:none;
+            }
     }
     
     .intro-page{
@@ -52,59 +86,72 @@
         align-items: center;
         box-shadow: 2px 4px 8px #0c0c0c;
         background-color: rgba(3, 3, 3, 0.7);
-
-        @include breakpoint(mama-bear){
-            width: 60%;
-        }
-        @include breakpoint(baby-bear){
-            height: 75%;
-            overflow-y: auto;
-        }
-        @include breakpoint(teeny){
-            width: 80%;   
-        }
-        @include breakpoint(smallest){
-            overflow: auto;
-        }
+              
+            // Media-Query
+            @include breakpoint(big-tablet){
+                margin: auto;
+                width: 100%;
+                height: 50%;
+            }
+            @include breakpoint(mid-tablet){
+                margin: auto;
+                width: 100%;
+                height: 70%;
+            }
+            @include breakpoint(new-mobile){
+                margin: auto;
+                width: 100%;
+                height: 100%;
+            }
+            @include breakpoint(old-mobile){
+                margin: auto;
+                width: 100%;
+                height: 100%;
+            }
      
         .intro-left{
             width: 60%;
             padding: 1rem;
             z-index: 2;
 
-            @include breakpoint(papa-bear){
-                width: 100%;
-                
-                justify-content: center;
+            // Media-Query
+    
+            @include breakpoint(mid-tablet){
+                margin: auto;
+                width: 80%;
             }
-            @include breakpoint(teeny){
-                margin-left: 0px;
-                padding: none;
-                width: 100%;
+            @include breakpoint(new-mobile){
+                margin: auto;
+                width: 60%;
+                height: 75%;
+                padding: 20px;
             }
+            @include breakpoint(old-mobile){
+                margin: auto;
+                width: 60%;
+                height: 100%;
+                padding: 20px;
+            }
+
             h1{
                 font-size: 62px;
                 margin-bottom: 40px;
                 text-transform: uppercase;
                 color:  $intro-text;
 
-                @include breakpoint(papa-bear){
-                    text-align:center;
+                 // Media-Query
+                @include breakpoint(mid-tablet){
+                    font-size: 30px;
+                    margin-bottom: 20px;
                 }
-                @include breakpoint(mama-bear){
-                    margin-top: 40px;
+                @include breakpoint(new-mobile){
+                    font-size: 20px;
+                    margin-bottom: 10px;
                 }
-                @include breakpoint(baby-bear){
-                    font-size: 35px;
+                @include breakpoint(old-mobile){
+                    font-size: 20px;
+                    margin-bottom: 5px;
                 }
-                @include breakpoint(teeny){
-                    margin-top: 60px;
-                    padding-bottom: 0px;
-                    font-size: 28px;
-                }
-                @include breakpoint(smallest){
-                    font-size: 18px;
-                  }
             }
 
             p{
@@ -112,9 +159,20 @@
                 font-size: 18px;
                 line-height: 140%;
                 letter-spacing: 1px;
-                @include breakpoint(smallest){
-                    font-size: 14px;
-                  }
+
+                  // Media-Query
+                 @include breakpoint(mid-tablet){
+                     font-size: 16px;
+                     margin-bottom: 20px;
+                 }
+                 @include breakpoint(new-mobile){
+                     font-size: 12px;
+                     margin-bottom: 10px;
+                 }
+                 @include breakpoint(old-mobile){
+                     font-size: 12px;
+                     margin-bottom: 10px;
+                 }
             }
         }
     }
@@ -128,6 +186,17 @@ footer {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+
+    // Media-Query
+    @include breakpoint(mid-tablet){
+        height: 250px;
+    }
+    @include breakpoint(new-mobile){
+        height: 200px;
+    }
+    @include breakpoint(old-mobile){
+        height: 200px;
+    }
 
     .credit{
         padding: 1rem;
@@ -159,10 +228,24 @@ footer {
             font-size: 50px;
             color: #F5CB5C;
             padding: 1rem;
+<<<<<<< HEAD
             @include breakpoint(smallest){
                 font-size: smaller;
               }
 >>>>>>> e343380bca9e925ffde7df23337ec1fe939c7878
+=======
+
+            @include breakpoint(mid-tablet){
+                font-size: 30px;
+            }
+            @include breakpoint(new-mobile){
+                font-size: 15px;
+            }
+            @include breakpoint(old-mobile){
+                font-size: 15px;
+            }
+
+>>>>>>> main
 
             &:hover {
                 color: #ff9900;
@@ -172,13 +255,30 @@ footer {
         p{
             margin-top: 20px;
             font-size: 22px;
-            @include breakpoint(smallest){
-                font-size: 14px;
-              }
+
+            @include breakpoint(mid-tablet){
+                font-size: 19px;
+            }
+            @include breakpoint(new-mobile){
+                font-size: 12px;
+            }
+            @include breakpoint(old-mobile){
+                font-size: 12px;
+            }
         }
 
         .date {
             font-size: 18px;
+
+            @include breakpoint(mid-tablet){
+                font-size: 14px;
+            }
+            @include breakpoint(new-mobile){
+                font-size: 10px;
+            }
+            @include breakpoint(old-mobile){
+                font-size: 10px;
+            }
         }
     }
 
@@ -190,11 +290,31 @@ footer {
         justify-content: center;
         margin-left: 30px;
 
+        @include breakpoint(mid-tablet){
+            margin-left: 30px;
+            padding: 0;
+        }
+        @include breakpoint(new-mobile){
+            margin-left: 20px;
+            padding: 0;
+        }
+        @include breakpoint(old-mobile){
+            margin-left: 10px;
+            padding: 0;
+        }
         h3{
             font-size: 32px;
             margin-bottom: 20px;
-            @include breakpoint(teeny){
-                font-size: smaller;
+            @include breakpoint(mid-tablet){
+                font-size: 28px;
+            }
+            @include breakpoint(new-mobile){
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            @include breakpoint(old-mobile){
+                font-size: 12px;
+                margin-bottom: 5px;
             }
         }
 
@@ -203,8 +323,15 @@ footer {
             text-transform: uppercase;
             list-style: none;
             padding: 5px 0;
-            @include breakpoint(teeny){
-                font-size: smaller;
+
+            @include breakpoint(mid-tablet){
+                font-size: 14px;
+            }
+            @include breakpoint(new-mobile){
+                font-size: 10px;
+            }
+            @include breakpoint(old-mobile){
+                font-size: 10px;
             }
         }
     }

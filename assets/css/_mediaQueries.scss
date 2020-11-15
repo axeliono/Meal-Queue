@@ -1,26 +1,21 @@
+// Breakpoints: List of different sizes
+
+// iPad pro   = 1024px
+// iPad       = 768px
+// mobile     = 500px
+// old mobile = 375px
+
 @mixin breakpoint($point) {
-    @if $point == big-small {
-      @media (max-width: 1500px) {@content;}
-    }
-    @if $point == papa-bear {
-      @media (max-width: 1163px) { @content; }
-    }
-    @else if $point == mama-bear {
-      @media (max-width: 1025px) { @content; }
-    }
-    @else if $point == auntie-bear{
-      @media (max-width: 905px){ @content; }
-    }
-    @else if $point == 780{
-      @media (max-width:780px){ @content; }
-    }
-    @else if $point == baby-bear {
-     @media (max-width: 650px)  { @content; }
-    }
-    @else if $point == teeny {
-        @media (max-width: 559px) {@content; }
-    }
-    @else if $point == smallest {
-      @media (max-width: 350px ) {@content; }
-    }
+  @if $point == big-tablet {
+    @media (max-width: 1024px) {@content;}
+  }
+  @if $point == mid-tablet {
+    @media (max-width: 770px) { @content; }
+  }
+  @else if $point == new-mobile {
+    @media (max-width: 550px) { @content; }
+  }
+  @else if $point == old-mobile{
+    @media (max-width: 400px){ @content; }
+  }
 }
