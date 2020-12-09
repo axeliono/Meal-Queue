@@ -241,9 +241,9 @@ function getYT(recipeName) {
       //console.log(data.items[0].id.videoId)
       var id = data.items[0].id.videoId;
       const videoURL =
-        "http://www.youtube.com/embed/" +
+        "https://www.youtube.com/embed/" +
         id +
-        "?enablejsapi=1&origin=http://example.com";
+        "?enablejsapi=1&origin=https://example.com";
       document.querySelector(".video-frame").setAttribute("src", videoURL);
     });
 }
