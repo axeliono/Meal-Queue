@@ -4,7 +4,7 @@ Type in a food item and a list of different recipes is presented with an
 option to view a video tutorial.  
 
 
-* Deployed Aplication: https://axeliono.github.io/group-project-1/
+* Deployed Aplication: https://axeliono.github.io/Meal-Queue/
 
 ## Responsive
 
